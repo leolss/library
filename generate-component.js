@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 15:10:57
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-13 16:37:48
+ * @LastEditTime: 2021-09-13 16:56:22
  * @Description: 生成文件模板脚本
  */
 
@@ -85,6 +85,6 @@ fs.writeFileSync(`${targetPath}/index.less`, styleStr, { encoding: 'utf8' });
 const fileStr = fs.readFileSync(`src/index.ts`);
 fs.writeFileSync(
   `src/index.ts`,
-  `${fileStr} export { default as ${Name} } from './components/${name}';`,
+  `${fileStr}\nexport { default as ${Name} } from './components/${name}';`,
   { encoding: 'utf8' },
 );

@@ -3,7 +3,7 @@
  * @Date: 2021-09-09 17:20:49
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-13 16:43:29
+ * @LastEditTime: 2021-09-13 17:01:58
  * @Description:入口文件
  */
 import './styles/index';
