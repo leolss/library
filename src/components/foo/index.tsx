@@ -3,7 +3,7 @@
  * @Date: 2021-09-10 13:47:27
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-10 18:18:55
+ * @LastEditTime: 2021-09-13 15:50:04
  * @Description: Foo Componet
  */
 
@@ -21,5 +21,5 @@ const Foo: React.FC<FooProps> = (props) => {
   );
   return el;
 };
-
+Foo.displayName = 'Foo';
 export default Foo;
