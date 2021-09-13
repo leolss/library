@@ -84,7 +84,7 @@ fs.writeFileSync(`${targetPath}/index.less`, styleStr, { encoding: 'utf8' });
 // 导出生成的组件
 const fileStr = fs.readFileSync(`src/index.ts`);
 fs.writeFileSync(
-  `${src}/index.ts`,
+  `src/index.ts`,
   `${fileStr} export { default as ${Name} } from './components/${name}';`,
   { encoding: 'utf8' },
 );
