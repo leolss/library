@@ -1,3 +1,11 @@
+/*
+ * @Author: 李闪闪
+ * @Date: 2021-09-14 14:53:17
+ * @Email: lishanshan6@jd.com
+ * @LastEditors: 李闪闪
+ * @LastEditTime: 2021-09-14 15:41:29
+ * @Description:
+ */
 export interface ButtonProps extends BaseProps {
   /**
    * @description 按钮类型
