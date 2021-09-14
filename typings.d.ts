@@ -2,8 +2,8 @@
  * @Author: 姚嘉琦
  * @Date: 2021-09-09 15:10:03
  * @Email: yaojiaqi1@jd.com
- * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-14 15:55:19
+ * @LastEditors: 李闪闪
+ * @LastEditTime: 2021-09-14 17:29:38
  * @Description: 全局global
  */
 declare module '*.css';
@@ -20,13 +20,13 @@ interface BaseProps {
    * @description 额外的style
    * @default {}
    */
-  extraStyle?: React.CSSProperties
+  extraStyle?: React.CSSProperties;
 
   /**
    * @description children
    * @default {}
    */
-  children?: React.ReactNode
+  children?: React.ReactNode;
 
   /**
    * @description Ref对象

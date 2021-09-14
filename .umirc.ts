@@ -57,7 +57,6 @@ export default defineConfig({
   //   ],
   // },
 
-
   // themeConfig: {
   //   hd: {
   //     // umi-hd 的 750 高清方案（默认值）

@@ -34,7 +34,7 @@ function gen(name: string, mods?: Mods): string {
 
   return Object.keys(mods).reduce(
     (ret, key) => ret + (mods[key] ? gen(name, key) : ''),
-    ''
+    '',
   );
 }
 

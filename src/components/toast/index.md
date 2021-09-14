@@ -1,5 +1,5 @@
 ---
-title: Button
+title: Toast
 nav:
   title: Components
   path: /components
@@ -11,9 +11,9 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Button } from 'library';
+import { Toast } from 'library';
 
-export default () => <Button>我是button</Button>;
+export default () => <Toast className="jdd-toast"></Toast>;
 ```
 
 <API src="./index.tsx"></API>

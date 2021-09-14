@@ -33,4 +33,3 @@ Generate a component
 ```bash
 $ npm generate:component [name]
 ```
-
