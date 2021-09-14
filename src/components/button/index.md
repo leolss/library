@@ -5,7 +5,7 @@ nav:
   path: /components
 ---
 
-## Button
+## Foo
 
 Demo:
 
@@ -13,7 +13,8 @@ Demo:
 import React from 'react';
 import { Button } from 'library';
 
-export default () => <Button title="hello,world" />;
+export default () => <Button>我是button</Button>;
 ```
 
-More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo
+<API src="./index.tsx"></API>
+

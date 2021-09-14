@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@umijs/plugin-locale": "^0.14.2",
+    "classnames": "^2.3.1",
     "react": "^16.12.0"
   },
   "devDependencies": {

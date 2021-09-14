@@ -3,7 +3,7 @@
  * @Date: 2021-09-10 13:47:27
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-13 16:20:14
+ * @LastEditTime: 2021-09-13 20:51:47
  * @Description: 配置文件
  */
 import { defineConfig } from 'dumi';
@@ -32,28 +32,28 @@ export default defineConfig({
    * 菜单
    * @see
    */
-  // menus: {
-  //   '/en-US/components': [
-  //     {
-  //       title: 'Architecture Design',
-  //       children: ['components/index.en-US.md'],
-  //     },
-  //     {
-  //       title: 'General',
-  //       children: ['components/foo/index.md', 'components/button/index.md', 'components/form/index.md', 'components/demo/index.md'],
-  //     },
-  //   ],
-  //   '/components': [
-  //     {
-  //       title: '架构设计',
-  //       children: ['components/index.md'],
-  //     },
-  //     {
-  //       title: '通用',
-  //       children: ['components/foo/index.md', 'components/button/index.md', 'components/form/index.md', 'components/demo/index.md'],
-  //     },
-  //   ],
-  // },
+  menus: {
+    '/en-US/components': [
+      {
+        title: 'Architecture Design',
+        children: ['components/index.en-US.md'],
+      },
+      {
+        title: 'General',
+        children: ['components/foo/index.md', 'components/button/index.md'],
+      },
+    ],
+    '/components': [
+      {
+        title: '架构设计',
+        children: ['components/index.md'],
+      },
+      {
+        title: '通用',
+        children: ['components/foo/index.md', 'components/button/index.md'],
+      },
+    ],
+  },
 
 
   // themeConfig: {

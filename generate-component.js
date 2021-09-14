@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 15:10:57
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-13 16:56:22
+ * @LastEditTime: 2021-09-13 16:58:53
  * @Description: 生成文件模板脚本
  */
 
@@ -74,8 +74,7 @@ export default () => <${Name} className="jdd-${name}"></${Name}>;
 `;
 fs.writeFileSync(`${targetPath}/index.md`, mdStr, { encoding: 'utf8' });
 
-let styleStr = `
-.jdd-${name}{
+let styleStr = `.jdd-${name}{
 
 }
 `;
