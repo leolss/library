@@ -66,7 +66,7 @@ $ npm run generate:component [name]
 
 - 不要修改 全局样式、主题色 相关内容,需要改动时早会沟通.
 - 组件书写到 src/components 中.暂时没做分包处理.推荐使用命令生成模板.命名跟随`camelCase`规范.
-- 组件可以参照 赵成献 分享风格编写
+- 组件可以参照 `vant | antd` 风格编写
 - 不建议使用 style 编写组件样式、保留`extraStyle`props.
 - 推荐使用 `createNamespace`方法 生成样式(基于 vant)
 - 组件注意处理监听、穿透、冒泡等问题
@@ -91,7 +91,7 @@ $ npm run generate:component [name]
   - index.less --- 组件样式
   - interface.ts --- 组件 API
 
-组件产出不需要关心 API 的书写,会根据 interface.ts 自动生成文档.复杂组件需要编写 demo 的情况需要在组件对应的文档编写代码块
+组件产出不需要关心 API 的书写,会根据 interface.ts 自动生成文档.复杂组件需要编写 demo 的情况需要在组件对应的文档编写代码块.Demo应将组件API介绍详尽.
 建议安装 [TS in Markdown](https://marketplace.visualstudio.com/items?itemName=amour1688.ts-in-markdown)
 注意 markdown 尽量不要添加头部注释.会使 dumi 错误识别,不能成功构建.
 
