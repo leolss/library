@@ -3,7 +3,7 @@
  * @Date: 2021-09-10 13:47:27
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-13 16:20:14
+ * @LastEditTime: 2021-09-14 13:22:40
  * @Description: 配置文件
  */
 import { defineConfig } from 'dumi';
@@ -31,7 +31,9 @@ export default defineConfig({
   /**
    * 菜单
    * @see
+   *
    */
+  // TODO 配置菜单
   // menus: {
   //   '/en-US/components': [
   //     {
@@ -40,7 +42,7 @@ export default defineConfig({
   //     },
   //     {
   //       title: 'General',
-  //       children: ['components/foo/index.md', 'components/button/index.md', 'components/form/index.md', 'components/demo/index.md'],
+  //       children: ['components/foo/index.md', 'components/button/index.md'],
   //     },
   //   ],
   //   '/components': [
@@ -50,11 +52,10 @@ export default defineConfig({
   //     },
   //     {
   //       title: '通用',
-  //       children: ['components/foo/index.md', 'components/button/index.md', 'components/form/index.md', 'components/demo/index.md'],
+  //       children: ['components/foo/index.md', 'components/button/index.md'],
   //     },
   //   ],
   // },
-
 
   // themeConfig: {
   //   hd: {

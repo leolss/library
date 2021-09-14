@@ -1,8 +1,8 @@
 # library
 
-## 快速上手
+## Getting Started
 
-安装依赖,
+Install dependencies,
 
 ```bash
 $ npm i
@@ -10,13 +10,13 @@ $ npm i
 $ yarn i
 ```
 
-启动开发环境,
+Start the dev server,
 
 ```bash
 $ npm start
 ```
 
-构建文档,
+Build documentation,
 
 ```bash
 $ npm run docs:build
