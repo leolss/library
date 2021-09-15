@@ -3,14 +3,27 @@
  * @Date: 2021-09-14 16:32:34
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-15 10:03:44
+ * @LastEditTime: 2021-09-15 14:10:40
  * @Description:
  */
-import React, { memo } from 'react';
-import { RadioStyles } from '../interface';
+import React, { memo, useMemo } from 'react';
+import { RadioProps } from '../interface';
 
-const NoCheck: React.FC<RadioStyles> = memo((props) => {
-  const { width = '26', height = '26', borderColor = '#4B5FE1' } = props;
+const NoCheck: React.FC<RadioProps> = memo((props) => {
+  const {
+    width = '26',
+    height = '26',
+    disabled,
+    borderColor = '#4B5FE1',
+  } = props;
+
+  const bc = useMemo(() => {
+    return disabled ? '#ccc' : borderColor;
+  }, [disabled, borderColor]);
+
+  const bg = useMemo(() => {
+    return disabled ? '#e4e2e2' : '#fff';
+  }, [disabled]);
 
   return (
     <>
@@ -88,9 +101,9 @@ const NoCheck: React.FC<RadioStyles> = memo((props) => {
                   xlinkHref="#path-no-1"
                 ></use>
                 <use
-                  stroke={borderColor}
+                  stroke={bc}
                   strokeWidth="1"
-                  fill="#FFFFFF"
+                  fill={bg}
                   xlinkHref="#path-no-1"
                 ></use>
               </g>

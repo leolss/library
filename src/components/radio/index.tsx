@@ -3,7 +3,7 @@
  * @Date: 2021-09-14 16:32:34
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-15 10:04:54
+ * @LastEditTime: 2021-09-15 16:26:13
  * @Description:
  */
 import React, { useMemo } from 'react';
@@ -41,10 +41,16 @@ const Radio: React.FC<RadioProps> = (props: RadioProps) => {
           width={width}
           height={height}
           color={color}
+          disabled={disabled}
           backgroundColor={backgroundColor}
         />
       ) : (
-        <NoCheckImg width={width} height={height} borderColor={borderColor} />
+        <NoCheckImg
+          width={width}
+          height={height}
+          disabled={disabled}
+          borderColor={borderColor}
+        />
       )}
       <span className="jdd-radio-label">{text ? text : children}</span>
     </div>
