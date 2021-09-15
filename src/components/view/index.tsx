@@ -1,16 +1,23 @@
-import React, { useMemo, forwardRef } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import { ViewProps } from './interface';
+import { createNamespace } from '@/utils/create';
+import classnames from 'classnames';
 
 import './index.less';
 
-// TODO ref类型待确认
-const View = forwardRef<any, ViewProps>((props, ref) => {
-  const { tag = 'div' } = props;
-  const renderer = useMemo(() => {
-    const dom = React.createElement(tag, { ref });
-    return dom;
-  }, [tag]);
-  return renderer;
+const View = forwardRef<HTMLDivElement, ViewProps>((props, ref) => {
+  const [name, bem] = createNamespace('view');
+  const { className, extraStyle = {}, children } = props;
+
+  const classes = useMemo(() => {
+    return classnames(bem([]), className);
+  }, [className]);
+
+  return (
+    <div ref={ref} className={classes} style={extraStyle}>
+      {children}
+    </div>
+  );
 });
 View.displayName = 'View';
 export default View;
