@@ -7,13 +7,70 @@ nav:
 
 ## View
 
-Demo:
+## 代码演示:
 
-```tsx
-import React, { useEffect, useRef} from 'react';
+```tsx | preview
+import React, { useEffect, useRef } from 'react';
 import { View } from 'library';
-const ref =  useRef()
-export default () => <View ref={ref}>我是View</View>;
+const ref = useRef();
+export default () => {
+  return (
+    <>
+      <View ref={ref} tag="div">
+        2222
+      </View>
+      <View ref={ref} tag="div">
+        3333
+      </View>
+    </>
+  );
+};
 ```
 
-<API src="./index.tsx"></API>
+```tsx
+import React, { useEffect, useRef } from 'react';
+import { View } from 'library';
+const ref = useRef();
+export default () => {
+  return (
+    <View ref={ref} tag="div">
+      我是View111
+    </View>
+  );
+};
+```
+
+```tsx
+import React, { useEffect, useRef } from 'react';
+import { View } from 'library';
+const ref = useRef();
+export default () => (
+  <View ref={ref} tag="div">
+    3333
+  </View>
+);
+```
+
+```tsx
+import React, { useEffect, useRef } from 'react';
+import { View } from 'library';
+const ref = useRef();
+export default () => (
+  <View ref={ref} tag="div">
+    44444
+  </View>
+);
+```
+
+```tsx
+import React, { useEffect, useRef } from 'react';
+import { View } from 'library';
+const ref = useRef();
+export default () => (
+  <View ref={ref} tag="div">
+    5555
+  </View>
+);
+```
+
+<API></API>

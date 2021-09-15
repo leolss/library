@@ -9,7 +9,7 @@
 export interface FooProps {
   /**
    * @description 额外的类名
-   * @default -
+   * @default --
    */
   className?: string;
 

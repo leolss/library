@@ -3,7 +3,7 @@
  * @Date: 2021-09-10 13:47:27
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-13 15:50:04
+ * @LastEditTime: 2021-09-15 19:56:02
  * @Description: Foo Componet
  */
 
@@ -13,7 +13,6 @@ import { getLocale } from 'umi';
 import './index.less';
 
 const Foo: React.FC<FooProps> = (props) => {
-  console.log(getLocale());
   const { className, tag = 'div', children } = props;
   const el = useMemo(
     () => React.createElement(tag, { className, children }),

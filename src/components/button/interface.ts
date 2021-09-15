@@ -13,7 +13,7 @@ export interface ButtonProps extends BaseProps {
 
   /**
    * @description 按钮图标
-   * @default -
+   * @default --
    */
   icon?: string;
 

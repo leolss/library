@@ -26,7 +26,7 @@ export interface RadioProps extends RadioStyles {
 
   /**
    * @description 额外的类名
-   * @default -
+   * @default --
    */
   className?: string;
 }
