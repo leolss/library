@@ -5,21 +5,15 @@ nav:
   path: /components
 ---
 
-## Foo
+## View
 
 Demo:
 
 ```tsx
-import React,{useRef,createRef,useEffect} from 'react';
+import React, { useEffect, useRef} from 'react';
 import { View } from 'library';
-export default () =>{ 
-  const ref = useRef()
-  useEffect(() => {
-    console.log(ref.current)
-  })
- return <View className="jdd-view" ref={ref}>我是view </View>
-}
+const ref =  useRef()
+export default () => <View ref={ref}>我是View</View>;
 ```
 
 <API src="./index.tsx"></API>
-
