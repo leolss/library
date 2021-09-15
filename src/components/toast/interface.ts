@@ -56,8 +56,38 @@ export interface ToastProps {
    */
   position?: ToastPosition;
   /**
-   * @description 动画类名，等价于 transition 的name属性
+   * @description 图标类名前缀，等同于 Icon 组件的 class-prefix 属性
    * @default
    */
-  transition?: string;
+  iconPrefix?: string;
+  /**
+   * @description 加载图标类型, 可选值为 spinner
+   * @default circular
+   */
+  loadingType?: 'circular' | 'spinner';
+  /**
+   * @description 是否禁止背景点击
+   * @default false
+   */
+  forbidClick?: string;
+  /**
+   * @description 是否在点击后关闭
+   * @default false
+   */
+  closeOnClick?: boolean;
+  /**
+   * @description 自定义遮罩层类名
+   * @default -
+   */
+  overlayClass?: string | Array<any> | object;
+  /**
+   * @description 自定义遮罩层样式
+   * @default -
+   */
+  overlayStyle?: Record<string, any>;
+  /**
+   * @description 是否在点击遮罩层后关闭
+   * @default false
+   */
+  closeOnClickOverlay?: boolean;
 }
