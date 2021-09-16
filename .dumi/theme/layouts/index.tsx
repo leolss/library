@@ -4,7 +4,7 @@ import { useDemoUrl } from 'dumi/theme';
 import Layout from 'dumi-theme-default/src/layout';
 import type { IRouteComponentProps } from '@umijs/types';
 import Device from '../components/Device';
-import { VIEWPORT_MSG_TYPE } from '../builtins/Previewer';
+import { ACTIVE_MSG_TYPE } from '../builtins/Previewer';
 import '../style/layout.less';
 
 const MobileLayout: React.FC<IRouteComponentProps> = ({
@@ -16,7 +16,7 @@ const MobileLayout: React.FC<IRouteComponentProps> = ({
 
   useEffect(() => {
     const handler = (ev: any) => {
-      if (ev.data.type === VIEWPORT_MSG_TYPE) {
+      if (ev.data.type === ACTIVE_MSG_TYPE) {
         setDemo(JSON.parse(ev.data.value));
       }
     };
@@ -33,11 +33,11 @@ const MobileLayout: React.FC<IRouteComponentProps> = ({
 
   return (
     <Layout {...props}>
-      <div className="__dumi-default-phone-content">
+      <div className="__dumi-default-mobile-content">
         <article>{children}</article>
         {demo && (
           <Device
-            className="__dumi-default-phone-content-device"
+            className="__dumi-default-mobile-content-device"
             url={demo.demoUrl || builtinDemoUrl}
           />
         )}
