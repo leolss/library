@@ -1,2 +1,92 @@
+@primaryColor: #1989fa;
+@infoColor: #f5a433;
+@dangerColor: #ee0a24;
+@warningColor: #ff976a;
+@successColor: #0cc15f;
+
 .jdd-button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  -webkit-appearance: none;
+  color: #fff;
+
+  &--default {
+    color: #323233;
+    background-color: #ffffff;
+    border: 1px solid #ebedf0;
+  }
+
+  &--primary {
+    background-color: @primaryColor;
+    border: 1px solid @primaryColor;
+
+    &.jdd-button--plain {
+      color: @primaryColor;
+    }
+  }
+  &--info {
+    background-color: @infoColor;
+    border: 1px solid @infoColor;
+
+    &.jdd-button--plain {
+      color: @infoColor;
+    }
+  }
+  &--danger {
+    background-color: @dangerColor;
+    border: 1px solid @dangerColor;
+
+    &.jdd-button--plain {
+      color: @dangerColor;
+    }
+  }
+  &--warning {
+    background-color: @warningColor;
+    border: 1px solid @warningColor;
+
+    &.jdd-button--plain {
+      color: @warningColor;
+    }
+  }
+  &--success {
+    background-color: @successColor;
+    border: 1px solid @successColor;
+
+    &.jdd-button--plain {
+      color: @successColor;
+    }
+  }
+
+  &--normal {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+  &--large {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 18px;
+  }
+  &--small {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  &--mini {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  &--plain {
+    background-color: #ffffff;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
