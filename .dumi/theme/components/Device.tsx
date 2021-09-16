@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import React, { useState, useContext, useEffect } from 'react';
 import QRCode from 'qrcode.react';
 import { context, usePrefersColor } from 'dumi/theme';
+import type IThemeConfig from '../typings/config';
 import './Device.less';
 
 interface IDeviceProps {
@@ -9,20 +10,13 @@ interface IDeviceProps {
   url: string;
 }
 
-const getDateTime = (date: Date) =>
-  `${date.getHours().toString().padStart(2, '0')}:${date
-    .getMinutes()
-    .toString()
-    .padStart(2, '0')}`;
-
 const Device: FC<IDeviceProps> = ({ url, className }) => {
   const [renderKey, setRenderKey] = useState(Math.random());
   const [color] = usePrefersColor();
-  const now = new Date();
-  const contextValue = useContext(context);
-  const { mode } = contextValue?.config ?? {};
-  const { supplier = 'dumi', time = getDateTime(now) } =
-    contextValue?.meta?.phone ?? {};
+  const {
+    config: { mode, theme },
+  } = useContext(context);
+  const carrier = theme?.carrier || 'dumi';
 
   // re-render iframe if prefers color changed
   useEffect(() => {
@@ -31,16 +25,16 @@ const Device: FC<IDeviceProps> = ({ url, className }) => {
 
   return (
     <div
-      className={['__dumi-default-phone-device'].concat(className).join(' ')}
+      className={['__dumi-default-device'].concat(className).join(' ')}
       data-device-type="iOS"
       data-mode={mode}
     >
-      <div className="__dumi-default-phone-device-status">
-        <span>{supplier}</span>
-        <span>{time}</span>
+      <div className="__dumi-default-device-status">
+        <span className="__dumi-default-device-status-carrier">{carrier}</span>
+        <span>10:24</span>
       </div>
       <iframe title="dumi-previewer" src={url} key={renderKey} />
-      <div className="__dumi-default-phone-device-action">
+      <div className="__dumi-default-device-action">
         <button
           className="__dumi-default-icon"
           role="refresh"

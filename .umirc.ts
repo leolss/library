@@ -2,8 +2,13 @@
  * @Author: 姚嘉琦
  * @Date: 2021-09-10 13:47:27
  * @Email: yaojiaqi1@jd.com
+<<<<<<< HEAD
  * @LastEditors: Please set LastEditors
  * @LastEditTime: 2021-09-16 16:36:53
+=======
+ * @LastEditors: 姚嘉琦
+ * @LastEditTime: 2021-09-16 14:58:39
+>>>>>>> f3f1fe7462f761e58d88aa27da8e90c31494a9a3
  * @Description: 配置文件
  */
 import { defineConfig } from 'dumi';
@@ -30,10 +35,6 @@ export default defineConfig({
     ['zh-CN', '中文'],
     ['en-US', 'English'],
   ],
-  resolve: {
-    // markdown默认不渲染代码块
-    passivePreview: true,
-  },
   // 导航
   navs: {
     'en-US': [null],

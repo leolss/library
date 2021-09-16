@@ -19,20 +19,17 @@ const HD_MODES = {
 const MobileDemoLayout: React.FC<IRouteComponentProps> = ({ children }) => {
   const { config } = useContext(context);
   const target = useRef<HTMLDivElement>(null);
-  const { hd = {} as IThemeConfig['hd'] } = config.theme as IThemeConfig;
-  const { rules = [{ mode: 'vw', options: [100, 750] }] } = hd;
+  const { hd: { rules = [{ mode: 'vw', options: [100, 750] }] } = {} } =
+    config.theme as IThemeConfig;
 
   useEffect(() => {
     // Simulate the touch event of mobile terminal
-    /* if (target.current) {
-            TouchEmulator(target.current);
-        } */
-    TouchEmulator(document.body);
+    if (target.current) {
+      TouchEmulator(target.current);
+    }
   }, []);
 
   useEffect(() => {
-    if (!hd) return;
-
     const handler = () => {
       const { clientWidth } = document.documentElement;
 
@@ -63,10 +60,10 @@ const MobileDemoLayout: React.FC<IRouteComponentProps> = ({ children }) => {
     window.addEventListener('resize', handler);
 
     return () => window.removeEventListener('resize', handler);
-  }, [hd, rules]);
+  }, [rules]);
 
   return (
-    <div className="__dumi-default-phone-demo-layout" ref={target}>
+    <div className="__dumi-default-mobile-demo-layout" ref={target}>
       {children}
     </div>
   );

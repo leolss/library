@@ -94,9 +94,9 @@ $ npm run generate:component [name]
 组件产出不需要关心 API 的书写,会根据 interface.ts 自动生成文档.复杂组件需要编写 demo 的情况需要在组件对应的文档编写代码块.Demo 应将组件 API 介绍详尽.
 建议安装 [TS in Markdown](https://marketplace.visualstudio.com/items?itemName=amour1688.ts-in-markdown)
 注意 markdown 尽量不要添加头部注释.会使 dumi 错误识别,不能成功构建.
-另外,本项目对移动端做了额外适配.demo 需要移动端演示时,需要添加 preview 标记,如下所示
+另外,本项目对移动端做了额外适配.demo 需要移动端演示时,需要添加 phone 标记.如下所示
 
-```tsx | preview
+```tsx | phone
 import React, { useRef } from 'react';
 import { View } from 'library';
 const ref = useRef();
