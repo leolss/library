@@ -2,8 +2,8 @@
  * @Author: 姚嘉琦
  * @Date: 2021-09-09 17:20:49
  * @Email: yaojiaqi1@jd.com
- * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-15 10:02:05
+ * @LastEditors: 李闪闪
+ * @LastEditTime: 2021-09-15 18:19:11
  * @Description:入口文件
  */
 import './styles/index';
@@ -13,3 +13,4 @@ export { default as Foo } from './components/foo';
 export { default as Button } from './components/button';
 export { default as View } from './components/view';
 export { default as Radio } from './components/radio';
+export { default as Toast } from './components/toast';

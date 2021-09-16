@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 16:41:56
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-15 16:18:17
+ * @LastEditTime: 2021-09-15 20:23:31
  * @Description:
  */
 import classnames from 'classnames';
@@ -18,17 +18,9 @@ import './index.less';
 const SHORT = 3;
 
 interface IToastConfig {
-  duration: ToastProps['duration'];
-  mask: ToastProps['mask'];
+  duration: number;
+  mask: boolean;
 }
-interface ToastOptions {
-  content: ToastProps['content'];
-  onClose: ToastProps['onClose'];
-}
-const toastOtions: ToastOptions = {
-  content: undefined,
-  onClose: undefined,
-};
 const config: IToastConfig = {
   duration: SHORT,
   mask: true,
@@ -53,10 +45,10 @@ function getMessageInstance(
   );
 }
 function notice(
-  content = toastOtions.content,
+  content: React.ReactNode,
   type: string,
   duration = config.duration,
-  onClose = toastOtions.onClose,
+  onClose: (() => void) | undefined | null,
   mask = config.mask,
 ) {
   const iconTypes: { [key: string]: string } = {
@@ -117,7 +109,7 @@ function notice(
     });
   });
 }
-export default {
+const Toast = {
   SHORT,
   LONG: 8,
   show(content: React.ReactNode, duration?: number, mask?: boolean) {
@@ -179,3 +171,8 @@ export default {
     }
   },
 };
+
+// const Toast = (props: ToastProps) => toast
+
+//Toast.displayName = 'Toast';
+export default Toast;
