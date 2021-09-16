@@ -1,9 +1,17 @@
+/*
+ * @Author: 李闪闪
+ * @Date: 2021-09-16 09:47:56
+ * @Email: lishanshan6@jd.com
+ * @LastEditors: 李闪闪
+ * @LastEditTime: 2021-09-16 09:48:51
+ * @Description:
+ */
 //import { ToastType, ToastPosition } from './Toast';
 import * as React from 'react';
 export interface ToastProps {
   /**
-   * @description 提示类型，可选值为 loading success fail html
-   * @default -
+   * @description 额外的类名
+   * @default --
    */
   content?: React.ReactNode;
   /**

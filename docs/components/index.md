@@ -1,5 +1,6 @@
 ---
 title: 组件总览
+path: /overview
 nav:
   title: 组件
   order: 0

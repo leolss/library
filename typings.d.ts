@@ -3,7 +3,7 @@
  * @Date: 2021-09-09 15:10:03
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-15 11:16:48
+ * @LastEditTime: 2021-09-16 09:48:19
  * @Description: 全局global
  */
 declare module '*.css';
@@ -12,7 +12,7 @@ declare module 'rmc-notification';
 interface BaseProps {
   /**
    * @description 额外的类名
-   * @default -
+   * @default --
    */
   className?: string;
 

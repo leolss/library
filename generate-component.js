@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 15:10:57
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-15 10:23:46
+ * @LastEditTime: 2021-09-15 14:32:54
  * @Description: 生成文件模板脚本
  */
 
@@ -94,7 +94,7 @@ export default ${Name};
 export interface ${Name}Props extends BaseProps {
   /**
    * @description props示范 必须要参照此格式书写注释以生成文档
-   * @default -
+   * @default --
    */
   props?: string;
 }
