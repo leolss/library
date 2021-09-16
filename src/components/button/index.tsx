@@ -2,8 +2,8 @@
  * @Author: 姚嘉琦
  * @Date: 2021-09-13 19:39:35
  * @Email: yaojiaqi1@jd.com
- * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-14 17:39:55
+ * @LastEditors: liuyingying
+ * @LastEditTime: 2021-09-16 16:29:56
  * @Description:  Button
  */
 import React, { useMemo } from 'react';
@@ -15,10 +15,11 @@ import './index.less';
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const [name, bem] = createNamespace('button');
-
+  console.log(props);
   const {
-    type = 'primary',
+    type = 'default',
     size = 'normal',
+    plain = false,
     className,
     disabled = false,
     loading = false,
@@ -27,7 +28,10 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   } = props;
 
   const classes = useMemo(() => {
-    return classnames(bem([type, size, { disabled, loading }]), className);
+    return classnames(
+      bem([type, size, { plain, disabled, loading }]),
+      className,
+    );
   }, [type, size, disabled, loading, className]);
 
   return (
@@ -36,5 +40,6 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     </div>
   );
 };
+
 Button.displayName = 'Button';
 export default Button;

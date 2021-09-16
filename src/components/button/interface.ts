@@ -1,3 +1,11 @@
+/*
+ * @Author: liuyingying
+ * @Date: 2021-09-16 11:14:47
+ * @Email: liuyingying1@jd.com
+ * @LastEditors: liuyingying
+ * @LastEditTime: 2021-09-16 16:24:03
+ * @Description:
+ */
 export interface ButtonProps extends BaseProps {
   /**
    * @description 按钮类型
@@ -9,7 +17,12 @@ export interface ButtonProps extends BaseProps {
    * @description 按钮尺寸
    * @default normal
    */
-  size?: 'normal' | 'largfe' | 'small';
+  size?: 'normal' | 'large' | 'small' | 'mini';
+  /**
+   * @description 朴素按钮
+   * @default false
+   */
+  plain?: boolean;
 
   /**
    * @description 按钮图标
