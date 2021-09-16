@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 16:41:56
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-15 20:23:31
+ * @LastEditTime: 2021-09-16 15:15:13
  * @Description:
  */
 import classnames from 'classnames';
@@ -27,18 +27,19 @@ const config: IToastConfig = {
 };
 let messageInstance: any;
 let messageNeedHide: boolean;
-const [name, bem] = createNamespace('toast');
+const [prefixCls, bem] = createNamespace('toast');
 function getMessageInstance(
   mask: boolean,
   callback: (notification: any) => void,
 ) {
   (Notification as any).newInstance(
     {
+      prefixCls,
       style: {}, // clear rmc-notification default style
       transitionName: 'am-fade',
       className: classnames({
-        [bem('mask') + '']: mask,
-        [bem('nomask') + '']: !mask,
+        [bem(['mask']) + '']: mask,
+        [bem(['nomask']) + '']: !mask,
       }),
     },
     (notification: any) => callback && callback(notification),

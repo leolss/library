@@ -9,13 +9,9 @@ nav:
 
 Demo:
 
-```tsx
+```tsx | phone
 import React, { useState, useCallback } from 'react';
 import { Toast, Button } from 'library';
-// const [showToast, setShowToast] = useState(false)
-// const onToast = useCallback(() => {
-//   setShowToast(!showToast)
-// }, [showToast]);
 const info = () => {
   Toast.success('你好你好===', 1000);
   console.log(Toast);
