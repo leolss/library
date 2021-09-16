@@ -9,32 +9,18 @@ nav:
 
 ## 代码演示:
 
-```tsx | phone
-import React, { useEffect, useRef } from 'react';
-import { View } from 'library';
-const ref = useRef();
-export default () => {
-  return (
-    <>
-      <View ref={ref} tag="div">
-        2222
-      </View>
-      <View ref={ref} tag="div">
-        3333
-      </View>
-    </>
-  );
-};
-```
+<code  src="./demo.tsx"  identifier="view-demo-phone" phone></code>
+
+## 代码 Demo:
 
 ```tsx
 import React, { useEffect, useRef } from 'react';
 import { View } from 'library';
-const ref = useRef();
 export default () => {
+  const ref = useRef();
   return (
-    <View ref={ref} tag="div">
-      我是View111
+    <View ref={ref} tag="div" justify="center">
+      111
     </View>
   );
 };
@@ -46,7 +32,7 @@ import { View } from 'library';
 const ref = useRef();
 export default () => (
   <View ref={ref} tag="div">
-    3333
+    222
   </View>
 );
 ```
@@ -57,7 +43,7 @@ import { View } from 'library';
 const ref = useRef();
 export default () => (
   <View ref={ref} tag="div">
-    44444
+    333
   </View>
 );
 ```
@@ -68,7 +54,7 @@ import { View } from 'library';
 const ref = useRef();
 export default () => (
   <View ref={ref} tag="div">
-    5555
+    444
   </View>
 );
 ```

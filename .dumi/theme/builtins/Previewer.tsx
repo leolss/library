@@ -34,7 +34,7 @@ export default (props: IPreviewerProps) => {
     } else {
       setIsActive(false);
     }
-    console.log(meta.mobile);
+
     if (
       // only render mobile phone when screen max than 960px
       window?.outerWidth > 960 &&

@@ -107,6 +107,10 @@ export default () => (
 );
 ```
 
+或者,你也可以在组件生成一个名为 demo.tsx 的文件.这样只需要在 markdown 文件引入即可 ,[demo 文档](https://d.umijs.org/zh-CN/guide/basic#%E6%8E%A7%E5%88%B6-demo-%E6%B8%B2%E6%9F%93).此方式需要声明 identifier.如下所示
+
+<code src="path/demo.tsx" identifier="[identifier]" phone>
+
 定义组件接口时,注意书写文档注释.必须字段: 属性名、描述、类型、默认值(无默认值填充 --)
 
 ```ts
