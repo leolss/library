@@ -16,7 +16,7 @@
   }
 }
 
-.@{prefix}-phone-content {
+.@{prefix}-mobile-content {
   display: flex;
 
   > article {
@@ -26,15 +26,11 @@
     > .markdown:first-child > *:first-child {
       margin-top: 0;
     }
-
-    > .markdown:not(:first-child):empty {
-      min-height: 0;
-    }
   }
 }
 
-/* @media only screen and (max-width: 500px) {
-  .@{prefix}-phone-demo-layout {
+@media only screen and (max-width: 500px) {
+  .@{prefix}-mobile-demo-layout {
     padding: 0.16rem;
   }
-} */
+}

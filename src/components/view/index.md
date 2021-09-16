@@ -9,7 +9,7 @@ nav:
 
 ## 代码演示:
 
-```tsx | preview
+```tsx | phone
 import React, { useEffect, useRef } from 'react';
 import { View } from 'library';
 const ref = useRef();
