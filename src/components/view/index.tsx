@@ -3,8 +3,8 @@
  * @Date: 2021-09-14 14:37:24
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-15 19:45:22
- * @Description:
+ * @LastEditTime: 2021-09-16 15:25:30
+ * @Description: View组件
  */
 import React, { forwardRef, useMemo } from 'react';
 import { ViewProps } from './interface';
