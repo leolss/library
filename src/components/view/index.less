@@ -2,7 +2,7 @@
   display: flex;
   flex-grow: 1;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: stretch;
   justify-content: stretch;
 
@@ -14,11 +14,14 @@
       flex-direction: column;
     }
   }
-  &--nowrap {
-    flex-wrap: nowrap;
+  &--wrap {
+    flex-wrap: wrap;
   }
 
   &--justify {
+    &-stretch {
+      justify-content: stretch;
+    }
     &-start {
       justify-content: flex-start;
     }
@@ -38,7 +41,22 @@
       justify-content: space-around;
     }
   }
+
   &--align {
-    align-items: center;
+    &-stretch {
+      align-items: stretch;
+    }
+    &-start {
+      align-items: flex-start;
+    }
+    &-center {
+      align-items: center;
+    }
+    &-end {
+      align-items: flex-end;
+    }
+    &-baseline {
+      align-items: baseline;
+    }
   }
 }
