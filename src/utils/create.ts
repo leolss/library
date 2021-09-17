@@ -2,8 +2,8 @@
  * @Author: 姚嘉琦
  * @Date: 2021-09-13 21:04:59
  * @Email: yaojiaqi1@jd.com
- * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-13 21:08:17
+ * @LastEditors: 李闪闪
+ * @LastEditTime: 2021-09-16 14:03:39
  * @Description: 创建类名等
  */
 
@@ -40,6 +40,7 @@ function gen(name: string, mods?: Mods): string {
 
 export function createBEM(name: string) {
   return function (el?: Mods, mods?: Mods): Mods {
+    console.log(el, mods);
     if (el && typeof el !== 'string') {
       mods = el;
       el = '';
