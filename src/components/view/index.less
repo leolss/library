@@ -1,9 +1,47 @@
 .jdd-view {
   display: flex;
   flex-grow: 1;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: stretch;
   background-color: red;
+
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &--justify {
+    &-start {
+      justify-content: flex-start;
+    }
+    &-center {
+      justify-content: center;
+    }
+    &-end {
+      justify-content: flex-end;
+    }
+    &-baseline {
+      justify-content: baseline;
+    }
+    &-between {
+      justify-content: space-between;
+    }
+    &-around {
+      justify-content: space-around;
+    }
+  }
   &--align {
-    align-items: center;
+    &-start {
+      align-items: flex-start;
+    }
+    &-center {
+      align-items: center;
+    }
+    &-end {
+      align-items: flex-end;
+    }
+    &-baseline {
+      align-items: baseline;
+    }
   }
 }

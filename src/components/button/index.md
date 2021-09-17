@@ -62,6 +62,10 @@ export default () => (
 ###### 按钮支持 default, primary, info, danger, warning, success 六种类型，默认为 default
 
 ```tsx
+export default () => null;
+```
+
+```tsx
 import React from 'react';
 import { Button } from 'library';
 
@@ -105,7 +109,7 @@ export default () => (
 
 ### 朴素按钮
 
-```tsx
+```tsx | preview
 import React from 'react';
 import { Button } from 'library';
 
@@ -138,5 +142,7 @@ export default () => (
   </>
 );
 ```
+
+<code src="./demo.tsx" phone></code>
 
 <API src="./index.tsx"></API>

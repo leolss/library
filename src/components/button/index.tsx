@@ -3,19 +3,18 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-16 16:29:56
+ * @LastEditTime: 2021-09-17 10:12:48
  * @Description:  Button
  */
 import React, { useMemo } from 'react';
 import { createNamespace } from '@/utils/create';
 import { ButtonProps } from './interface';
 import classnames from 'classnames';
-
 import './index.less';
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const [name, bem] = createNamespace('button');
-  console.log(props);
+
   const {
     type = 'default',
     size = 'normal',
@@ -23,6 +22,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     className,
     disabled = false,
     loading = false,
+    loadingType = 'circle',
     extraStyle,
     children,
   } = props;
@@ -34,9 +34,39 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     );
   }, [type, size, disabled, loading, className]);
 
+  const renderLoad = useMemo(() => {
+    if (loading) {
+      const numObj = {
+        circle: 8,
+        line: 4,
+        turn: 2,
+      };
+      const toppicNow = (numObj[loadingType] && loadingType) || 'circle';
+      const num = numObj[loadingType];
+
+      return (
+        <div
+          className={[
+            name + '-loading-style',
+            name + '-loading-' + toppicNow,
+          ].join(' ')}
+        >
+          {Array(num)
+            .fill('')
+            .map((item, index) => (
+              <span key={index} />
+            ))}
+        </div>
+      );
+    }
+  }, [loading]);
+
   return (
     <div className={classes} style={extraStyle}>
-      {children}
+      <div className={name + '-content'}>
+        {renderLoad}
+        {children && <span className={name + '-text'}>{children}</span>}
+      </div>
     </div>
   );
 };
