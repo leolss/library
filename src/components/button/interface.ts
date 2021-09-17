@@ -3,11 +3,21 @@
  * @Date: 2021-09-16 11:14:47
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 15:59:59
+ * @LastEditTime: 2021-09-17 16:50:11
  * @Description:
  */
 
 export interface StyleProps {
+  /**
+   * @description 宽度
+   * @default --
+   */
+  width?: number;
+  /**
+   * @description 高度
+   * @default --
+   */
+  height?: number;
   /**
    * @description 圆角
    * @default 2px
@@ -51,6 +61,7 @@ export interface ButtonProps extends BaseProps, StyleProps, EventProps {
 
   /**
    * @description 按钮图标
+   * @type search, edit
    * @default --
    */
   icon?: string;

@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 17:34:09
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 15:55:01
+ * @LastEditTime: 2021-09-17 16:48:46
  * @Description:
  */
 import React, { memo, useCallback } from 'react';
@@ -46,6 +46,14 @@ const Demo: React.FC = memo(() => {
         朴素按钮
       </Button>
 
+      <h2 className="jdd-button-md-title">图标按钮</h2>
+      <Button type="primary" icon="search">
+        按钮
+      </Button>
+      <Button type="primary" icon="edit" plain>
+        按钮
+      </Button>
+
       <h2 className="jdd-button-md-title">禁用状态</h2>
       <Button type="primary" disabled>
         禁用按钮
@@ -54,7 +62,7 @@ const Demo: React.FC = memo(() => {
         禁用按钮
       </Button>
 
-      <h2 className="jdd-button-md-title">加载状态</h2>
+      <h2 className="jdd-button-md-title">加载图标类型</h2>
       <Button type="primary" loading>
         加载中
       </Button>
