@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 11:14:47
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-16 19:52:50
+ * @LastEditTime: 2021-09-17 10:34:15
  * @Description:
  */
 export interface ButtonProps extends BaseProps {
