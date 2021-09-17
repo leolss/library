@@ -3,7 +3,7 @@
  * @Date: 2021-09-14 14:37:24
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-16 18:43:24
+ * @LastEditTime: 2021-09-17 16:21:31
  * @Description: View组件
  */
 import React, { forwardRef, useMemo } from 'react';
@@ -15,16 +15,40 @@ import './index.less';
 
 const View = forwardRef<HTMLDivElement, ViewProps>((props, ref) => {
   const [name, bem] = createNamespace('view');
-  const { className, extraStyle = {}, children, align, justify } = props;
+  const {
+    className,
+    extraStyle = {},
+    children,
+    direction,
+    align,
+    justify,
+    nowrap,
+    onClick,
+  } = props;
 
   const classes = useMemo(() => {
-    const bemClass = bem([{ align, justify }]);
+    return classnames(
+      bem({
+        [`direction-${direction}`]: direction,
+        [`align-${align}`]: align,
+        [`justify-${justify}`]: justify,
+        nowrap,
+      }),
+      className,
+    );
+  }, [className, direction, align, justify, nowrap]);
 
-    return classnames(bemClass, className);
-  }, [className, align, justify]);
+  const onClickHandler = () => {
+    onClick && onClick();
+  };
 
   return (
-    <div ref={ref} className={classes} style={extraStyle}>
+    <div
+      ref={ref}
+      className={classes}
+      style={extraStyle}
+      onClick={onClickHandler}
+    >
       {children}
     </div>
   );

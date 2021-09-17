@@ -5,13 +5,9 @@ nav:
   path: /components
 ---
 
-## View
+# View 视图
 
 ## 代码演示:
-
-<code  src="./demo.tsx"  identifier="view-demo-phone" phone></code>
-
-## 代码 Demo:
 
 ```tsx
 import React, { useEffect, useRef } from 'react';
@@ -37,26 +33,6 @@ export default () => (
 );
 ```
 
-```tsx
-import React, { useEffect, useRef } from 'react';
-import { View } from 'library';
-const ref = useRef();
-export default () => (
-  <View ref={ref} tag="div">
-    333
-  </View>
-);
-```
-
-```tsx
-import React, { useEffect, useRef } from 'react';
-import { View } from 'library';
-const ref = useRef();
-export default () => (
-  <View ref={ref} tag="div">
-    444
-  </View>
-);
-```
+<code  src="./demo.tsx"  identifier="view-demo-phone" phone></code>
 
 <API></API>
