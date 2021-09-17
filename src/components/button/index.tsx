@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 16:34:15
+ * @LastEditTime: 2021-09-17 18:18:41
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -135,7 +135,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     >
       <div className={name + '-content'}>
         {renderLoad}
-        {!loading && renderIcon}
+        {!loading && icon && renderIcon}
         {children && <span className={name + '-text'}>{children}</span>}
       </div>
     </div>
