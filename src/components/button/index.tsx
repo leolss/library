@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 16:06:13
+ * @LastEditTime: 2021-09-17 16:34:15
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -25,6 +25,9 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     loading = false,
     block = false,
     loadingType = 'circle',
+    icon,
+    width,
+    height,
     borderRadius,
     color,
     extraStyle,
@@ -42,11 +45,11 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
 
   // styles
   const styles: React.CSSProperties = useMemo(() => {
-    let style: React.CSSProperties = {};
-
-    if (borderRadius) {
-      style['borderRadius'] = borderRadius + 'px';
-    }
+    let style: React.CSSProperties = {
+      width: width + 'px',
+      height: height + 'px',
+      borderRadius: borderRadius + 'px',
+    };
 
     if (color) {
       if (plain) {
@@ -87,6 +90,15 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     [],
   );
 
+  // icon
+  const renderIcon = useMemo(() => {
+    return (
+      <i
+        className={[name + '-icon-style', name + '-icon-' + icon].join(' ')}
+      ></i>
+    );
+  }, [icon]);
+
   // loading图标类型
   const renderLoad = useMemo(() => {
     if (loading) {
@@ -123,6 +135,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     >
       <div className={name + '-content'}>
         {renderLoad}
+        {!loading && renderIcon}
         {children && <span className={name + '-text'}>{children}</span>}
       </div>
     </div>

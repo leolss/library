@@ -75,7 +75,25 @@ export default () => (
 );
 ```
 
-### 禁用按钮
+### 图标按钮
+
+```tsx
+import React from 'react';
+import { Button } from 'library';
+
+export default () => (
+  <>
+    <Button type="primary" icon="search">
+      按钮
+    </Button>
+    <Button type="primary" icon="edit" plain>
+      按钮
+    </Button>
+  </>
+);
+```
+
+### 禁用状态
 
 ```tsx
 import React from 'react';
