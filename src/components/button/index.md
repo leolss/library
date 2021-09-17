@@ -12,10 +12,6 @@ nav:
 ###### 按钮支持 default, primary, danger, warning, success 五种类型，默认为 default
 
 ```tsx
-export default () => null;
-```
-
-```tsx
 import React from 'react';
 import { Button } from 'library';
 
@@ -170,6 +166,6 @@ export default () => (
 );
 ```
 
-<code src="./demo.tsx" phone></code>
+<code src="./demo.tsx" identifier="button-demo-phone" phone></code>
 
 <API src="./index.tsx"></API>

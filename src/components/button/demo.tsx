@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 17:34:09
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 16:48:46
+ * @LastEditTime: 2021-09-17 19:25:55
  * @Description:
  */
 import React, { memo, useCallback } from 'react';
@@ -76,10 +76,10 @@ const Demo: React.FC = memo(() => {
       </Button>
 
       <h2 className="jdd-button-md-title">自定义按钮</h2>
-      <Button type="primary" borderRadius="10" onClick={clickButton}>
+      <Button type="primary" borderRadius={10} onClick={clickButton}>
         改变圆角
       </Button>
-      <Button type="primary" borderRadius="10" plain>
+      <Button type="primary" borderRadius={10} plain>
         改变圆角
       </Button>
       <Button type="primary" color="rgb(136, 232, 58)">
