@@ -3,7 +3,7 @@
  * @Date: 2021-09-14 14:37:24
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-17 16:21:31
+ * @LastEditTime: 2021-09-17 18:17:11
  * @Description: View组件
  */
 import React, { forwardRef, useMemo } from 'react';
@@ -22,7 +22,7 @@ const View = forwardRef<HTMLDivElement, ViewProps>((props, ref) => {
     direction,
     align,
     justify,
-    nowrap,
+    wrap,
     onClick,
   } = props;
 
@@ -32,11 +32,11 @@ const View = forwardRef<HTMLDivElement, ViewProps>((props, ref) => {
         [`direction-${direction}`]: direction,
         [`align-${align}`]: align,
         [`justify-${justify}`]: justify,
-        nowrap,
+        wrap,
       }),
       className,
     );
-  }, [className, direction, align, justify, nowrap]);
+  }, [className, direction, align, justify, wrap]);
 
   const onClickHandler = () => {
     onClick && onClick();
