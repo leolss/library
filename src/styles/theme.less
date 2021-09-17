@@ -1,22 +1,206 @@
-@import './var.less';
 :root {
-  --jdd-color-primary: #1677ff;
-  --jdd-color-success: #00b578;
-  --jdd-color-warning: #ff8f1f;
-  --jdd-color-danger: #ff3141;
-  --jdd-color-white: #ffffff;
-  --jdd-color-weak: #999999;
-  --jdd-color-light: #cccccc;
-  --jdd-border-color: #eeeeee;
-  --jdd-font-size-main: 13px;
-  --jdd-color-text: #333333;
+  // 全局/品牌色
+  --jdd-brand-primary: #108ee9;
+  --jdd-brand-primary-tap: #0e80d2;
+  --jdd-brand-success: #6abf47;
+  --jdd-brand-warning: #ffc600;
+  --jdd-brand-error: #f4333c;
+  --jdd-brand-important: #ff5b05; // 用于小红点
+  --jdd-brand-wait: #108ee9;
+  --jdd-color-text-base: #000; // 基本
+  --jdd-color-text-base-inverse: #fff; // 基本 - 反色
+  --jdd-color-text-secondary: #a4a9b0; // 辅助色
+  --jdd-color-text-placeholder: #bbb; // 文本框提示
+  --jdd-color-text-disabled: #bbb; // 失效
+  --jdd-color-text-caption: #888; // 辅助描述
+  --jdd-color-text-paragraph: #333; // 段落
+  --jdd-color-link: #108ee9; // 链接
 
+  // 背景色
+  // ---
+  --jdd-fill-base: #fff; // 组件默认背景
+  --jdd-fill-body: #f5f5f9; // 页面背景
+  --jdd-fill-tap: #ddd; // 组件默认背景 - 按下
+  --jdd-fill-disabled: #ddd; // 通用失效背景
+  --jdd-fill-mask: rgba(0, 0, 0, 0.4); // 遮罩背景
+  --jdd-color-icon-base: #ccc; // 许多小图标的背景，比如一些小圆点，加减号
+  --jdd-fill-grey: #f7f7f7;
+
+  // 透明度
+  --jdd-opacity-disabled: 0.3; // switch checkbox radio 等组件禁用的透明度
+
+  // 边框色
+  --jdd-border-color-base: #ddd;
+
+  // 基本单位
+  // @hd: 1px;
+
+  // 字体尺寸
+  // ---
+  --jdd-font-size-xs: 10px;
+  --jdd-font-size-sm: 12px;
+  --jdd-font-size-md: 14px;
+  --jdd-font-size-lg: 16px;
+  --jdd-font-weight-bold: 500;
+  --jdd-line-height-xs: 14px;
+  --jdd-line-height-sm: 18px;
+  --jdd-line-height-md: 20px;
+  --jdd-line-height-lg: 22px;
   --jdd-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
     helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
     'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
 
-  --jdd-z-index-mask: 1000;
-  --jdd-z-index-popup: 1000;
-  --jdd-z-index-popover: 1030;
-  --jdd-z-index-floating-panel: 900;
+  // 圆角
+  // ---
+  --jdd-radius-xs: 2px;
+  --jdd-radius-sm: 3px;
+  --jdd-radius-md: 5px;
+  --jdd-radius-lg: 7px;
+  --jdd-radius-circle: 50%;
+
+  // 边框尺寸
+  // ---
+  --jdd-border-width-sm: 1px;
+  --jdd-border-width-md: 1px;
+  --jdd-border-width-lg: 2px;
+
+  // 间距
+  // ---
+  // 水平间距
+  --jdd-h-spacing-sm: 5px;
+  --jdd-h-spacing-md: 8px;
+  --jdd-h-spacing-lg: 15px;
+
+  // 垂直间距
+  --jdd-v-spacing-xs: 3px;
+  --jdd-v-spacing-sm: 6px;
+  --jdd-v-spacing-md: 9px;
+  --jdd-v-spacing-lg: 15px;
+  --jdd-v-spacing-xl: 21px;
+
+  // 高度
+  // ---
+  --jdd-line-height-base: 1; // 单行行高
+  --jdd-line-height-paragraph: 1.5; // 多行行高
+
+  // 图标尺寸
+  // ---
+  --jdd-icon-size-xxs: 15px;
+  --jdd-icon-size-xs: 18px;
+  --jdd-icon-size-sm: 21px;
+  --jdd-icon-size-md: 22px; // 导航条上的图标、grid的图标大小
+  --jdd-icon-size-lg: 36px;
+
+  // 动画缓动
+  // ---
+  --jdd-ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+
+  // 组件变量
+  // ---
+
+  --jdd-actionsheet-item-height: 50px;
+  --jdd-actionsheet-item-font-size: 18px;
+
+  // button
+  --jdd-button-height: 47px;
+  --jdd-button-font-size: 18px;
+
+  --jdd-button-height-sm: 30px;
+  --jdd-button-font-size-sm: 13px;
+
+  --jdd-primary-button-fill: var(--jdd-brand-primary);
+  --jdd-primary-button-fill-tap: var(--jdd-brand-primary-tap);
+
+  --jdd-ghost-button-color: var(
+    --jdd-brand-primary
+  ); // 同时应用于背景、文字颜色、边框色
+  --jdd-ghost-button-fill-tap: ~'fade(--jdd-brand-primary, 60%)';
+
+  --jdd-warning-button-fill: #e94f4f;
+  --jdd-warning-button-fill-tap: #d24747;
+
+  --jdd-link-button-fill-tap: #ddd;
+  --jdd-link-button-font-size: 16px;
+
+  // menu
+  --jdd-menu-multi-select-btns-height: var(--jdd-button-height);
+
+  // modal
+  --jdd-modal-font-size-heading: 18px;
+  --jdd-modal-button-font-size: 18px; // 按钮字号
+  --jdd-modal-button-height: 50px; // 按钮高度
+
+  // list
+  --jdd-list-title-height: 30px;
+  --jdd-list-item-height-sm: 35px;
+  --jdd-list-item-height: 44px;
+
+  // input
+  --jdd-input-label-width: 17px; // InputItem、TextareaItem 文字长度基础值
+  --jdd-input-font-size: 17px;
+  --jdd-input-color-icon: #ccc; // input clear icon 的背景色
+  --jdd-input-color-icon-tap: var(--jdd-brand-primary);
+
+  // tabs
+  --jdd-tabs-color: var(--jdd-brand-primary);
+  --jdd-tabs-height: 43.5px;
+  --jdd-tabs-font-size-heading: 15px;
+  --jdd-tabs-ink-bar-height: var(--jdd-border-width-lg);
+
+  // segmented-control
+  --jdd-segmented-control-color: var(
+    --jdd-brand-primary
+  ); // 同时应用于背景、文字颜色、边框色
+  --jdd-segmented-control-height: 27px;
+  --jdd-segmented-control-fill-tap: ~'fade(var(--jdd-brand-primary), 0.1)';
+
+  // tab-bar
+  --jdd-tab-bar-fill: #ebeeef;
+  --jdd-tab-bar-height: 50px;
+
+  // toast
+  --jdd-toast-fill: rgba(
+    58,
+    58,
+    58,
+    0.9
+  ); // toast, activity-indicator 的背景颜色
+
+  // search-bar
+  --jdd-search-bar-fill: #efeff4;
+  --jdd-search-bar-height: 44px;
+  --jdd-search-bar-input-height: 28px;
+  --jdd-search-bar-font-size: 15px;
+  --jdd-search-color-icon: #bbb; // input search icon 的背景色
+
+  // notice-bar
+  --jdd-notice-bar-fill: #fefcec;
+  --jdd-notice-bar-height: 36px;
+  --jdd-notice-bar-color: #f76a24;
+
+  // switch
+  --jdd-switch-fill: #4dd865;
+  --jdd-switch-fill-android: var(--jdd-brand-primary);
+
+  // tag
+  --jdd-tag-height: 25px;
+  --jdd-tag-height-sm: 15px;
+  --jdd-tag-color: var(--jdd-brand-primary);
+
+  // keyboard
+  --jdd-keyboard-confirm-color: var(--jdd-brand-primary);
+  --jdd-keyboard-confirm-tap-color: var(--jdd-brand-primary-tap);
+
+  // picker
+  --jdd-option-height: 42px; // picker 标题的高度
+
+  // z-index
+  --jdd-progress-zindex: 2000;
+  --jdd-popover-zindex: 1999;
+  --jdd-toast-zindex: 1999;
+  --jdd-action-sheet-zindex: 1000; // actonsheet 会放到 popup / modal 中
+  --jdd-picker-zindex: 1000;
+  --jdd-popup-zindex: 999;
+  --jdd-modal-zindex: 999; // modal.alert 应该最大，其他应该较小
+  --jdd-tabs-pagination-zindex: 999;
 }

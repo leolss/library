@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 16:41:56
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-16 15:15:13
+ * @LastEditTime: 2021-09-17 09:38:52
  * @Description:
  */
 import classnames from 'classnames';
@@ -91,6 +91,7 @@ function notice(
           {/*
             <Icon type={iconType} size="lg" />
             */}
+          <img src="" />
           <div className={bem('text-info') + ''}>{content}</div>
         </div>
       ) : (

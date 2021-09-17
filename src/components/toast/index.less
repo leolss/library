@@ -1,28 +1,17 @@
-//@import '@/style/mixins';
-// @import '../../styles/theme.less';
-
 @toastPrefixCls: jdd-toast;
-
+@hd: 1px;
 .@{toastPrefixCls} {
-  --color: var(--jdd-color-white);
-  --text-color: var(--adm-color-text);
-  --background-color: var(--adm-color-white);
-  --border-radius: 4px;
-  --border-width: 1px;
-  --border-style: solid;
-  --border-color: var(--adm-border-color);
-
   position: fixed;
   width: 100%;
-  // z-index: @toast-zindex;
-  // font-size: @font-size-base;
+  z-index: var(--jdd-toast-zindex);
+  font-size: var(--jdd-font-size-sm);
   text-align: center;
 
   > span {
     max-width: 50%;
   }
 
-  &&-mask {
+  &&--mask {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -30,10 +19,9 @@
     left: 0;
     top: 0;
     transform: translateZ(1px);
-    background-color: var(--background-color);
   }
 
-  &&-nomask {
+  &&--nomask {
     position: fixed;
     max-width: 50%;
     width: auto;
@@ -45,23 +33,23 @@
     }
   }
 
-  // &-notice-content {
-  //   .@{toastPrefixCls}-text {
-  //     min-width: 60 * @hd;
-  //     border-radius: @radius-sm;
-  //     color: @color-text-base-inverse;
-  //     background-color: @toast-fill;
-  //     line-height: @line-height-paragraph;
-  //     padding: @v-spacing-md @h-spacing-lg;
+  &-notice-content {
+    .@{toastPrefixCls}__text {
+      min-width: 60 * @hd;
+      border-radius: var(--jdd-radius-sm);
+      color: var(--jdd-color-text-base-inverse);
+      background-color: var(--jdd-toast-fill);
+      line-height: var(--jdd-line-height-paragraph);
+      padding: var(--jdd-v-spacing-md) var(--jdd-h-spacing-lg);
 
-  //     &.@{toastPrefixCls}-text-icon {
-  //       border-radius: @radius-md;
-  //       padding: @v-spacing-lg @h-spacing-lg;
+      &.@{toastPrefixCls}__text-icon {
+        border-radius: var(--jdd-radius-md);
+        padding: var(--jdd-v-spacing-lg) var(--jdd-h-spacing-lg);
 
-  //       .@{toastPrefixCls}-text-info {
-  //         margin-top: @v-spacing-sm;
-  //       }
-  //     }
-  //   }
-  // }
+        .@{toastPrefixCls}__text-info {
+          margin-top: var(--jdd-v-spacing-sm);
+        }
+      }
+    }
+  }
 }
