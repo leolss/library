@@ -37,26 +37,4 @@ export default () => (
 );
 ```
 
-```tsx
-import React, { useEffect, useRef } from 'react';
-import { View } from 'library';
-const ref = useRef();
-export default () => (
-  <View ref={ref} tag="div">
-    333
-  </View>
-);
-```
-
-```tsx
-import React, { useEffect, useRef } from 'react';
-import { View } from 'library';
-const ref = useRef();
-export default () => (
-  <View ref={ref} tag="div">
-    444
-  </View>
-);
-```
-
 <API></API>
