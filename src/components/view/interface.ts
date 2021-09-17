@@ -3,17 +3,16 @@
  * @Date: 2021-09-14 14:37:24
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-17 10:37:53
+ * @LastEditTime: 2021-09-17 16:06:53
  * @Description: API
  */
 
 export interface ViewProps extends BaseProps {
   /**
-   * @description 标签
-   * @default div
+   * @description 方向
+   * @default row
    */
-  tag?: React.ReactHTML;
-
+  direction?: 'row' | 'column';
   /**
    * @description  水平方向
    * @default --

@@ -3,7 +3,7 @@
  * @Date: 2021-09-14 14:37:24
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-17 10:36:46
+ * @LastEditTime: 2021-09-17 16:06:35
  * @Description: View组件
  */
 import React, { forwardRef, useMemo, useCallback } from 'react';
@@ -19,6 +19,7 @@ const View = forwardRef<HTMLDivElement, ViewProps>((props, ref) => {
     className,
     extraStyle = {},
     children,
+    direction,
     align,
     justify,
     nowrap,
@@ -28,6 +29,7 @@ const View = forwardRef<HTMLDivElement, ViewProps>((props, ref) => {
   const classes = useMemo(() => {
     return classnames(
       bem({
+        [`direction-${direction}`]: direction,
         [`align-${align}`]: align,
         [`justify-${justify}`]: justify,
         nowrap,

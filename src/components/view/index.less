@@ -1,11 +1,19 @@
 .jdd-view {
   display: flex;
   flex-grow: 1;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: stretch;
   background-color: red;
-
+  &--direction {
+    &-row {
+      flex-direction: row;
+    }
+    &-column {
+      flex-direction: column;
+    }
+  }
   &--nowrap {
     flex-wrap: nowrap;
   }
