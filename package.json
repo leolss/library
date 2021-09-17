@@ -31,9 +31,11 @@
   "dependencies": {
     "@umijs/plugin-locale": "^0.14.2",
     "classnames": "^2.3.1",
-    "react": "^16.12.0"
+    "react": "^16.12.0",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.14",
     "@umijs/test": "^3.0.5",
     "dumi": "^1.0.16",
     "dumi-theme-mobile": "^1.1.9",

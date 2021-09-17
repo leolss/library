@@ -2,8 +2,8 @@
  * @Author: 姚嘉琦
  * @Date: 2021-09-13 15:10:57
  * @Email: yaojiaqi1@jd.com
- * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-15 14:32:54
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-09-16 18:19:29
  * @Description: 生成文件模板脚本
  */
 
@@ -110,7 +110,7 @@ nav:
   path: /components
 ---
 
-## Foo
+## ${Name}
 
 Demo:
 

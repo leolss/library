@@ -13,3 +13,5 @@ export { default as Foo } from './components/foo';
 export { default as Button } from './components/button';
 export { default as View } from './components/view';
 export { default as Radio } from './components/radio';
+
+export { default as Header } from './components/header';

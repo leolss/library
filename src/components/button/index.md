@@ -7,7 +7,7 @@ nav:
 
 ## Foo
 
-```tsx |  preview
+```tsx |  phone
 import React from 'react';
 import { Button } from 'library';
 import './index.md.less';
