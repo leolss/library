@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 10:12:48
+ * @LastEditTime: 2021-09-17 10:55:01
  * @Description:  Button
  */
 import React, { useMemo } from 'react';
@@ -26,6 +26,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     extraStyle,
     children,
   } = props;
+  console.log(props);
 
   const classes = useMemo(() => {
     return classnames(

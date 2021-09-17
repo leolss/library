@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 11:14:47
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 10:34:15
+ * @LastEditTime: 2021-09-17 10:39:32
  * @Description:
  */
 export interface ButtonProps extends BaseProps {
@@ -11,7 +11,7 @@ export interface ButtonProps extends BaseProps {
    * @description 按钮类型
    * @default primary
    */
-  type?: 'primary' | 'info' | 'default' | 'danger' | 'warning' | 'success';
+  type?: 'primary' | 'default' | 'danger' | 'warning' | 'success';
 
   /**
    * @description 按钮尺寸
