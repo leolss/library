@@ -3,10 +3,10 @@
  * @Date: 2021-09-14 14:37:24
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-17 16:06:35
+ * @LastEditTime: 2021-09-17 16:21:31
  * @Description: View组件
  */
-import React, { forwardRef, useMemo, useCallback } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import { ViewProps } from './interface';
 import { createNamespace } from '@/utils/create';
 import classnames from 'classnames';
@@ -36,11 +36,11 @@ const View = forwardRef<HTMLDivElement, ViewProps>((props, ref) => {
       }),
       className,
     );
-  }, [className, align, justify]);
+  }, [className, direction, align, justify, nowrap]);
 
-  const onClickHandler = useCallback(() => {
+  const onClickHandler = () => {
     onClick && onClick();
-  }, [onclick]);
+  };
 
   return (
     <div

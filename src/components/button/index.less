@@ -1,20 +1,15 @@
-@primaryColor: #1989fa;
-@infoColor: #f5a433;
-@dangerColor: #ee0a24;
-@warningColor: #ff976a;
-@successColor: #0cc15f;
-
 .jdd-button {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
   font-size: var(--jdd-font-size-main);
   text-align: center;
-  border-radius: 2px;
+  border-radius: var(--jdd-radius-xs);
   cursor: pointer;
   transition: opacity 0.2s;
   -webkit-appearance: none;
-  color: #fff;
+  color: var(--jdd-color-text-base-inverse);
+  overflow: hidden;
 
   .jdd-button-content {
     display: flex;
@@ -22,124 +17,224 @@
     justify-content: center;
     height: 100%;
   }
+  .jdd-button-text {
+    padding: 4px;
+  }
 
   &--default {
-    color: #323233;
-    background-color: #ffffff;
-    border: 1px solid #ebedf0;
+    color: var(--jdd-color-text-base);
+    background-color: var(--jdd-fill-base);
+    border: 1px solid var(--jdd-border-color-base);
+
+    &.jdd-button--loading .jdd-button-loading-style span {
+      background-color: var(--jdd-color-text-base);
+    }
   }
 
   &--primary {
-    background-color: var(--jdd-color-primary);
-    border: 1px solid @primaryColor;
+    background-color: var(--jdd-brand-primary);
+    border: 1px solid var(--jdd-brand-primary);
 
     &.jdd-button--plain {
-      color: @primaryColor;
-    }
+      color: var(--jdd-brand-primary);
 
-    .jdd-button-loading-style {
-      span {
-        background-color: #fff;
+      .jdd-button-loading-style span {
+        background-color: var(--jdd-brand-primary);
       }
     }
   }
-  &--info {
-    background-color: @infoColor;
-    border: 1px solid @infoColor;
-
-    &.jdd-button--plain {
-      color: @infoColor;
-    }
-  }
   &--danger {
-    background-color: @dangerColor;
-    border: 1px solid @dangerColor;
+    background-color: var(--jdd-brand-error);
+    border: 1px solid var(--jdd-brand-error);
 
     &.jdd-button--plain {
-      color: @dangerColor;
+      color: var(--jdd-brand-error);
+
+      .jdd-button-loading-style span {
+        background-color: var(--jdd-brand-error);
+      }
     }
   }
   &--warning {
-    background-color: @warningColor;
-    border: 1px solid @warningColor;
+    background-color: var(--jdd-brand-warning);
+    border: 1px solid var(--jdd-brand-warning);
 
     &.jdd-button--plain {
-      color: @warningColor;
+      color: var(--jdd-brand-warning);
+
+      .jdd-button-loading-style span {
+        background-color: var(--jdd-brand-warning);
+      }
     }
   }
   &--success {
-    background-color: @successColor;
-    border: 1px solid @successColor;
+    background-color: var(--jdd-brand-success);
+    border: 1px solid var(--jdd-brand-success);
 
     &.jdd-button--plain {
-      color: @successColor;
+      color: var(--jdd-brand-success);
+
+      .jdd-button-loading-style span {
+        background-color: var(--jdd-brand-success);
+      }
     }
   }
 
   &--normal {
-    font-size: 14px;
-    padding: 10px 14px;
+    height: var(--jdd-button-height-sm);
+    font-size: var(--jdd-button-font-size-sm);
+    padding: 6px 10px;
 
     .jdd-button-loading-circle {
       width: 20px;
       height: 20px;
-      margin-right: 6px;
 
       span {
         width: 3px;
         height: 3px;
       }
     }
+
+    .jdd-button-loading-turn {
+      width: 22px;
+      height: 22px;
+
+      span {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    .jdd-button-loading-line {
+      height: 3px;
+
+      span {
+        width: 3px;
+        height: 3px;
+        margin-right: 2px;
+      }
+    }
   }
+
   &--large {
     width: 100%;
-    font-size: 16px;
-    padding: 14px 18px;
+    height: var(--jdd-button-height);
+    font-size: var(--jdd-button-font-size);
+    padding: 10px 18px;
 
     .jdd-button-loading-circle {
       width: 24px;
       height: 24px;
-      margin-right: 8px;
 
       span {
         width: 4px;
         height: 4px;
       }
     }
+
+    .jdd-button-loading-turn {
+      width: 28px;
+      height: 28px;
+
+      span {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .jdd-button-loading-line {
+      height: 4px;
+
+      span {
+        width: 4px;
+        height: 4px;
+        margin-right: 3px;
+      }
+    }
   }
   &--small {
-    font-size: 12px;
-    padding: 6px 10px;
+    height: 26px;
+    font-size: 10px;
+    padding: 2px 4px;
+
+    .jdd-button-content {
+      transform: scale(0.93);
+    }
 
     .jdd-button-loading-circle {
       width: 16px;
       height: 16px;
-      margin-right: 4px;
 
       span {
         width: 2px;
         height: 2px;
+      }
+    }
+
+    .jdd-button-loading-turn {
+      width: 16px;
+      height: 16px;
+
+      span {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .jdd-button-loading-line {
+      height: 3px;
+
+      span {
+        width: 3px;
+        height: 3px;
+        margin-right: 2px;
       }
     }
   }
   &--mini {
-    font-size: 10px;
-    padding: 2px 6px;
+    height: 22px;
+    font-size: 8px;
+
+    .jdd-button-content {
+      transform: scale(0.8);
+    }
 
     .jdd-button-loading-circle {
       width: 12px;
       height: 12px;
-      margin-right: 4px;
 
       span {
         width: 2px;
         height: 2px;
       }
     }
+
+    .jdd-button-loading-turn {
+      width: 12px;
+      height: 12px;
+
+      span {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    .jdd-button-loading-line {
+      height: 2px;
+
+      span {
+        width: 2px;
+        height: 2px;
+        margin-right: 1px;
+      }
+    }
+  }
+  &--block {
+    width: 100%;
   }
 
   &--plain {
-    background-color: #ffffff;
+    background-color: var(--jdd-fill-base);
   }
 
   &--disabled {
@@ -153,9 +248,10 @@
       display: inline-block;
 
       span {
-        background-color: #fff;
+        background-color: var(--jdd-fill-base);
       }
     }
+
     .jdd-button-loading-circle {
       span {
         position: absolute;
@@ -206,6 +302,44 @@
         bottom: 10%;
         left: 10%;
         animation-delay: 1.04s;
+      }
+    }
+
+    .jdd-button-loading-turn {
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.5;
+        border-radius: 50%;
+        animation: turnLoading 1.4s infinite ease-in;
+      }
+      span:nth-child(2) {
+        animation-delay: -0.7s;
+      }
+    }
+
+    .jdd-button-loading-line {
+      width: auto;
+
+      span {
+        float: left;
+        border-radius: 50%;
+        animation: lineLoad 1s ease infinite;
+      }
+      span:nth-child(1) {
+        animation-delay: 0.12s;
+      }
+      span:nth-child(2) {
+        animation-delay: 0.24s;
+      }
+      span:nth-child(3) {
+        animation-delay: 0.36s;
+      }
+      span:nth-child(4) {
+        animation-delay: 0.48s;
       }
     }
   }

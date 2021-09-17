@@ -3,16 +3,17 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 10:12:48
+ * @LastEditTime: 2021-09-17 16:06:13
  * @Description:  Button
  */
-import React, { useMemo } from 'react';
+import React, { memo, useMemo, useCallback } from 'react';
 import { createNamespace } from '@/utils/create';
+import { Throttle } from '@/utils/debounced';
 import { ButtonProps } from './interface';
 import classnames from 'classnames';
 import './index.less';
 
-const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
+const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   const [name, bem] = createNamespace('button');
 
   const {
@@ -22,18 +23,71 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     className,
     disabled = false,
     loading = false,
+    block = false,
     loadingType = 'circle',
+    borderRadius,
+    color,
     extraStyle,
     children,
+    onClick,
   } = props;
 
+  // 最外层类名
   const classes = useMemo(() => {
     return classnames(
-      bem([type, size, { plain, disabled, loading }]),
+      bem([type, size, { plain, disabled, loading, block }]),
       className,
     );
   }, [type, size, disabled, loading, className]);
 
+  // styles
+  const styles: React.CSSProperties = useMemo(() => {
+    let style: React.CSSProperties = {};
+
+    if (borderRadius) {
+      style['borderRadius'] = borderRadius + 'px';
+    }
+
+    if (color) {
+      if (plain) {
+        style['color'] = color;
+      } else {
+        style['backgroundColor'] = color;
+      }
+
+      style['borderColor'] = color;
+    }
+
+    style = Object.assign({}, style, extraStyle);
+
+    return style;
+  }, [borderRadius]);
+
+  // click 节流
+  const throttleClick = useMemo(() => {
+    if (onClick) {
+      return new Throttle().use(onClick, 500);
+    } else {
+      return () => {};
+    }
+  }, [onClick]);
+
+  const click = useCallback(
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      e.stopPropagation;
+      throttleClick();
+    },
+    [throttleClick],
+  );
+
+  const disabledClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      e.stopPropagation();
+    },
+    [],
+  );
+
+  // loading图标类型
   const renderLoad = useMemo(() => {
     if (loading) {
       const numObj = {
@@ -59,17 +113,21 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         </div>
       );
     }
-  }, [loading]);
+  }, [loading, loadingType]);
 
   return (
-    <div className={classes} style={extraStyle}>
+    <div
+      className={classes}
+      style={styles}
+      onClick={disabled || loading ? disabledClick : click}
+    >
       <div className={name + '-content'}>
         {renderLoad}
         {children && <span className={name + '-text'}>{children}</span>}
       </div>
     </div>
   );
-};
+});
 
 Button.displayName = 'Button';
 export default Button;

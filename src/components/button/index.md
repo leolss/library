@@ -9,7 +9,7 @@ nav:
 
 ### 按钮类型
 
-###### 按钮支持 default, primary, info, danger, warning, success 六种类型，默认为 default
+###### 按钮支持 default, primary, danger, warning, success 五种类型，默认为 default
 
 ```tsx
 export default () => null;
@@ -88,6 +88,65 @@ export default () => (
     </Button>
     <Button type="primary" plain disabled>
       禁用按钮
+    </Button>
+  </>
+);
+```
+
+### 加载图标类型
+
+###### 加载图标类型 circle, turn, line 三种，默认 circle
+
+```tsx
+import React from 'react';
+import { Button } from 'library';
+
+export default () => (
+  <>
+    <Button type="primary" loading>
+      加载中
+    </Button>
+    <Button type="primary" loading loadingType="circle" />
+    <Button type="primary" loading loadingType="turn" />
+    <Button type="primary" loading loadingType="line" />
+  </>
+);
+```
+
+### 块级元素
+
+```tsx
+import React from 'react';
+import { Button } from 'library';
+
+export default () => (
+  <>
+    <Button type="primary" block>
+      块级元素
+    </Button>
+  </>
+);
+```
+
+### 自定义按钮
+
+```tsx
+import React from 'react';
+import { Button } from 'library';
+
+export default () => (
+  <>
+    <Button type="primary" borderRadius="10">
+      改变圆角
+    </Button>
+    <Button type="primary" borderRadius="10" plain>
+      改变圆角
+    </Button>
+    <Button type="primary" color="rgb(136, 232, 58)">
+      主题按钮
+    </Button>
+    <Button type="primary" color="rgb(136, 232, 58)" plain>
+      主题按钮
     </Button>
   </>
 );
