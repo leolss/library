@@ -113,6 +113,45 @@ export default () => (
 );
 ```
 
+### 块级元素
+
+```tsx
+import React from 'react';
+import { Button } from 'library';
+
+export default () => (
+  <>
+    <Button type="primary" block>
+      块级元素
+    </Button>
+  </>
+);
+```
+
+### 自定义按钮
+
+```tsx
+import React from 'react';
+import { Button } from 'library';
+
+export default () => (
+  <>
+    <Button type="primary" borderRadius="10">
+      改变圆角
+    </Button>
+    <Button type="primary" borderRadius="10" plain>
+      改变圆角
+    </Button>
+    <Button type="primary" color="rgb(136, 232, 58)">
+      主题按钮
+    </Button>
+    <Button type="primary" color="rgb(136, 232, 58)" plain>
+      主题按钮
+    </Button>
+  </>
+);
+```
+
 <code src="./demo.tsx" phone></code>
 
 <API src="./index.tsx"></API>

@@ -3,14 +3,18 @@
  * @Date: 2021-09-16 17:34:09
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 11:36:28
+ * @LastEditTime: 2021-09-17 15:55:01
  * @Description:
  */
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { Button } from 'library';
 import './index.md.less';
 
 const Demo: React.FC = memo(() => {
+  const clickButton = useCallback((e: React.MouseEvent) => {
+    console.log('button');
+  }, []);
+
   return (
     <div className="jdd-button-md">
       <h2 className="jdd-button-md-title">按钮类型</h2>
@@ -57,6 +61,25 @@ const Demo: React.FC = memo(() => {
       <Button type="primary" loading loadingType="circle" />
       <Button type="primary" loading loadingType="turn" />
       <Button type="primary" loading loadingType="line" />
+
+      <h2 className="jdd-button-md-title">块级元素</h2>
+      <Button type="primary" block>
+        块级元素
+      </Button>
+
+      <h2 className="jdd-button-md-title">自定义按钮</h2>
+      <Button type="primary" borderRadius="10" onClick={clickButton}>
+        改变圆角
+      </Button>
+      <Button type="primary" borderRadius="10" plain>
+        改变圆角
+      </Button>
+      <Button type="primary" color="rgb(136, 232, 58)">
+        主题按钮
+      </Button>
+      <Button type="primary" color="rgb(136, 232, 58)" plain>
+        主题按钮
+      </Button>
     </div>
   );
 });
