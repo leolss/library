@@ -14,3 +14,5 @@ export { default as Button } from './components/button';
 export { default as View } from './components/view';
 export { default as Radio } from './components/radio';
 export { default as Toast } from './components/toast';
+
+export { default as Icon } from './components/icon';
