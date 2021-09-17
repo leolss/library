@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 11:14:47
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-16 16:24:03
+ * @LastEditTime: 2021-09-17 10:34:15
  * @Description:
  */
 export interface ButtonProps extends BaseProps {
@@ -35,6 +35,12 @@ export interface ButtonProps extends BaseProps {
    * @default false
    */
   loading?: boolean;
+
+  /**
+   * @description 加载图标类型
+   * @default circle
+   */
+  loadingType?: 'circle' | 'turn' | 'line';
 
   /**
    * @description disabled状态

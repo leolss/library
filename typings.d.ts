@@ -2,13 +2,13 @@
  * @Author: 姚嘉琦
  * @Date: 2021-09-09 15:10:03
  * @Email: yaojiaqi1@jd.com
- * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-15 14:13:56
+ * @LastEditors: 李闪闪
+ * @LastEditTime: 2021-09-16 09:48:19
  * @Description: 全局global
  */
 declare module '*.css';
 declare module '*.less';
-
+declare module 'rmc-notification';
 interface BaseProps {
   /**
    * @description 额外的类名
