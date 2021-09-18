@@ -1,0 +1,85 @@
+.jdd-badge {
+  position: relative;
+  display: inline-block;
+  line-height: var(--jdd-line-height-base);
+  vertical-align: middle;
+
+  &__text {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    top: -1 * var(--jdd-v-spacing-sm);
+    height: var(--jdd-icon-size-xs);
+    line-height: var(--jdd-icon-size-xs);
+    min-width: var(--jdd-icon-size-xs) / 2;
+    border-radius: 2 * var(--jdd-v-spacing-sm);
+    padding: 0 var(--jdd-h-spacing-sm);
+    text-align: center;
+    font-size: var(--jdd-font-size-caption-sm);
+    color: var(--jdd-color-text-base-inverse);
+    background-color: var(--jdd-brand-important);
+    white-space: nowrap;
+    transform: translateX(-45%);
+    transform-origin: -10% center;
+    z-index: 10;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+      'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', SimSun, sans-serif;
+
+    a {
+      color: var(--jdd-color-text-base-inverse);
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__hot &__text {
+    background-color: #f96268;
+  }
+
+  &__dot {
+    position: absolute;
+    transform: translateX(-50%);
+    transform-origin: 0 center;
+    top: -2 * var(--jdd-border-width-lg);
+    height: 0.5 * var(--jdd-link-button-font-size);
+    width: 0.5 * var(--jdd-link-button-font-size);
+    border-radius: 100%;
+    background: var(--jdd-brand-important);
+    z-index: 10;
+
+    &-large {
+      height: var(--jdd-link-button-font-size);
+      width: var(--jdd-link-button-font-size);
+    }
+  }
+
+  &__not-a-wrapper &__text,
+  &__not-a-wrapper &__dot {
+    top: auto;
+    display: block;
+    position: relative;
+    transform: translateX(0);
+  }
+
+  &__corner {
+    width: 5 * var(--jdd-link-button-font-size);
+    padding: 0.5 * var(--jdd-link-button-font-size);
+    position: absolute;
+    right: -2 * var(--jdd-link-button-font-size);
+    top: 0.5 * var(--jdd-link-button-font-size);
+    background-color: var(--jdd-brand-important);
+    color: var(--jdd-color-text-base-inverse);
+    white-space: nowrap;
+    transform: rotate(45deg);
+    text-align: center;
+    font-size: var(--jdd-font-size-subhead);
+
+    &-wrapper {
+      overflow: hidden;
+    }
+  }
+}
