@@ -3,7 +3,7 @@
  * @Date: 2021-09-09 17:20:49
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-17 10:08:39
+ * @LastEditTime: 2021-09-18 16:00:32
  * @Description:入口文件
  */
 import './styles/index';
@@ -18,3 +18,4 @@ export { default as Toast } from './components/toast';
 export { default as Icon } from './components/icon';
 
 export { default as Badge } from './components/badge';
+export { default as Text } from './components/text';
