@@ -3,7 +3,7 @@
  * @Date: 2021-09-18 09:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-18 15:03:33
+ * @LastEditTime: 2021-09-18 16:23:39
  * @Description:
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -26,7 +26,6 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
     fontSize,
     fontWeight,
     backgroundColor,
-
     lineFeed,
     lineNum,
     marginTop,
@@ -42,7 +41,7 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
     borderColor = '#ddd',
     borderStyle = 'solid',
     borderRadius,
-
+    block = false,
     className,
     extraStyle,
     children,
@@ -93,6 +92,9 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
       style['borderColor'] = borderColor;
       style['borderStyle'] = borderStyle;
       style['borderRadius'] = formatUnit(borderRadius);
+    }
+    if (block) {
+      style['display'] = 'block';
     }
 
     style = Object.assign({}, style, extraStyle);

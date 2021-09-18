@@ -3,28 +3,28 @@
  * @Date: 2021-09-16 11:14:47
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-18 11:29:19
+ * @LastEditTime: 2021-09-18 16:28:22
  * @Description:
  */
 
 export interface StyleProps {
   /**
-   * @description 宽度
+   * @description 设置按钮宽度
    * @default --
    */
   width?: number;
   /**
-   * @description 高度
+   * @description 设置按钮高度
    * @default --
    */
   height?: number;
   /**
-   * @description 圆角
+   * @description 设置按钮圆角
    * @default 2px
    */
   borderRadius?: number;
   /**
-   * @description 主题色
+   * @description 设置按钮主题色
    * @default --
    */
   color?: string;
@@ -41,14 +41,14 @@ export interface EventProps {
 
 export interface ButtonProps extends BaseProps, StyleProps, EventProps {
   /**
-   * @description 按钮类型
+   * @description 设置按钮类型
    * @type primary、default、danger、warning、success
    * @default primary
    */
   type?: 'primary' | 'default' | 'danger' | 'warning' | 'success';
 
   /**
-   * @description 按钮尺寸, 可选四种类型
+   * @description 设置按钮尺寸, 可选四种类型
    * @type normal、large、small、mini
    * @default normal
    */
@@ -60,7 +60,7 @@ export interface ButtonProps extends BaseProps, StyleProps, EventProps {
   plain?: boolean;
 
   /**
-   * @description 按钮图标（待添加）
+   * @description 设置按钮图标（待添加）
    * @type search、edit
    * @default --
    */
@@ -73,7 +73,7 @@ export interface ButtonProps extends BaseProps, StyleProps, EventProps {
   loading?: boolean;
 
   /**
-   * @description 加载图标类型，可选三种类型
+   * @description 设置按钮加载图标类型，可选三种类型
    * @type circle、turn、line
    * @default circle
    */

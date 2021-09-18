@@ -3,7 +3,7 @@
  * @Date: 2021-09-18 09:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-18 15:04:52
+ * @LastEditTime: 2021-09-18 16:16:27
  * @Description:
  */
 export interface StyleProps {
@@ -34,27 +34,23 @@ export interface StyleProps {
   /**
    * @description 设置横向对齐
    * @type left、center、right
-   * @default left
+   * @default 继承
    */
   textAlign?: 'left' | 'center' | 'right';
   /**
    * @description 设置添加到文本的修饰
-   * @type none、underline(文本下的一条线)、overline(文本上的一条线)、line-through(穿过文本下的一条线)、blink(闪烁的文本)、inherit(从父元素继承)
+   * @type none、underline(文本下的一条线)、overline(文本上的一条线)、line-through(穿过文本下的一条线)
    * @default none
    */
-  textDecoration?:
-    | 'none'
-    | 'underline'
-    | 'overline'
-    | 'line-through'
-    | 'blink'
-    | 'inherit';
+  textDecoration?: 'none' | 'underline' | 'overline' | 'line-through';
   /**
    * @description 设置文本的颜色
+   * @default 继承
    */
   color?: string;
   /**
    * @description 设置字号大小
+   * @default 继承
    */
   fontSize?: number;
   /**
@@ -115,6 +111,7 @@ export interface StyleProps {
   showBorder?: boolean;
   /**
    * @description 设置边框宽度, showBorder为true设置有效
+   * @default 1
    */
   borderWidth?: number;
   /**
@@ -124,10 +121,11 @@ export interface StyleProps {
   borderColor?: string;
   /**
    * @description 设置边框样式,showBorder为true设置有效
-   * @type solid(实线)、dashed(虚线)、dotted(点状边框)、double(双线)、groove(3D 凹槽边框)、ridge(3D 垄状边框)、inset(3D inset 边框)、outset(3D outset 边框)
-   * @default none
+   * @type solid(实线)、dashed(虚线)、dotted(点状边框)、double(双线, 需要配合width使用)、groove(3D 凹槽边框)、ridge(3D 垄状边框)、inset(3D inset 边框)、outset(3D outset 边框)
+   * @default solid
    */
   borderStyle?:
+    | string
     | 'solid'
     | 'dashed'
     | 'dotted'
@@ -141,6 +139,11 @@ export interface StyleProps {
    * @default none
    */
   borderRadius?: number;
+  /**
+   * @description 是否为块级元素
+   * @default false
+   */
+  block?: boolean;
 }
 
 export interface TextProps extends BaseProps, StyleProps {
