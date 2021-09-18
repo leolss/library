@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 18:18:41
+ * @LastEditTime: 2021-09-18 10:46:26
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -64,7 +64,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     style = Object.assign({}, style, extraStyle);
 
     return style;
-  }, [borderRadius]);
+  }, [width, height, borderRadius, plain, color, extraStyle]);
 
   // click 节流
   const throttleClick = useMemo(() => {

@@ -1,0 +1,18 @@
+.jdd-text {
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+  display: inline-block;
+
+  &--lineFeed {
+    white-space: nowrap;
+    word-break: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &--lineNum {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

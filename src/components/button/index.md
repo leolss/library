@@ -5,7 +5,7 @@ nav:
   path: /components
 ---
 
-## Demo:
+## Button 按钮:
 
 ### 按钮类型
 
@@ -71,7 +71,7 @@ export default () => (
 );
 ```
 
-### 图标按钮
+### 图标按钮(待添加)
 
 ```tsx
 import React from 'react';

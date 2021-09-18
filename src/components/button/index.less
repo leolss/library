@@ -21,6 +21,7 @@
     padding: 4px;
   }
 
+  /* 默认按钮 */
   &--default {
     color: var(--jdd-color-text-base);
     background-color: var(--jdd-fill-base);
@@ -31,6 +32,7 @@
     }
   }
 
+  /* 主要按钮 */
   &--primary {
     background-color: var(--jdd-brand-primary);
     border: 1px solid var(--jdd-brand-primary);
@@ -43,6 +45,8 @@
       }
     }
   }
+
+  /* 危险按钮 */
   &--danger {
     background-color: var(--jdd-brand-error);
     border: 1px solid var(--jdd-brand-error);
@@ -55,6 +59,8 @@
       }
     }
   }
+
+  /* 警示按钮 */
   &--warning {
     background-color: var(--jdd-brand-warning);
     border: 1px solid var(--jdd-brand-warning);
@@ -67,6 +73,8 @@
       }
     }
   }
+
+  /* 成功按钮 */
   &--success {
     background-color: var(--jdd-brand-success);
     border: 1px solid var(--jdd-brand-success);
@@ -80,6 +88,7 @@
     }
   }
 
+  /* 正常大小 */
   &--normal {
     height: var(--jdd-button-height-sm);
     font-size: var(--jdd-button-font-size-sm);
@@ -116,6 +125,7 @@
     }
   }
 
+  /* 大号按钮 */
   &--large {
     width: 100%;
     height: var(--jdd-button-height);
@@ -152,6 +162,8 @@
       }
     }
   }
+
+  /* 小号按钮 */
   &--small {
     height: 26px;
     font-size: 10px;
@@ -191,6 +203,8 @@
       }
     }
   }
+
+  /* 迷你按钮 */
   &--mini {
     height: 22px;
     font-size: 8px;
@@ -229,19 +243,24 @@
       }
     }
   }
+
+  /* 块级 */
   &--block {
     width: 100%;
   }
 
+  /* 朴素按钮 */
   &--plain {
     background-color: var(--jdd-fill-base);
   }
 
+  /* 禁用按钮 */
   &--disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
+  /* 加载状态 */
   &--loading {
     .jdd-button-loading-style {
       position: relative;
@@ -252,6 +271,7 @@
       }
     }
 
+    /* 转圈图标 */
     .jdd-button-loading-circle {
       span {
         position: absolute;
@@ -305,6 +325,7 @@
       }
     }
 
+    /* 交替变大圆圈 */
     .jdd-button-loading-turn {
       span {
         position: absolute;
@@ -321,6 +342,7 @@
       }
     }
 
+    /* 横线动画 */
     .jdd-button-loading-line {
       width: auto;
 
@@ -344,6 +366,7 @@
     }
   }
 
+  /* icon -- 待添加 */
   &-icon-style::before {
     font-family: 'QuarkIcon';
   }

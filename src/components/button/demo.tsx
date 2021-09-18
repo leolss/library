@@ -3,12 +3,12 @@
  * @Date: 2021-09-16 17:34:09
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 19:25:55
+ * @LastEditTime: 2021-09-18 15:00:58
  * @Description:
  */
 import React, { memo, useCallback } from 'react';
 import { Button } from 'library';
-import './index.md.less';
+import './demo.less';
 
 const Demo: React.FC = memo(() => {
   const clickButton = useCallback((e: React.MouseEvent) => {
@@ -46,7 +46,7 @@ const Demo: React.FC = memo(() => {
         朴素按钮
       </Button>
 
-      <h2 className="jdd-button-md-title">图标按钮</h2>
+      <h2 className="jdd-button-md-title">图标按钮(待添加)</h2>
       <Button type="primary" icon="search">
         按钮
       </Button>

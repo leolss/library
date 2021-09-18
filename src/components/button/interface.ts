@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 11:14:47
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-17 16:50:11
+ * @LastEditTime: 2021-09-18 11:29:19
  * @Description:
  */
 
@@ -48,32 +48,32 @@ export interface ButtonProps extends BaseProps, StyleProps, EventProps {
   type?: 'primary' | 'default' | 'danger' | 'warning' | 'success';
 
   /**
-   * @description 按钮尺寸
+   * @description 按钮尺寸, 可选四种类型
    * @type normal、large、small、mini
    * @default normal
    */
   size?: 'normal' | 'large' | 'small' | 'mini';
   /**
-   * @description 朴素按钮
+   * @description 是否为朴素按钮
    * @default false
    */
   plain?: boolean;
 
   /**
-   * @description 按钮图标
-   * @type search, edit
+   * @description 按钮图标（待添加）
+   * @type search、edit
    * @default --
    */
   icon?: string;
 
   /**
-   * @description loading状态
+   * @description 是否显示加载动画
    * @default false
    */
   loading?: boolean;
 
   /**
-   * @description 加载图标类型
+   * @description 加载图标类型，可选三种类型
    * @type circle、turn、line
    * @default circle
    */
@@ -85,7 +85,7 @@ export interface ButtonProps extends BaseProps, StyleProps, EventProps {
   block?: boolean;
 
   /**
-   * @description disabled状态
+   * @description 是否是禁用状态
    * @default false
    */
   disabled?: boolean;
