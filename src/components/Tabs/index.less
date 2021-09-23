@@ -1,0 +1,70 @@
+.jdd-tabs {
+  font-size: 14px;
+  overflow: hidden;
+
+  &-nav {
+    display: flex;
+    flex: none;
+    position: relative;
+
+    &-wrap {
+      transform: translate(0);
+      position: relative;
+      display: inline-block;
+      flex: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      display: flex;
+    }
+
+    &-list {
+      width: 100%;
+      display: flex;
+      position: relative;
+      transition: transform 0.3s;
+    }
+  }
+
+  &-tab {
+    border: 0;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    font-weight: normal;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+
+    &-btn {
+      border: 0;
+      background: transparent;
+      font-weight: inherit;
+      line-height: 32px;
+    }
+
+    &--active {
+      font-weight: bolder;
+    }
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &-ink-bar {
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: red;
+    pointer-events: none;
+
+    &-animated {
+      transition: all 0.3s;
+    }
+  }
+}
