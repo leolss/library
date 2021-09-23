@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 16:41:56
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-18 10:54:12
+ * @LastEditTime: 2021-09-23 09:42:24
  * @Description:
  */
 import classnames from 'classnames';
@@ -12,7 +12,7 @@ import Notification from 'rmc-notification';
 import { createNamespace } from '@/utils/create';
 import { ToastProps } from './interface';
 
-//import Icon from '../icon';
+import Icon from '../icon';
 import './index.less';
 
 const SHORT = 3;
@@ -88,9 +88,7 @@ function notice(
           role="alert"
           aria-live="assertive"
         >
-          {/*
-            <Icon type={iconType} size="lg" />
-            */}
+          <Icon type={iconType} size="lg" />
           <img src="" />
           <div className={`${bem('text-info')}`}>{content}</div>
         </div>

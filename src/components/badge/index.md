@@ -29,6 +29,7 @@ import { Badge, View } from 'library';
 export default () => (
   <>
     <View align="center">
+      // dot
       <Badge dot>
         <span
           style={{
@@ -54,28 +55,26 @@ export default () => (
         />
         <span style={{ marginLeft: 12 }}>content</span>
       </View>
+      // text数字或文案，大于overflowCount时的显示效果
       <Badge text={77} overflowCount={55} />
     </View>
     <br />
     <div>
+      // corner
       <Badge text={'促'} corner>
         <div style={{ height: '50px', width: '200px' }}>Use corner prop</div>
       </Badge>
     </div>
     <View>
+      // text
       <Badge text={0} style={{ marginLeft: 12 }}>
         Text number 0
       </Badge>
       <Badge text={'new'} style={{ marginLeft: 12 }} />
     </View>
     <br />
-    <View align="center" justify="between">
-      <p>Custo corner</p>
-      <Badge text={'促'} />
-    </View>
-    <br />
     <View>
-      Marketing:
+      // hot
       <Badge text="减" hot style={{ marginLeft: 12 }} />
       <Badge text="惠" hot style={{ marginLeft: 12 }} />
       <Badge text="免" hot style={{ marginLeft: 12 }} />
@@ -84,7 +83,7 @@ export default () => (
     </View>
     <br />
     <View>
-      Customize
+      // 自定义样式
       <Badge
         text="券"
         style={{
