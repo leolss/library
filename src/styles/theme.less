@@ -1,206 +1,195 @@
+@import './var.less';
+
 :root {
   // 全局/品牌色
-  --jdd-brand-primary: #108ee9;
-  --jdd-brand-primary-tap: #0e80d2;
-  --jdd-brand-success: #6abf47;
-  --jdd-brand-warning: #ffc600;
-  --jdd-brand-error: #f4333c;
-  --jdd-brand-important: #ff5b05; // 用于小红点
-  --jdd-brand-wait: #108ee9;
-  --jdd-color-text-base: #000; // 基本
-  --jdd-color-text-base-inverse: #fff; // 基本 - 反色
-  --jdd-color-text-secondary: #a4a9b0; // 辅助色
-  --jdd-color-text-placeholder: #bbb; // 文本框提示
-  --jdd-color-text-disabled: #bbb; // 失效
-  --jdd-color-text-caption: #888; // 辅助描述
-  --jdd-color-text-paragraph: #333; // 段落
-  --jdd-color-link: #108ee9; // 链接
+  --jdd-brand-primary: @brand-primary;
+  --jdd-brand-primary-tap: @brand-primary-tap;
+  --jdd-brand-success: @brand-success;
+  --jdd-brand-warning: @brand-warning;
+  --jdd-brand-error: @brand-error;
+  --jdd-brand-important: @brand-important;
+  --jdd-brand-wait: @brand-wait;
+  --jdd-color-text-base: @color-text-base;
+  --jdd-color-text-base-inverse: @color-text-base-inverse;
+  --jdd-color-text-secondary: @color-text-secondary;
+  --jdd-color-text-placeholder: @color-text-placeholder;
+  --jdd-color-text-disabled: @color-text-disabled;
+  --jdd-color-text-caption: @color-text-caption;
+  --jdd-color-text-paragraph: @color-text-paragraph;
+  --jdd-color-link: @color-link;
 
   // 背景色
   // ---
-  --jdd-fill-base: #fff; // 组件默认背景
-  --jdd-fill-body: #f5f5f9; // 页面背景
-  --jdd-fill-tap: #ddd; // 组件默认背景 - 按下
-  --jdd-fill-disabled: #ddd; // 通用失效背景
-  --jdd-fill-mask: rgba(0, 0, 0, 0.4); // 遮罩背景
-  --jdd-color-icon-base: #ccc; // 许多小图标的背景，比如一些小圆点，加减号
-  --jdd-fill-grey: #f7f7f7;
+  --jdd-fill-base: @fill-base;
+  --jdd-fill-body: @fill-body;
+  --jdd-fill-tap: @fill-tap;
+  --jdd-fill-disabled: @fill-disabled;
+  --jdd-fill-mask: @fill-mask;
+  --jdd-color-icon-base: @color-icon-base;
+  --jdd-fill-grey: @fill-grey;
 
   // 透明度
-  --jdd-opacity-disabled: 0.3; // switch checkbox radio 等组件禁用的透明度
+  --jdd-opacity-disabled: @opacity-disabled;
 
   // 边框色
-  --jdd-border-color-base: #ddd;
-
-  // 基本单位
-  // @hd: 1px;
+  --jdd-border-color-base: @border-color-base;
 
   // 字体尺寸
   // ---
-  --jdd-font-size-xs: 10px;
-  --jdd-font-size-sm: 12px;
-  --jdd-font-size-md: 14px;
-  --jdd-font-size-lg: 16px;
-  --jdd-font-weight-bold: 500;
-  --jdd-line-height-xs: 14px;
-  --jdd-line-height-sm: 18px;
-  --jdd-line-height-md: 20px;
-  --jdd-line-height-lg: 22px;
-  --jdd-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
-    helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
-    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  --jdd-font-size-xs: @font-size-xs;
+  --jdd-font-size-sm: @font-size-sm;
+  --jdd-font-size-md: @font-size-md;
+  --jdd-font-size-subhead: @font-size-subhead;
+  --jdd-font-size-lg: @font-size-lg;
+  --jdd-font-weight-bold: @font-weight-bold;
+  --jdd-line-height-xs: @line-height-xs;
+  --jdd-line-height-sm: @line-height-sm;
+  --jdd-line-height-md: @line-height-md;
+  --jdd-line-height-lg: @line-height-lg;
+  --jdd-font-family: @font-family;
 
   // 圆角
   // ---
-  --jdd-radius-xs: 2px;
-  --jdd-radius-sm: 3px;
-  --jdd-radius-md: 5px;
-  --jdd-radius-lg: 7px;
-  --jdd-radius-circle: 50%;
+  --jdd-radius-xs: @radius-xs;
+  --jdd-radius-sm: @radius-sm;
+  --jdd-radius-md: @radius-md;
+  --jdd-radius-lg: @radius-lg;
+  --jdd-radius-circle: @radius-circle;
 
   // 边框尺寸
   // ---
-  --jdd-border-width-sm: 1px;
-  --jdd-border-width-md: 1px;
-  --jdd-border-width-lg: 2px;
+  --jdd-border-width-sm: @border-width-sm;
+  --jdd-border-width-md: @border-width-md;
+  --jdd-border-width-lg: @border-width-lg;
 
   // 间距
   // ---
   // 水平间距
-  --jdd-h-spacing-sm: 5px;
-  --jdd-h-spacing-md: 8px;
-  --jdd-h-spacing-lg: 15px;
+  --jdd-h-spacing-sm: @h-spacing-sm;
+  --jdd-h-spacing-md: @h-spacing-md;
+  --jdd-h-spacing-lg: @h-spacing-lg;
 
   // 垂直间距
-  --jdd-v-spacing-xs: 3px;
-  --jdd-v-spacing-sm: 6px;
-  --jdd-v-spacing-md: 9px;
-  --jdd-v-spacing-lg: 15px;
-  --jdd-v-spacing-xl: 21px;
+  --jdd-v-spacing-xs: @v-spacing-xs;
+  --jdd-v-spacing-sm: @v-spacing-sm;
+  --jdd-v-spacing-md: @v-spacing-md;
+  --jdd-v-spacing-lg: @v-spacing-lg;
+  --jdd-v-spacing-xl: @v-spacing-xl;
 
   // 高度
   // ---
-  --jdd-line-height-base: 1; // 单行行高
-  --jdd-line-height-paragraph: 1.5; // 多行行高
+  --jdd-line-height-base: @line-height-base;
+  --jdd-line-height-paragraph: @line-height-paragraph;
 
   // 图标尺寸
   // ---
-  --jdd-icon-size-xxs: 15px;
-  --jdd-icon-size-xs: 18px;
-  --jdd-icon-size-sm: 21px;
-  --jdd-icon-size-md: 22px; // 导航条上的图标、grid的图标大小
-  --jdd-icon-size-lg: 36px;
+  --jdd-icon-size-xxs: @icon-size-xxs;
+  --jdd-icon-size-xs: @icon-size-xs;
+  --jdd-icon-size-sm: @icon-size-sm;
+  --jdd-icon-size-md: @icon-size-md;
+  --jdd-icon-size-lg: @icon-size-lg;
 
   // 动画缓动
   // ---
-  --jdd-ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --jdd-ease-in-out-quint: @ease-in-out-quint;
 
   // 组件变量
   // ---
 
-  --jdd-actionsheet-item-height: 50px;
-  --jdd-actionsheet-item-font-size: 18px;
+  --jdd-actionsheet-item-height: @actionsheet-item-height;
+  --jdd-actionsheet-item-font-size: @actionsheet-item-font-size;
 
   // button
-  --jdd-button-height: 47px;
-  --jdd-button-font-size: 18px;
+  --jdd-button-height: @button-height;
+  --jdd-button-font-size: @button-font-size;
 
-  --jdd-button-height-sm: 30px;
-  --jdd-button-font-size-sm: 13px;
+  --jdd-button-height-sm: @button-height-sm;
+  --jdd-button-font-size-sm: @button-font-size-sm;
 
-  --jdd-primary-button-fill: var(--jdd-brand-primary);
-  --jdd-primary-button-fill-tap: var(--jdd-brand-primary-tap);
+  --jdd-primary-button-fill: @primary-button-fill;
+  --jdd-primary-button-fill-tap: @primary-button-fill-tap;
 
-  --jdd-ghost-button-color: var(
-    --jdd-brand-primary
-  ); // 同时应用于背景、文字颜色、边框色
-  --jdd-ghost-button-fill-tap: ~'fade(--jdd-brand-primary, 60%)';
+  --jdd-ghost-button-color: @ghost-button-color; // 同时应用于背景、文字颜色、边框色
+  --jdd-ghost-button-fill-tap: @ghost-button-fill-tap;
 
-  --jdd-warning-button-fill: #e94f4f;
-  --jdd-warning-button-fill-tap: #d24747;
+  --jdd-warning-button-fill: @warning-button-fill;
+  --jdd-warning-button-fill-tap: @warning-button-fill-tap;
 
-  --jdd-link-button-fill-tap: #ddd;
-  --jdd-link-button-font-size: 16px;
+  --jdd-link-button-fill-tap: @link-button-fill-tap;
+  --jdd-link-button-font-size: @link-button-font-size;
 
   // menu
-  --jdd-menu-multi-select-btns-height: var(--jdd-button-height);
+  --jdd-menu-multi-select-btns-height: @menu-multi-select-btns-height;
 
   // modal
-  --jdd-modal-font-size-heading: 18px;
-  --jdd-modal-button-font-size: 18px; // 按钮字号
-  --jdd-modal-button-height: 50px; // 按钮高度
+  --jdd-modal-font-size-heading: @modal-font-size-heading;
+  --jdd-modal-button-font-size: @modal-button-font-size;
+  --jdd-modal-button-height: @modal-button-height;
 
   // list
-  --jdd-list-title-height: 30px;
-  --jdd-list-item-height-sm: 35px;
-  --jdd-list-item-height: 44px;
+  --jdd-list-title-height: @list-title-height;
+  --jdd-list-item-height-sm: @list-item-height-sm;
+  --jdd-list-item-height: @list-item-height;
 
   // input
-  --jdd-input-label-width: 17px; // InputItem、TextareaItem 文字长度基础值
-  --jdd-input-font-size: 17px;
-  --jdd-input-color-icon: #ccc; // input clear icon 的背景色
-  --jdd-input-color-icon-tap: var(--jdd-brand-primary);
+  --jdd-input-label-width: @input-label-width;
+  --jdd-input-font-size: @input-font-size;
+  --jdd-input-color-icon: @input-color-icon;
+  --jdd-input-color-icon-tap: @input-color-icon-tap;
 
   // tabs
-  --jdd-tabs-color: var(--jdd-brand-primary);
-  --jdd-tabs-height: 43.5px;
-  --jdd-tabs-font-size-heading: 15px;
-  --jdd-tabs-ink-bar-height: var(--jdd-border-width-lg);
+  --jdd-tabs-color: @tabs-color;
+  --jdd-tabs-height: @tabs-height;
+  --jdd-tabs-font-size-heading: @tabs-font-size-heading;
+  --jdd-tabs-ink-bar-height: @tabs-ink-bar-height;
 
   // segmented-control
-  --jdd-segmented-control-color: var(
-    --jdd-brand-primary
-  ); // 同时应用于背景、文字颜色、边框色
-  --jdd-segmented-control-height: 27px;
-  --jdd-segmented-control-fill-tap: ~'fade(var(--jdd-brand-primary), 0.1)';
+  --jdd-segmented-control-color: @segmented-control-color; // 同时应用于背景、文字颜色、边框色
+  --jdd-segmented-control-height: @segmented-control-height;
+  --jdd-segmented-control-fill-tap: @segmented-control-fill-tap;
 
   // tab-bar
-  --jdd-tab-bar-fill: #ebeeef;
-  --jdd-tab-bar-height: 50px;
+  --jdd-tab-bar-fill: @tab-bar-fill;
+  --jdd-tab-bar-height: @tab-bar-height;
 
   // toast
-  --jdd-toast-fill: rgba(
-    58,
-    58,
-    58,
-    0.9
-  ); // toast, activity-indicator 的背景颜色
+  --jdd-toast-fill: @toast-fill; // toast, activity-indicator 的背景颜色
 
   // search-bar
-  --jdd-search-bar-fill: #efeff4;
-  --jdd-search-bar-height: 44px;
-  --jdd-search-bar-input-height: 28px;
-  --jdd-search-bar-font-size: 15px;
-  --jdd-search-color-icon: #bbb; // input search icon 的背景色
+  --jdd-search-bar-fill: @search-bar-fill;
+  --jdd-search-bar-height: @search-bar-height;
+  --jdd-search-bar-input-height: @search-bar-input-height;
+  --jdd-search-bar-font-size: @search-bar-font-size;
+  --jdd-search-color-icon: @search-color-icon;
 
   // notice-bar
-  --jdd-notice-bar-fill: #fefcec;
-  --jdd-notice-bar-height: 36px;
-  --jdd-notice-bar-color: #f76a24;
+  --jdd-notice-bar-fill: @notice-bar-fill;
+  --jdd-notice-bar-height: @notice-bar-height;
+  --jdd-notice-bar-color: @notice-bar-color;
 
   // switch
-  --jdd-switch-fill: #4dd865;
-  --jdd-switch-fill-android: var(--jdd-brand-primary);
+  --jdd-switch-fill: @switch-fill;
+  --jdd-switch-fill-android: @switch-fill-android;
 
   // tag
-  --jdd-tag-height: 25px;
-  --jdd-tag-height-sm: 15px;
-  --jdd-tag-color: var(--jdd-brand-primary);
+  --jdd-tag-height: @tag-height;
+  --jdd-tag-height-sm: @tag-height-sm;
+  --jdd-tag-color: @tag-color;
 
   // keyboard
-  --jdd-keyboard-confirm-color: var(--jdd-brand-primary);
-  --jdd-keyboard-confirm-tap-color: var(--jdd-brand-primary-tap);
+  --jdd-keyboard-confirm-color: @keyboard-confirm-color;
+  --jdd-keyboard-confirm-tap-color: @keyboard-confirm-tap-color;
 
   // picker
-  --jdd-option-height: 42px; // picker 标题的高度
+  --jdd-option-height: @option-height;
 
   // z-index
-  --jdd-progress-zindex: 2000;
-  --jdd-popover-zindex: 1999;
-  --jdd-toast-zindex: 1999;
-  --jdd-action-sheet-zindex: 1000; // actonsheet 会放到 popup / modal 中
-  --jdd-picker-zindex: 1000;
-  --jdd-popup-zindex: 999;
-  --jdd-modal-zindex: 999; // modal.alert 应该最大，其他应该较小
-  --jdd-tabs-pagination-zindex: 999;
+  --jdd-progress-zindex: @progress-zindex;
+  --jdd-popover-zindex: @popover-zindex;
+  --jdd-toast-zindex: @toast-zindex;
+  --jdd-action-sheet-zindex: @action-sheet-zindex;
+  --jdd-picker-zindex: @picker-zindex;
+  --jdd-popup-zindex: @popup-zindex;
+  --jdd-modal-zindex: @modal-zindex;
+  --jdd-tabs-pagination-zindex: @tabs-pagination-zindex;
 }
