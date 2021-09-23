@@ -2,13 +2,8 @@
  * @Author: 姚嘉琦
  * @Date: 2021-09-10 13:47:27
  * @Email: yaojiaqi1@jd.com
-<<<<<<< HEAD
- * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-17 13:57:13
-=======
- * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-16 14:58:39
->>>>>>> f3f1fe7462f761e58d88aa27da8e90c31494a9a3
+ * @LastEditors: 李闪闪
+ * @LastEditTime: 2021-09-18 16:00:14
  * @Description: 配置文件
  */
 import { defineConfig } from 'dumi';
