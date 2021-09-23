@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 10:58:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 15:05:05
+ * @LastEditTime: 2021-09-23 16:07:11
  * @Description:
  */
 import React, {
@@ -19,13 +19,12 @@ import TabPaneList from './TabPane/TabPaneList';
 import TabPane from './TabPane/TabPane';
 import TabNavList from './TabNav';
 import TabContext from './TabContext';
-
 import type { Tab, TabsProps, AnimatedConfig } from './interface';
 
 import './index.less';
 
-function parseTabList(children: React.ReactNode): Tab[] {
-  return React.Children.map(children, (node: any) => {
+function parseTabList(children: React.ReactElement): Tab[] {
+  return React.Children.map(children, (node: React.ReactElement) => {
     if (React.isValidElement(node)) {
       const key = node.key !== undefined ? String(node.key) : undefined;
       return {
@@ -40,17 +39,7 @@ function parseTabList(children: React.ReactNode): Tab[] {
 }
 
 function TabsFn(
-  {
-    className,
-    children,
-    activeKey,
-    animated = {
-      inkBar: true,
-      tabPane: false,
-    },
-    onChange,
-    onClick,
-  }: TabsProps,
+  { activeKey, animated = false, className, children, onClick }: TabsProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
   const { prefixCls } = useContext(TabContext);
@@ -60,19 +49,9 @@ function TabsFn(
     () => activeKey || tabs[0]?.key,
   );
 
-  const mergedAnimated: AnimatedConfig | false = useMemo(() => {
-    return {
-      inkBar: animated === false ? false : true,
-      tabPane: animated === true ? true : false,
-      ...(typeof animated === 'object' ? animated : {}),
-    };
-  }, [animated]);
-
   const onTabClick = useCallback((key: string, e: React.MouseEvent) => {
     onClick?.(key, e);
-
     setFinalActiveKey(key);
-    onChange?.(key);
   }, []);
 
   // 最外层类名
@@ -82,7 +61,7 @@ function TabsFn(
 
   const sharedProps = {
     activeKey: finalActiveKey,
-    animated: mergedAnimated,
+    animated: animated,
   };
 
   const tabNavBarProps = {

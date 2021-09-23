@@ -7,16 +7,6 @@
     flex: none;
     position: relative;
 
-    &-wrap {
-      transform: translate(0);
-      position: relative;
-      display: inline-block;
-      flex: auto;
-      white-space: nowrap;
-      overflow: hidden;
-      display: flex;
-    }
-
     &-list {
       width: 100%;
       display: flex;
@@ -56,15 +46,13 @@
     }
   }
 
-  &-ink-bar {
+  &-tab-active {
     position: absolute;
+    bottom: 0;
     width: 60px;
     height: 2px;
     background: red;
     pointer-events: none;
-
-    &-animated {
-      transition: all 0.3s;
-    }
+    transition: all 0.3s;
   }
 }

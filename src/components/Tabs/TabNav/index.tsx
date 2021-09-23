@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 13:44:37
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 15:26:58
+ * @LastEditTime: 2021-09-23 17:01:43
  * @Description:
  */
 import * as React from 'react';
@@ -12,7 +12,7 @@ import classNames from 'classnames';
 import { createNamespace } from '@/utils/create';
 import TabNode from './TabNode';
 
-import { TabNavListProps } from './interface';
+import type { TabNavListProps } from './interface';
 import TabContext from '../TabContext';
 
 function TabNavList(
@@ -21,7 +21,7 @@ function TabNavList(
 ) {
   const { prefixCls, tabs } = useContext(TabContext);
 
-  const tabNodes: React.ReactElement[] = useMemo(() => {
+  const renderTabNodes: React.ReactElement[] = useMemo(() => {
     return tabs.map((tab) => {
       const { key } = tab;
       return (
@@ -40,21 +40,13 @@ function TabNavList(
 
   const [inkStyle, setInkStyle] = useState<React.CSSProperties>();
 
-  const [wrapPrefix] = createNamespace(`${prefixCls}-nav-wrap`);
+  const [name] = createNamespace(prefixCls);
 
-  const [name] = createNamespace(`${prefixCls}`);
   return (
-    <div ref={ref} className={classNames(name)}>
-      <div className={classNames(wrapPrefix)}>
-        <div className={`${name}-nav-list`}>
-          {tabNodes}
-          <div
-            className={classNames(`${name}-ink-bar`, {
-              [`${name}-ink-bar-animated`]: animated.inkBar,
-            })}
-            style={inkStyle}
-          />
-        </div>
+    <div className={classNames(`${name}-nav`)}>
+      <div className={`${name}-nav-list`}>
+        {renderTabNodes}
+        <div className={classNames(`${name}-tab-active`)} style={inkStyle} />
       </div>
     </div>
   );

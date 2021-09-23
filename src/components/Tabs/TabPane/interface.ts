@@ -3,14 +3,12 @@
  * @Date: 2021-09-22 11:04:22
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 14:53:58
+ * @LastEditTime: 2021-09-23 16:04:18
  * @Description:
  */
-import type { AnimatedConfig } from '../interface';
-
 export interface TabPaneListProps extends BaseProps {
   activeKey: React.Key;
-  animated?: AnimatedConfig;
+  animated?: boolean;
 }
 
 export interface TabPaneProps extends BaseProps {

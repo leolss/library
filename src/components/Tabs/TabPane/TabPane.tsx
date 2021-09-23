@@ -3,12 +3,12 @@
  * @Date: 2021-09-22 11:18:51
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 14:46:28
+ * @LastEditTime: 2021-09-23 16:48:12
  * @Description:
  */
 import React, { memo, useMemo } from 'react';
 import classNames from 'classnames';
-import { TabPaneProps } from './interface';
+import type { TabPaneProps } from './interface';
 import { createNamespace } from '@/utils/create';
 
 const TabPane: React.FC<TabPaneProps> = memo(
@@ -21,7 +21,7 @@ const TabPane: React.FC<TabPaneProps> = memo(
     tabKey,
     children,
   }: TabPaneProps) => {
-    const [name, bem] = createNamespace(prefixCls);
+    const [name, bem] = createNamespace(`${prefixCls}-content`);
 
     const mergedStyle: React.CSSProperties = {};
     if (!active) {
@@ -34,13 +34,15 @@ const TabPane: React.FC<TabPaneProps> = memo(
       }
     }
 
-    // 最外层类名
-    const classes = useMemo(() => {
-      return classNames(bem([`${name}-${tabKey}`, { active }]), className);
-    }, [active, className]);
-
     return (
-      <div style={{ ...mergedStyle, ...extraStyle }} className={classes}>
+      <div
+        style={{ ...mergedStyle, ...extraStyle }}
+        className={classNames(
+          `${name}-${tabKey}`,
+          { [`${name}--active`]: active },
+          className,
+        )}
+      >
         {active && children}
       </div>
     );

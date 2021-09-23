@@ -3,14 +3,15 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-22 16:04:45
+ * @LastEditTime: 2021-09-23 15:50:20
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
 import { createNamespace } from '@/utils/create';
 import { Throttle } from '@/utils/debounced';
-import { ButtonProps } from './interface';
 import classnames from 'classnames';
+
+import type { ButtonProps } from './interface';
 import './index.less';
 
 const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
@@ -130,7 +131,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   return (
     <div
       className={classes}
-      style={styles}
+      style={{ ...styles, ...extraStyle }}
       onClick={disabled || loading ? disabledClick : click}
     >
       <div className={name + '-content'}>

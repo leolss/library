@@ -3,13 +3,14 @@
  * @Date: 2021-09-18 09:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-18 16:23:39
+ * @LastEditTime: 2021-09-23 15:50:48
  * @Description:
  */
 import React, { memo, useMemo, useCallback } from 'react';
-import { TextProps } from './interface';
 import { createNamespace } from '@/utils/create';
 import classnames from 'classnames';
+
+import type { TextProps } from './interface';
 import './index.less';
 
 const Text: React.FC<TextProps> = memo((props: TextProps) => {
@@ -113,7 +114,11 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
   );
 
   return (
-    <div className={classes} style={styles} onClick={click}>
+    <div
+      className={classes}
+      style={{ ...styles, ...extraStyle }}
+      onClick={click}
+    >
       {children}
     </div>
   );
