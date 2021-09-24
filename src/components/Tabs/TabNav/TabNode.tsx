@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 13:44:37
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 14:58:01
+ * @LastEditTime: 2021-09-24 09:29:37
  * @Description:
  */
 import * as React from 'react';
@@ -29,7 +29,7 @@ function TabNode(
       if (disabled) {
         return;
       }
-      onClick(e);
+      onClick?.(e);
     },
     [disabled, onClick],
   );

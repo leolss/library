@@ -3,10 +3,10 @@
  * @Date: 2021-09-22 16:43:45
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 15:05:41
+ * @LastEditTime: 2021-09-23 19:26:15
  * @Description:
  */
-import type { Tab, AnimatedConfig } from '../interface';
+import type { Tab } from '../interface';
 
 export interface TabNodeProps extends BaseProps {
   prefixCls: string;
@@ -16,10 +16,7 @@ export interface TabNodeProps extends BaseProps {
 }
 
 export interface TabNavListProps extends BaseProps {
-  activeKey: string;
-  animated?: AnimatedConfig;
-  onClick: (
-    activeKey: React.Key,
-    e: React.MouseEvent | React.KeyboardEvent,
-  ) => void;
+  activeKey: React.Key;
+  animated?: boolean;
+  onClick: (activeKey: React.Key, e: React.MouseEvent) => void;
 }
