@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 10:58:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 16:07:11
+ * @LastEditTime: 2021-09-24 09:26:23
  * @Description:
  */
 import React, {
@@ -19,7 +19,7 @@ import TabPaneList from './TabPane/TabPaneList';
 import TabPane from './TabPane/TabPane';
 import TabNavList from './TabNav';
 import TabContext from './TabContext';
-import type { Tab, TabsProps, AnimatedConfig } from './interface';
+import type { Tab, TabsProps } from './interface';
 
 import './index.less';
 
@@ -49,7 +49,7 @@ function TabsFn(
     () => activeKey || tabs[0]?.key,
   );
 
-  const onTabClick = useCallback((key: string, e: React.MouseEvent) => {
+  const onTabClick = useCallback((key: React.Key, e: React.MouseEvent) => {
     onClick?.(key, e);
     setFinalActiveKey(key);
   }, []);

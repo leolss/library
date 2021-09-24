@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 11:04:22
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 16:04:18
+ * @LastEditTime: 2021-09-23 19:23:25
  * @Description:
  */
 export interface TabPaneListProps extends BaseProps {
@@ -15,7 +15,7 @@ export interface TabPaneProps extends BaseProps {
   /**
    * @description 唯一标识
    */
-  key?: string;
+  key?: React.Key;
   /**
    * @description 显示文字
    */
