@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 10:58:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-24 09:26:23
+ * @LastEditTime: 2021-09-26 10:15:30
  * @Description:
  */
 import React, {
@@ -24,7 +24,7 @@ import type { Tab, TabsProps } from './interface';
 import './index.less';
 
 function parseTabList(children: React.ReactElement): Tab[] {
-  return React.Children.map(children, (node: React.ReactElement) => {
+  return React.Children.map(children, (node) => {
     if (React.isValidElement(node)) {
       const key = node.key !== undefined ? String(node.key) : undefined;
       return {
@@ -44,7 +44,7 @@ function TabsFn(
 ) {
   const { prefixCls } = useContext(TabContext);
   const [name, bem] = createNamespace(prefixCls);
-  const tabs = parseTabList(children);
+  const tabs = parseTabList(children as React.ReactElement);
   const [finalActiveKey, setFinalActiveKey] = useState(
     () => activeKey || tabs[0]?.key,
   );

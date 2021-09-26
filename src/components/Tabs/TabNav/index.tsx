@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 13:44:37
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 17:01:43
+ * @LastEditTime: 2021-09-26 09:33:55
  * @Description:
  */
 import * as React from 'react';
@@ -16,7 +16,7 @@ import type { TabNavListProps } from './interface';
 import TabContext from '../TabContext';
 
 function TabNavList(
-  { activeKey, animated, onClick }: TabNavListProps,
+  { activeKey, onClick }: TabNavListProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
   const { prefixCls, tabs } = useContext(TabContext);
@@ -44,10 +44,7 @@ function TabNavList(
 
   return (
     <div className={classNames(`${name}-nav`)}>
-      <div className={`${name}-nav-list`}>
-        {renderTabNodes}
-        <div className={classNames(`${name}-tab-active`)} style={inkStyle} />
-      </div>
+      <div className={`${name}-nav-list`}>{renderTabNodes}</div>
     </div>
   );
 }
