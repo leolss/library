@@ -36,6 +36,18 @@
       background: transparent;
       font-weight: inherit;
       line-height: 32px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: red;
+        transform: translateX(-50%);
+        transition: all 0.3s;
+      }
     }
 
     &--active {
@@ -43,14 +55,7 @@
       font-weight: bolder;
 
       .jdd-tabs-tab-btn::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
         width: 100%;
-        height: 2px;
-        background: red;
       }
     }
     &--disabled {
@@ -58,15 +63,15 @@
       cursor: not-allowed;
     }
   }
-  /*
-  &-tab-active {
-    position: absolute;
-    bottom: 0;
-    width: 60px;
-    height: 2px;
-    background: red;
-    pointer-events: none;
-    transition: all 0.3s;
+
+  &-content {
+    &-item {
+      width: 100%;
+      display: inline-block;
+    }
+    &--animated {
+      white-space: nowrap;
+      transition: transform 0.5s;
+    }
   }
-  */
 }
