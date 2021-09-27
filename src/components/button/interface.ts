@@ -3,11 +3,16 @@
  * @Date: 2021-09-16 11:14:47
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-18 16:28:22
+ * @LastEditTime: 2021-09-27 15:50:49
  * @Description:
  */
 
 export interface StyleProps {
+  /**
+   * @description 设置单位
+   * @default px
+   */
+  unit?: string;
   /**
    * @description 设置按钮宽度
    * @default --
@@ -28,6 +33,46 @@ export interface StyleProps {
    * @default --
    */
   color?: string;
+  /**
+   * @description 设置文本的外边距，可以是数字｜百分比｜有单位
+   */
+  margin?: number | string;
+  /**
+   * @description 设置文本的上外边距，可以是数字｜百分比｜有单位
+   */
+  marginTop?: number | string;
+  /**
+   * @description 设置文本的右外边距，可以是数字｜百分比｜有单位
+   */
+  marginRight?: number | string;
+  /**
+   * @description 设置文本的左外边距，可以是数字｜百分比｜有单位
+   */
+  marginBottom?: number | string;
+  /**
+   * @description 设置文本的下外边距，可以是数字｜百分比｜有单位
+   */
+  marginLeft?: number | string;
+  /**
+   * @description 设置文本的内边距，可以是数字｜百分比｜有单位
+   */
+  padding?: number | string;
+  /**
+   * @description 设置文本的上内边距，可以是数字｜百分比｜有单位
+   */
+  paddingTop?: number | string;
+  /**
+   * @description 设置文本的右内边距，可以是数字｜百分比｜有单位
+   */
+  paddingRight?: number | string;
+  /**
+   * @description 设置文本的左内边距，可以是数字｜百分比｜有单位
+   */
+  paddingBottom?: number | string;
+  /**
+   * @description 设置文本的下内边距，可以是数字｜百分比｜有单位
+   */
+  paddingLeft?: number | string;
 }
 
 export interface EventProps {

@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 17:34:09
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-18 16:19:30
+ * @LastEditTime: 2021-09-27 15:56:03
  * @Description:
  */
 import React, { memo, useCallback } from 'react';
@@ -27,7 +27,7 @@ const Demo: React.FC = memo(() => {
       <Text width="100%" textAlign="center">
         居中文本
       </Text>
-      <Text width="100%" textAlign="right">
+      <Text width="80vw" textAlign="right">
         居右文本
       </Text>
 

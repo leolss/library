@@ -3,34 +3,39 @@
  * @Date: 2021-09-18 09:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-18 16:16:27
+ * @LastEditTime: 2021-09-27 10:11:07
  * @Description:
  */
 export interface StyleProps {
   /**
-   * @description 设置宽度, 可以是数字或者百分比
+   * @description 单位
+   * @default px
+   */
+  unit?: string;
+  /**
+   * @description 设置宽度, 可以是数字｜百分比｜有单位
    * @type number ｜ string
    */
   width?: number | string;
   /**
-   * @description 设置高度, 可以是数字或者百分比
+   * @description 设置高度, 可以是数字｜百分比｜有单位
    * @type number ｜ string
    */
   height?: number | string;
   /**
-   * @description 设置最大高度, 可以是数字或者百分比
+   * @description 设置最大高度, 可以是数字｜百分比｜有单位
    * @type number ｜ string
    */
   maxWidth?: number | string;
   /**
-   * @description 设置最小高度, 可以是数字或者百分比
+   * @description 设置最小高度, 可以是数字｜百分比｜有单位
    * @type number ｜ string
    */
   minWidth?: number | string;
   /**
-   * @description 设置行高
+   * @description 设置行高，可以是数字｜百分比｜有单位
    */
-  lineHeight?: number;
+  lineHeight?: number | string;
   /**
    * @description 设置横向对齐
    * @type left、center、right
@@ -49,10 +54,10 @@ export interface StyleProps {
    */
   color?: string;
   /**
-   * @description 设置字号大小
+   * @description 设置字号大小，可以是数字｜百分比｜有单位
    * @default 继承
    */
-  fontSize?: number;
+  fontSize?: number | string;
   /**
    * @description 设置文本的粗细
    * @type 100、200、300、400(等同于normal)、500、600、700(等同于bold)、800、900、normal、bold、bolder、lighter、inherit
@@ -73,47 +78,55 @@ export interface StyleProps {
    */
   lineNum?: number;
   /**
-   * @description 设置文本的上外边距
+   * @description 设置文本的外边距，可以是数字｜百分比｜有单位
    */
-  marginTop?: number;
+  margin?: number | string;
   /**
-   * @description 设置文本的右外边距
+   * @description 设置文本的上外边距，可以是数字｜百分比｜有单位
    */
-  marginRight?: number;
+  marginTop?: number | string;
   /**
-   * @description 设置文本的左外边距
+   * @description 设置文本的右外边距，可以是数字｜百分比｜有单位
    */
-  marginBottom?: number;
+  marginRight?: number | string;
   /**
-   * @description 设置文本的下外边距
+   * @description 设置文本的左外边距，可以是数字｜百分比｜有单位
    */
-  marginLeft?: number;
+  marginBottom?: number | string;
   /**
-   * @description 设置文本的上内边距
+   * @description 设置文本的下外边距，可以是数字｜百分比｜有单位
    */
-  paddingTop?: number;
+  marginLeft?: number | string;
   /**
-   * @description 设置文本的右内边距
+   * @description 设置文本的内边距，可以是数字｜百分比｜有单位
    */
-  paddingRight?: number;
+  padding?: number | string;
   /**
-   * @description 设置文本的左内边距
+   * @description 设置文本的上内边距，可以是数字｜百分比｜有单位
    */
-  paddingBottom?: number;
+  paddingTop?: number | string;
   /**
-   * @description 设置文本的下内边距
+   * @description 设置文本的右内边距，可以是数字｜百分比｜有单位
    */
-  paddingLeft?: number;
+  paddingRight?: number | string;
+  /**
+   * @description 设置文本的左内边距，可以是数字｜百分比｜有单位
+   */
+  paddingBottom?: number | string;
+  /**
+   * @description 设置文本的下内边距，可以是数字｜百分比｜有单位
+   */
+  paddingLeft?: number | string;
   /**
    * @description 是否显示边框
    * @default false
    */
   showBorder?: boolean;
   /**
-   * @description 设置边框宽度, showBorder为true设置有效
+   * @description 设置边框宽度，可以是数字｜百分比｜有单位, showBorder为true设置有效
    * @default 1
    */
-  borderWidth?: number;
+  borderWidth?: number | string;
   /**
    * @description 设置边框颜色, showBorder为true设置有效
    * @default #ddd
@@ -135,10 +148,10 @@ export interface StyleProps {
     | 'inset'
     | 'outset';
   /**
-   * @description 设置边框圆角,showBorder为true设置有效
+   * @description 设置边框圆角，可以是数字｜百分比｜有单位, showBorder为true设置有效
    * @default none
    */
-  borderRadius?: number;
+  borderRadius?: number | string;
   /**
    * @description 是否为块级元素
    * @default false

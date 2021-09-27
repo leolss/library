@@ -5,20 +5,54 @@ nav:
   path: /components
 ---
 
-## Foo
+# Toast 轻提示
 
-Demo:
+一种轻量级反馈/提示，可以用来显示不会打断用户操作的内容，适合用于页面转场、数据交互的等场景中。
 
-```tsx | phone
+### 规则
+
+- 一次只显示一个 toast。
+- 有 Icon 的 Toast，字数为 4-6 个；没有 Icon 的 Toast，字数不宜超过 14 个。
+
+<code  src="./demo.tsx"  identifier="Toast-demo-phone" phone></code>
+
+### 代码演示
+
+```tsx
 import React, { useState, useCallback } from 'react';
 import { Toast, Button } from 'library';
+const success = () => {
+  Toast.success('success===', 2);
+};
+const loading = () => {
+  Toast.loading('loading===', 2);
+};
 const info = () => {
-  Toast.success('你好你好===', 1000);
-  console.log(Toast);
+  Toast.info('info===', 2);
+};
+const fail = () => {
+  Toast.fail('fail===', 2);
+};
+const offline = () => {
+  Toast.offline('offline===', 2);
 };
 export default () => (
   <div>
-    <button onClick={info}>text only text only text only</button>
+    <Button type="default" block onClick={info}>
+      info Toast
+    </Button>
+    <Button type="danger" block onClick={fail}>
+      fail Toast
+    </Button>
+    <Button type="warning" block onClick={offline}>
+      offline Toast
+    </Button>
+    <Button type="success" block onClick={success}>
+      success Toast
+    </Button>
+    <Button type="primary" block onClick={loading}>
+      loading Toast
+    </Button>
   </div>
 );
 ```
@@ -27,7 +61,23 @@ export default () => (
 
 ## API
 
-| 属性名 | 表头   |
-| ------ | ------ |
-| 单元格 | 单元格 |
-| 单元格 | 单元格 |
+- `Toast.success(content, duration, onClose, mask)`
+- `Toast.fail(content, duration, onClose, mask)`
+- `Toast.info(content, duration, onClose, mask)`
+- `Toast.loading(content, duration, onClose, mask)`
+- `Toast.offline(content, duration, onClose, mask)`
+
+组件提供了五个静态方法，参数如下：
+
+| 属性     | 说明                           | 类型                    | 默认值 |
+| -------- | ------------------------------ | ----------------------- | ------ |
+| content  | 提示内容                       | React.Element or String | --     |
+| duration | 自动关闭的延时，单位秒         | number                  | 3      |
+| onClose  | 关闭后回调函数                 | Function                | --     |
+| mask     | 是否显示透明蒙层，防止触摸穿透 | Boolean                 | true   |
+
+> _注： duration = 0 时，onClose 无效，toast 不会消失；隐藏 toast 需要手动调用_ hide
+> 还提供了全局配置和全局销毁方法：
+
+- `Toast.config({ duration, mask })`
+- `Toast.hide()`

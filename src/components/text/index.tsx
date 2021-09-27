@@ -3,18 +3,20 @@
  * @Date: 2021-09-18 09:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-18 16:23:39
+ * @LastEditTime: 2021-09-27 15:49:06
  * @Description:
  */
 import React, { memo, useMemo, useCallback } from 'react';
-import { TextProps } from './interface';
 import { createNamespace } from '@/utils/create';
 import classnames from 'classnames';
+
+import type { TextProps } from './interface';
 import './index.less';
 
-const Text: React.FC<TextProps> = memo((props: TextProps) => {
+const Text: React.FC<TextProps> = memo((props: TextProps | any) => {
   const [name, bem] = createNamespace('text');
   const {
+    unit = 'px',
     width,
     height,
     maxWidth,
@@ -28,10 +30,12 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
     backgroundColor,
     lineFeed,
     lineNum,
+    margin,
     marginTop,
     marginRight,
     marginBottom,
     marginLeft,
+    padding,
     paddingTop,
     paddingRight,
     paddingBottom,
@@ -46,6 +50,7 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
     extraStyle,
     children,
     onClick,
+    ...restProps
   } = props;
 
   // 最外层类名
@@ -56,9 +61,18 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
   // 判断是数字还是百分比
   const formatUnit = useCallback((value: any) => {
     if (value) {
-      return typeof value === 'string' && value.indexOf('%')
-        ? value
-        : value + 'px';
+      if (!isNaN(value)) {
+        return value + unit;
+      }
+
+      const valueArray = value
+        .trim()
+        .split(' ')
+        .map((item: any) => {
+          return !isNaN(item) ? item + unit : item;
+        });
+
+      return valueArray.join(' ');
     }
   }, []);
 
@@ -77,10 +91,12 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
       fontWeight: fontWeight,
       backgroundColor: backgroundColor,
       WebkitLineClamp: lineNum,
+      margin: formatUnit(margin),
       marginTop: formatUnit(marginTop),
       marginRight: formatUnit(marginRight),
       marginBottom: formatUnit(marginBottom),
       marginLeft: formatUnit(marginLeft),
+      padding: formatUnit(padding),
       paddingTop: formatUnit(paddingTop),
       paddingRight: formatUnit(paddingRight),
       paddingBottom: formatUnit(paddingBottom),
@@ -113,7 +129,11 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
   );
 
   return (
-    <div className={classes} style={styles} onClick={click}>
+    <div
+      className={classes}
+      style={{ ...styles, ...extraStyle, ...restProps?.style }}
+      onClick={click}
+    >
       {children}
     </div>
   );

@@ -32,7 +32,7 @@ export default () => (
     <Text width="100%" textAlign="center">
       居中文本
     </Text>
-    <Text width="100%" textAlign="right">
+    <Text width="80vw" textAlign="right">
       居右文本
     </Text>
   </>

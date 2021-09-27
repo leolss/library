@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-09-23 14:02:45
+ * @LastEditTime: 2021-09-27 17:41:22
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \library\src\components\header\index.tsx
+ */
 import React, { useCallback, useMemo } from 'react';
 import goback from './static/goback.svg';
 import se from './static/search.svg';
@@ -7,15 +15,7 @@ import { HeaderProps } from './interface';
 import './index.less';
 
 const Header: React.FC<HeaderProps> = React.memo((props) => {
-  const {
-    children,
-    goBack,
-    search,
-    Icon,
-    close,
-    fontSize = 24,
-    titleAlign = 'center',
-  } = props;
+  const { children, goBack, search, Icon, close, title } = props;
 
   const renderLeftSlot = useCallback(() => {
     if (goBack && close) {
@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = React.memo((props) => {
   return (
     <div className="jdd-header">
       <div className="jdd-leftSlot">{renderLeftSlot()}</div>
-      <div style={{ fontSize: fontSize + 'px' }}>{children}</div>
+      <div className="jdd-content">{title == null ? children : title}</div>
       <div className="jdd-rightSlot">{renderRightSlot()}</div>
     </div>
   );

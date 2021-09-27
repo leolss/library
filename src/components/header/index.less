@@ -1,31 +1,39 @@
 .jdd-header {
-  height: 50px;
+  width: 100%;
+  height: 46px;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: relative;
-  background-color: yellowgreen;
+  background-color: #fff;
+  .jdd-content {
+    display: inline-block;
+    margin: 0 auto;
+  }
   .jdd-leftSlot {
     position: absolute;
-    bottom: 26px;
-    left: 30px;
+    top: 10px;
+    left: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-box-align: center;
     .jdd-goback-img {
-      height: 38px;
-      width: 42px;
+      height: 30px;
+      width: 24px;
     }
     .jdd-close-img {
       margin-left: 29px;
-      height: 40px;
-      width: 40px;
+      height: 14px;
+      width: 14px;
     }
   }
   .jdd-rightSlot {
     position: absolute;
-    bottom: 26px;
-    right: 30px;
+    top: 10px;
+    right: 4px;
     .jdd-search-img {
-      width: 36px;
-      height: 37px;
+      height: 30px;
+      width: 24px;
     }
   }
 }

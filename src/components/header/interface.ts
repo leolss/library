@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-23 14:02:45
- * @LastEditTime: 2021-09-23 15:08:25
+ * @LastEditTime: 2021-09-27 17:38:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \library\src\components\header\interface.ts
@@ -26,6 +26,11 @@ export interface HeaderProps {
    * @default  false
    */
   close?: () => void;
+  /**
+   * @description 标题
+   * @default  快乐小header
+   */
+  title?: String;
   /**
    * @description 图标
    * @default  null
