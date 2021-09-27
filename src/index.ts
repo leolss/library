@@ -3,7 +3,7 @@
  * @Date: 2021-09-09 17:20:49
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 16:46:47
+ * @LastEditTime: 2021-09-27 19:03:27
  * @Description:入口文件
  */
 import './styles/index';
@@ -20,8 +20,11 @@ export { default as Icon } from './components/icon';
 export { default as Badge } from './components/badge';
 export { default as Text } from './components/text';
 
+export { default as Header } from './components/header';
 export { default as Tabs } from './components/Tabs';
 export { default as TabPane } from './components/Tabs/TabPane/TabPane';
 
 export { default as CategorySelection } from './components/categorySelection';
 export { default as Category } from './components/categorySelection/category';
+
+export { default as NoData } from './components/noData';
