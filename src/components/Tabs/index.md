@@ -178,5 +178,5 @@ export default () => {
 };
 ```
 
-<code src="./demo.tsx"  identifier="tabs-demo-phone" phone></code>
+<code src="./demo.tsx" identifier="tabs-demo-phone" phone></code>
 <API src="./index.tsx"></API>
