@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 15:57:18
+ * @LastEditTime: 2021-09-27 19:01:12
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -14,7 +14,7 @@ import classnames from 'classnames';
 import type { ButtonProps } from './interface';
 import './index.less';
 
-const Button: React.FC<ButtonProps> = memo((props: ButtonProps | any) => {
+const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   const [name, bem] = createNamespace('button');
 
   const {
@@ -45,6 +45,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps | any) => {
     extraStyle,
     children,
     onClick,
+    style = {},
     ...restProps
   } = props;
 
@@ -171,7 +172,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps | any) => {
   return (
     <div
       className={classes}
-      style={{ ...styles, ...extraStyle, ...restProps?.style }}
+      style={{ ...styles, ...extraStyle, ...style }}
       onClick={disabled || loading ? disabledClick : click}
     >
       <div className={name + '-content'}>

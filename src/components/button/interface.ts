@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 11:14:47
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 15:50:49
+ * @LastEditTime: 2021-09-27 19:00:36
  * @Description:
  */
 
@@ -73,6 +73,10 @@ export interface StyleProps {
    * @description 设置文本的下内边距，可以是数字｜百分比｜有单位
    */
   paddingLeft?: number | string;
+  /**
+   * @description 自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
 export interface EventProps {

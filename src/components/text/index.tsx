@@ -3,7 +3,7 @@
  * @Date: 2021-09-18 09:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 15:49:06
+ * @LastEditTime: 2021-09-27 19:02:12
  * @Description:
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -13,7 +13,7 @@ import classnames from 'classnames';
 import type { TextProps } from './interface';
 import './index.less';
 
-const Text: React.FC<TextProps> = memo((props: TextProps | any) => {
+const Text: React.FC<TextProps> = memo((props: TextProps) => {
   const [name, bem] = createNamespace('text');
   const {
     unit = 'px',
@@ -50,6 +50,7 @@ const Text: React.FC<TextProps> = memo((props: TextProps | any) => {
     extraStyle,
     children,
     onClick,
+    style,
     ...restProps
   } = props;
 
@@ -131,7 +132,7 @@ const Text: React.FC<TextProps> = memo((props: TextProps | any) => {
   return (
     <div
       className={classes}
-      style={{ ...styles, ...extraStyle, ...restProps?.style }}
+      style={{ ...styles, ...extraStyle, ...style }}
       onClick={click}
     >
       {children}

@@ -3,7 +3,7 @@
  * @Date: 2021-09-18 09:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 10:11:07
+ * @LastEditTime: 2021-09-27 19:01:48
  * @Description:
  */
 export interface StyleProps {
@@ -157,6 +157,10 @@ export interface StyleProps {
    * @default false
    */
   block?: boolean;
+  /**
+   * @description 自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
 export interface TextProps extends BaseProps, StyleProps {
