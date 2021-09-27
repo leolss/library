@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 13:44:37
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-26 18:12:46
+ * @LastEditTime: 2021-09-27 15:30:34
  * @Description:
  */
 import * as React from 'react';
@@ -42,40 +42,28 @@ function TabNavList(
     return navListRefs.current.get(key);
   }, []);
 
-  const scrollTimeout = (result: number) => {};
-
-  const onTabScroll = (key: React.Key) => {
-    const navBoxObj = navRef?.current;
-    const navListObj = navListRef?.current;
-    const navObj = getNavListRef(key)?.current;
-    let result = 0;
-
-    if (
-      navObj.offsetLeft >
-      navBoxObj.offsetWidth / 2 - navObj.offsetWidth / 2
-    ) {
-      result =
-        navObj.offsetLeft - navBoxObj.offsetWidth / 2 + navObj.offsetWidth / 2;
-    } else {
-      result = 0;
-    }
-
-    navListObj.scrollLeft = result;
-  };
+  useEffect(() => {
+    getNavListRef(activeKey)?.current?.scrollIntoView({
+      inline: tabs[tabs.length - 1].key === activeKey ? 'nearest' : 'center',
+      behavior: 'smooth',
+      block: 'nearest',
+    });
+  }, [activeKey, tabs]);
 
   const renderTabNodes: React.ReactElement[] = useMemo(() => {
     return tabs.map((tab) => {
-      const { key } = tab;
+      const { key, tabSlot, style } = tab;
       return (
         <TabNode
           ref={getNavListRef(key)}
           prefixCls={prefixCls}
           key={key}
           tab={tab}
+          tabSlot={tabSlot}
           active={key === activeKey}
+          style={style}
           onClick={(e) => {
             onClick(key, e);
-            onTabScroll(key);
           }}
         />
       );

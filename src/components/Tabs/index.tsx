@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 10:58:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-26 16:03:02
+ * @LastEditTime: 2021-09-27 15:20:56
  * @Description:
  */
 import React, {
@@ -39,7 +39,15 @@ function parseTabList(children: React.ReactElement): Tab[] {
 }
 
 function TabsFn(
-  { activeKey, animated = false, className, children, onClick }: TabsProps,
+  {
+    activeKey,
+    animated = false,
+    headerSlot,
+    className,
+    children,
+    onClick,
+    ...restProps
+  }: TabsProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
   const { prefixCls } = useContext(TabContext);
@@ -71,8 +79,9 @@ function TabsFn(
 
   return (
     <TabContext.Provider value={{ tabs, prefixCls }}>
-      <div ref={ref} className={divClasses}>
+      <div ref={ref} className={divClasses} {...restProps}>
         <TabNavList {...tabNavBarProps} />
+        {headerSlot}
         <TabPaneList {...sharedProps} />
       </div>
     </TabContext.Provider>

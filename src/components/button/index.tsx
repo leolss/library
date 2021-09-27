@@ -1,9 +1,9 @@
 /*
- * @Author: 姚嘉琦
+ * @Author: liuyingying
  * @Date: 2021-09-13 19:39:35
- * @Email: yaojiaqi1@jd.com
+ * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 10:32:27
+ * @LastEditTime: 2021-09-27 15:57:18
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -14,7 +14,7 @@ import classnames from 'classnames';
 import type { ButtonProps } from './interface';
 import './index.less';
 
-const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
+const Button: React.FC<ButtonProps> = memo((props: ButtonProps | any) => {
   const [name, bem] = createNamespace('button');
 
   const {
@@ -45,6 +45,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     extraStyle,
     children,
     onClick,
+    ...restProps
   } = props;
 
   // 判断是数字还是百分比
@@ -142,7 +143,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   // loading图标类型
   const renderLoad = useMemo(() => {
     if (loading) {
-      const numObj = {
+      const numObj: any = {
         circle: 8,
         line: 4,
         turn: 2,
@@ -170,7 +171,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   return (
     <div
       className={classes}
-      style={{ ...styles, ...extraStyle }}
+      style={{ ...styles, ...extraStyle, ...restProps?.style }}
       onClick={disabled || loading ? disabledClick : click}
     >
       <div className={name + '-content'}>

@@ -1,4 +1,6 @@
-.jdd-tabs {
+@prefixCls: jdd-tabs;
+
+.@{prefixCls} {
   font-size: var(--jdd-font-size-md);
   overflow: hidden;
 
@@ -63,7 +65,7 @@
       font-weight: bolder;
       color: var(--jdd-tabs-color);
 
-      .jdd-tabs-tab-btn::after {
+      .@{prefixCls}-tab-btn::after {
         width: 100%;
       }
     }

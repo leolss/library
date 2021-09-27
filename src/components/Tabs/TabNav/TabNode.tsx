@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 13:44:37
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-26 15:46:24
+ * @LastEditTime: 2021-09-27 15:26:19
  * @Description:
  */
 import * as React from 'react';
@@ -17,8 +17,10 @@ function TabNode(
     prefixCls,
     active,
     tab: { key, label, disabled },
+    tabSlot,
     onClick,
     className,
+    ...restProps
   }: TabNodeProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -40,15 +42,23 @@ function TabNode(
   }, [active, disabled, className]);
 
   const node: ReactElement = (
-    <div key={key} ref={ref} className={tabClassNames} onClick={onTabClick}>
+    <div
+      key={key}
+      ref={ref}
+      id={`${name}-${key}`}
+      className={tabClassNames}
+      onClick={onTabClick}
+    >
       <div
         className={`${name}-btn`}
         onClick={(e) => {
           e.stopPropagation();
           onTabClick(e);
         }}
+        {...restProps}
       >
         {label}
+        {tabSlot}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
-@prefixCls: 'jdd-button';
+@prefixCls: jdd-button;
 @hd: 1px;
 
-.jdd-button {
+.@{prefixCls} {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -32,7 +32,7 @@
     background-color: var(--jdd-fill-base);
     border-color: var(--jdd-border-color-base);
 
-    &.jdd-button--loading .jdd-button-loading-style span {
+    &.@{prefixCls}--loading .@{prefixCls}-loading-style span {
       background-color: var(--jdd-color-text-base);
     }
   }
@@ -42,10 +42,10 @@
     background-color: var(--jdd-brand-primary);
     border-color: var(--jdd-brand-primary);
 
-    &.jdd-button--plain {
+    &.@{prefixCls}--plain {
       color: var(--jdd-brand-primary);
 
-      .jdd-button-loading-style span {
+      .@{prefixCls}-loading-style span {
         background-color: var(--jdd-brand-primary);
       }
     }
@@ -56,10 +56,10 @@
     background-color: var(--jdd-brand-error);
     border-color: var(--jdd-brand-error);
 
-    &.jdd-button--plain {
+    &.@{prefixCls}--plain {
       color: var(--jdd-brand-error);
 
-      .jdd-button-loading-style span {
+      .@{prefixCls}-loading-style span {
         background-color: var(--jdd-brand-error);
       }
     }
@@ -70,10 +70,10 @@
     background-color: var(--jdd-brand-warning);
     border-color: var(--jdd-brand-warning);
 
-    &.jdd-button--plain {
+    &.@{prefixCls}--plain {
       color: var(--jdd-brand-warning);
 
-      .jdd-button-loading-style span {
+      .@{prefixCls}-loading-style span {
         background-color: var(--jdd-brand-warning);
       }
     }
@@ -84,10 +84,10 @@
     background-color: var(--jdd-brand-success);
     border-color: var(--jdd-brand-success);
 
-    &.jdd-button--plain {
+    &.@{prefixCls}--plain {
       color: var(--jdd-brand-success);
 
-      .jdd-button-loading-style span {
+      .@{prefixCls}-loading-style span {
         background-color: var(--jdd-brand-success);
       }
     }
@@ -107,7 +107,7 @@
     font-size: var(--jdd-button-font-size);
     padding: 10 * @hd 18 * @hd;
 
-    .jdd-button-loading-style {
+    .@{prefixCls}-loading-style {
       transform: scale(1.3);
     }
   }
@@ -117,11 +117,11 @@
     height: 26 * @hd;
     font-size: 12 * @hd;
 
-    .jdd-button-content {
+    .@{prefixCls}-content {
       transform: scale(0.93);
     }
 
-    .jdd-button-loading-style {
+    .@{prefixCls}-loading-style {
       transform: scale(0.83);
     }
   }
@@ -131,11 +131,11 @@
     height: 22 * @hd;
     font-size: 12 * @hd;
 
-    .jdd-button-content {
+    .@{prefixCls}-content {
       transform: scale(0.8);
     }
 
-    .jdd-button-loading-style {
+    .@{prefixCls}-loading-style {
       transform: scale(0.71);
     }
   }
@@ -168,7 +168,7 @@
     }
 
     /* 转圈图标 */
-    .jdd-button-loading-circle {
+    .@{prefixCls}-loading-circle {
       width: 20 * @hd;
       height: 20 * @hd;
 
@@ -227,7 +227,7 @@
     }
 
     /* 交替变大圆圈 */
-    .jdd-button-loading-turn {
+    .@{prefixCls}-loading-turn {
       width: 22 * @hd;
       height: 22 * @hd;
 
@@ -249,7 +249,7 @@
     }
 
     /* 横线动画 */
-    .jdd-button-loading-line {
+    .@{prefixCls}-loading-line {
       width: auto;
       height: 3 * @hd;
 
