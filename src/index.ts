@@ -23,3 +23,5 @@ export { default as Text } from './components/text';
 export { default as Header } from './components/header';
 export { default as Tabs } from './components/Tabs';
 export { default as TabPane } from './components/Tabs/TabPane/TabPane';
+
+export { default as NoData } from './components/noData';
