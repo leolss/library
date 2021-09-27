@@ -1,8 +1,9 @@
 .jdd-tabs {
-  font-size: 14px;
+  font-size: var(--jdd-font-size-md);
   overflow: hidden;
 
   &-nav {
+    height: var(--jdd-tabs-height);
     display: flex;
     flex: none;
     position: relative;
@@ -11,14 +12,19 @@
       width: 100%;
       display: flex;
       position: relative;
-      transition: transform 0.3s;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 
   &-tab {
     border: 0;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.5);
+    font-size: var(--jdd-font-size-subhead);
     margin: 0;
     display: flex;
     outline: none;
@@ -29,13 +35,15 @@
     flex: 1;
     justify-content: center;
     text-align: center;
+    padding: 0 var(--jdd-h-spacing-md);
 
     &-btn {
       position: relative;
       border: 0;
       background: transparent;
       font-weight: inherit;
-      line-height: 32px;
+      height: var(--jdd-tabs-height);
+      line-height: var(--jdd-tabs-height);
 
       &::after {
         content: '';
@@ -43,23 +51,24 @@
         bottom: 0;
         left: 50%;
         width: 0;
-        height: 2px;
-        background: red;
+        height: var(--jdd-tabs-ink-bar-height);
+        background: var(--jdd-tabs-color);
         transform: translateX(-50%);
-        transition: all 0.3s;
+        transition: all 0.2s;
       }
     }
 
     &--active {
       position: relative;
       font-weight: bolder;
+      color: var(--jdd-tabs-color);
 
       .jdd-tabs-tab-btn::after {
         width: 100%;
       }
     }
     &--disabled {
-      opacity: 0.5;
+      opacity: 0.3;
       cursor: not-allowed;
     }
   }
@@ -67,6 +76,7 @@
   &-content {
     &-item {
       width: 100%;
+      padding: var(--jdd-h-spacing-md);
       display: inline-block;
     }
     &--animated {

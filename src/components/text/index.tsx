@@ -3,7 +3,7 @@
  * @Date: 2021-09-18 09:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 15:50:48
+ * @LastEditTime: 2021-09-27 11:08:58
  * @Description:
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -16,6 +16,7 @@ import './index.less';
 const Text: React.FC<TextProps> = memo((props: TextProps) => {
   const [name, bem] = createNamespace('text');
   const {
+    unit = 'px',
     width,
     height,
     maxWidth,
@@ -29,10 +30,12 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
     backgroundColor,
     lineFeed,
     lineNum,
+    margin,
     marginTop,
     marginRight,
     marginBottom,
     marginLeft,
+    padding,
     paddingTop,
     paddingRight,
     paddingBottom,
@@ -57,9 +60,18 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
   // 判断是数字还是百分比
   const formatUnit = useCallback((value: any) => {
     if (value) {
-      return typeof value === 'string' && value.indexOf('%')
-        ? value
-        : value + 'px';
+      if (!isNaN(value)) {
+        return value + unit;
+      }
+
+      const valueArray = value
+        .trim()
+        .split(' ')
+        .map((item: any) => {
+          return !isNaN(item) ? item + unit : item;
+        });
+
+      return valueArray.join(' ');
     }
   }, []);
 
@@ -78,10 +90,12 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
       fontWeight: fontWeight,
       backgroundColor: backgroundColor,
       WebkitLineClamp: lineNum,
+      margin: formatUnit(margin),
       marginTop: formatUnit(marginTop),
       marginRight: formatUnit(marginRight),
       marginBottom: formatUnit(marginBottom),
       marginLeft: formatUnit(marginLeft),
+      padding: formatUnit(padding),
       paddingTop: formatUnit(paddingTop),
       paddingRight: formatUnit(paddingRight),
       paddingBottom: formatUnit(paddingBottom),

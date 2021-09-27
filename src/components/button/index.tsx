@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-23 15:50:20
+ * @LastEditTime: 2021-09-27 10:32:27
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -18,6 +18,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   const [name, bem] = createNamespace('button');
 
   const {
+    unit = 'px',
     type = 'default',
     size = 'normal',
     plain = false,
@@ -29,12 +30,40 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     icon,
     width,
     height,
+    margin,
+    marginTop,
+    marginRight,
+    marginBottom,
+    marginLeft,
+    padding,
+    paddingTop,
+    paddingRight,
+    paddingBottom,
+    paddingLeft,
     borderRadius,
     color,
     extraStyle,
     children,
     onClick,
   } = props;
+
+  // 判断是数字还是百分比
+  const formatUnit = useCallback((value: any) => {
+    if (value) {
+      if (!isNaN(value)) {
+        return value + unit;
+      }
+
+      const valueArray = value
+        .trim()
+        .split(' ')
+        .map((item: any) => {
+          return !isNaN(item) ? item + unit : item;
+        });
+
+      return valueArray.join(' ');
+    }
+  }, []);
 
   // 最外层类名
   const classes = useMemo(() => {
@@ -47,9 +76,19 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   // styles
   const styles: React.CSSProperties = useMemo(() => {
     let style: React.CSSProperties = {
-      width: width + 'px',
-      height: height + 'px',
-      borderRadius: borderRadius + 'px',
+      width: formatUnit(width),
+      height: formatUnit(height),
+      borderRadius: formatUnit(borderRadius),
+      margin: formatUnit(margin),
+      marginTop: formatUnit(marginTop),
+      marginRight: formatUnit(marginRight),
+      marginBottom: formatUnit(marginBottom),
+      marginLeft: formatUnit(marginLeft),
+      padding: formatUnit(padding),
+      paddingTop: formatUnit(paddingTop),
+      paddingRight: formatUnit(paddingRight),
+      paddingBottom: formatUnit(paddingBottom),
+      paddingLeft: formatUnit(paddingLeft),
     };
 
     if (color) {

@@ -1,3 +1,6 @@
+@prefixCls: 'jdd-button';
+@hd: 1px;
+
 .jdd-button {
   position: relative;
   display: inline-block;
@@ -10,22 +13,24 @@
   -webkit-appearance: none;
   color: var(--jdd-color-text-base-inverse);
   overflow: hidden;
+  border-width: var(--jdd-border-width-sm);
+  border-style: solid;
 
-  .jdd-button-content {
+  &-content {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
   }
-  .jdd-button-text {
-    padding: 4px;
+  &-text {
+    padding: 4 * @hd;
   }
 
   /* 默认按钮 */
   &--default {
     color: var(--jdd-color-text-base);
     background-color: var(--jdd-fill-base);
-    border: 1px solid var(--jdd-border-color-base);
+    border-color: var(--jdd-border-color-base);
 
     &.jdd-button--loading .jdd-button-loading-style span {
       background-color: var(--jdd-color-text-base);
@@ -35,7 +40,7 @@
   /* 主要按钮 */
   &--primary {
     background-color: var(--jdd-brand-primary);
-    border: 1px solid var(--jdd-brand-primary);
+    border-color: var(--jdd-brand-primary);
 
     &.jdd-button--plain {
       color: var(--jdd-brand-primary);
@@ -49,7 +54,7 @@
   /* 危险按钮 */
   &--danger {
     background-color: var(--jdd-brand-error);
-    border: 1px solid var(--jdd-brand-error);
+    border-color: var(--jdd-brand-error);
 
     &.jdd-button--plain {
       color: var(--jdd-brand-error);
@@ -63,7 +68,7 @@
   /* 警示按钮 */
   &--warning {
     background-color: var(--jdd-brand-warning);
-    border: 1px solid var(--jdd-brand-warning);
+    border-color: var(--jdd-brand-warning);
 
     &.jdd-button--plain {
       color: var(--jdd-brand-warning);
@@ -77,7 +82,7 @@
   /* 成功按钮 */
   &--success {
     background-color: var(--jdd-brand-success);
-    border: 1px solid var(--jdd-brand-success);
+    border-color: var(--jdd-brand-success);
 
     &.jdd-button--plain {
       color: var(--jdd-brand-success);
@@ -92,37 +97,7 @@
   &--normal {
     height: var(--jdd-button-height-sm);
     font-size: var(--jdd-button-font-size-sm);
-    padding: 6px 10px;
-
-    .jdd-button-loading-circle {
-      width: 20px;
-      height: 20px;
-
-      span {
-        width: 3px;
-        height: 3px;
-      }
-    }
-
-    .jdd-button-loading-turn {
-      width: 22px;
-      height: 22px;
-
-      span {
-        width: 22px;
-        height: 22px;
-      }
-    }
-
-    .jdd-button-loading-line {
-      height: 3px;
-
-      span {
-        width: 3px;
-        height: 3px;
-        margin-right: 2px;
-      }
-    }
+    padding: 6 * @hd 10 * @hd;
   }
 
   /* 大号按钮 */
@@ -130,117 +105,38 @@
     width: 100%;
     height: var(--jdd-button-height);
     font-size: var(--jdd-button-font-size);
-    padding: 10px 18px;
+    padding: 10 * @hd 18 * @hd;
 
-    .jdd-button-loading-circle {
-      width: 24px;
-      height: 24px;
-
-      span {
-        width: 4px;
-        height: 4px;
-      }
-    }
-
-    .jdd-button-loading-turn {
-      width: 28px;
-      height: 28px;
-
-      span {
-        width: 28px;
-        height: 28px;
-      }
-    }
-
-    .jdd-button-loading-line {
-      height: 4px;
-
-      span {
-        width: 4px;
-        height: 4px;
-        margin-right: 3px;
-      }
+    .jdd-button-loading-style {
+      transform: scale(1.3);
     }
   }
 
   /* 小号按钮 */
   &--small {
-    height: 26px;
-    font-size: 10px;
-    padding: 2px 4px;
+    height: 26 * @hd;
+    font-size: 12 * @hd;
 
     .jdd-button-content {
       transform: scale(0.93);
     }
 
-    .jdd-button-loading-circle {
-      width: 16px;
-      height: 16px;
-
-      span {
-        width: 2px;
-        height: 2px;
-      }
-    }
-
-    .jdd-button-loading-turn {
-      width: 16px;
-      height: 16px;
-
-      span {
-        width: 16px;
-        height: 16px;
-      }
-    }
-
-    .jdd-button-loading-line {
-      height: 3px;
-
-      span {
-        width: 3px;
-        height: 3px;
-        margin-right: 2px;
-      }
+    .jdd-button-loading-style {
+      transform: scale(0.83);
     }
   }
 
   /* 迷你按钮 */
   &--mini {
-    height: 22px;
-    font-size: 8px;
+    height: 22 * @hd;
+    font-size: 12 * @hd;
 
     .jdd-button-content {
       transform: scale(0.8);
     }
 
-    .jdd-button-loading-circle {
-      width: 12px;
-      height: 12px;
-
-      span {
-        width: 2px;
-        height: 2px;
-      }
-    }
-
-    .jdd-button-loading-turn {
-      width: 12px;
-      height: 12px;
-
-      span {
-        width: 12px;
-        height: 12px;
-      }
-    }
-
-    .jdd-button-loading-line {
-      height: 2px;
-
-      span {
-        width: 2px;
-        height: 2px;
-        margin-right: 1px;
-      }
+    .jdd-button-loading-style {
+      transform: scale(0.71);
     }
   }
 
@@ -273,7 +169,12 @@
 
     /* 转圈图标 */
     .jdd-button-loading-circle {
+      width: 20 * @hd;
+      height: 20 * @hd;
+
       span {
+        width: 3 * @hd;
+        height: 3 * @hd;
         position: absolute;
         border-radius: 50%;
         animation: circleLoad 1.04s ease infinite;
@@ -327,7 +228,12 @@
 
     /* 交替变大圆圈 */
     .jdd-button-loading-turn {
+      width: 22 * @hd;
+      height: 22 * @hd;
+
       span {
+        width: 22 * @hd;
+        height: 22 * @hd;
         position: absolute;
         top: 0;
         left: 0;
@@ -345,8 +251,12 @@
     /* 横线动画 */
     .jdd-button-loading-line {
       width: auto;
+      height: 3 * @hd;
 
       span {
+        width: 3 * @hd;
+        height: 3 * @hd;
+        margin-right: 2 * @hd;
         float: left;
         border-radius: 50%;
         animation: lineLoad 1s ease infinite;

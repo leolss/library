@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 11:07:29
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-26 10:08:20
+ * @LastEditTime: 2021-09-26 13:53:32
  * @Description:
  */
 import React, { memo, useMemo, useRef, useEffect } from 'react';
@@ -24,9 +24,11 @@ const TabPaneList: React.FC<TabPaneListProps> = memo(
       return classNames(bem([animated && 'animated']));
     }, []);
 
-    const animatedStyle: React.CSSProperties = {
-      transform: `translateX(-${activeIndex * 100 + '%'})`,
-    };
+    const animatedStyle: React.CSSProperties = {};
+
+    if (animated) {
+      animatedStyle['transform'] = `translateX(-${activeIndex * 100 + '%'})`;
+    }
 
     return (
       <div className={contentClass} style={animatedStyle}>
@@ -37,6 +39,7 @@ const TabPaneList: React.FC<TabPaneListProps> = memo(
             tabKey: tab.key,
             animated: animated,
             active: tab.key === activeKey,
+            extraStyle: tab.extraStyle,
           });
         })}
       </div>
