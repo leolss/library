@@ -3,39 +3,106 @@
  * @Date: 2021-09-16 16:24:29
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 姚嘉琦
- * @LastEditTime: 2021-09-17 18:03:48
+ * @LastEditTime: 2021-09-22 14:47:02
  * @Description: View Demo
  */
 import React from 'react';
-import { View } from 'library';
+import { View, Button } from 'library';
 
 const Demo: React.FC<any> = (props) => {
   return (
     <>
-      <View direction="row">
-        <p>111</p>
-        <p>222</p>
+      <h4>排列方向</h4>
+      <View direction="row" extraStyle={{ margin: '10px 0' }}>
+        <Button>button</Button>
+        <Button>button</Button>
       </View>
-      <View direction="column">
-        <p>111</p>
-        <p>222</p>
+      <View direction="column" extraStyle={{ margin: '10px 0' }}>
+        <Button>button</Button>
+        <Button>button</Button>
       </View>
 
-      <View justify="start" align="center">
-        <p className="aaa">123123</p>
+      <h4>主轴方向对齐方式</h4>
+      <View justify="start" align="center" extraStyle={{ margin: '10px 0' }}>
+        <Button>button</Button>
+        <Button>button</Button>
       </View>
-      <View justify="center"></View>
-      <View justify="end"></View>
-      <View justify="baseline"></View>
-      <View justify="around"></View>
-      <View justify="between"></View>
+      <View justify="center" extraStyle={{ margin: '10px 0' }}>
+        <Button>button</Button>
+        <Button>button</Button>
+      </View>
+      <View justify="end" extraStyle={{ margin: '10px 0' }}>
+        <Button>button</Button>
+        <Button>button</Button>
+      </View>
+      <View justify="baseline" extraStyle={{ margin: '10px 0' }}>
+        <Button>button</Button>
+        <Button>button</Button>
+      </View>
+      <View justify="around" extraStyle={{ margin: '10px 0' }}>
+        <Button>button</Button>
+        <Button>button</Button>
+      </View>
+      <View justify="between" extraStyle={{ margin: '10px 0' }}>
+        <Button>button</Button>
+        <Button>button</Button>
+      </View>
 
-      <View align="start"></View>
-      <View align="center"></View>
-      <View align="end"></View>
-      <View align="baseline"></View>
+      <h4>交叉轴方向对齐方式</h4>
+      <View
+        align="start"
+        extraStyle={{
+          height: '80px',
+          border: '1px solid #ddd',
+          marginBottom: '10px',
+        }}
+      >
+        <Button>button</Button>
+        <Button>button</Button>
+      </View>
+      <View
+        align="center"
+        extraStyle={{
+          height: '80px',
+          border: '1px solid #ddd',
+          marginBottom: '10px',
+        }}
+      >
+        <Button>button</Button>
+        <Button>button</Button>
+      </View>
+      <View
+        align="end"
+        extraStyle={{
+          height: '80px',
+          border: '1px solid #ddd',
+          marginBottom: '10px',
+        }}
+      >
+        <Button>button</Button>
+        <Button>button</Button>
+      </View>
+      <View
+        align="baseline"
+        extraStyle={{
+          height: '80px',
+          border: '1px solid #ddd',
+          marginBottom: '10px',
+        }}
+      >
+        <p>我是文本</p>
+        <Button>button</Button>
+      </View>
 
-      <View wrap></View>
+      <h4>指定 flex 元素单行显示还是多行显示 </h4>
+      <View>
+        <p>nowrap0 nowrap0</p>
+        <p>nowrap1 nowrap1</p>
+      </View>
+      <View wrap>
+        <p>wrap0 wrap0 wrap0 wrap0 wrap0 wrap0 wrap0</p>
+        <p>wrap1 wrap1 wrap1 wrap1 wrap1 wrap1 wrap1</p>
+      </View>
     </>
   );
 };

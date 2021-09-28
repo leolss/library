@@ -1,22 +1,24 @@
 /*
- * @Author: 姚嘉琦
+ * @Author: liuyingying
  * @Date: 2021-09-13 19:39:35
- * @Email: yaojiaqi1@jd.com
+ * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-18 10:46:26
+ * @LastEditTime: 2021-09-27 19:01:12
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
 import { createNamespace } from '@/utils/create';
 import { Throttle } from '@/utils/debounced';
-import { ButtonProps } from './interface';
 import classnames from 'classnames';
+
+import type { ButtonProps } from './interface';
 import './index.less';
 
 const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   const [name, bem] = createNamespace('button');
 
   const {
+    unit = 'px',
     type = 'default',
     size = 'normal',
     plain = false,
@@ -28,12 +30,42 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     icon,
     width,
     height,
+    margin,
+    marginTop,
+    marginRight,
+    marginBottom,
+    marginLeft,
+    padding,
+    paddingTop,
+    paddingRight,
+    paddingBottom,
+    paddingLeft,
     borderRadius,
     color,
     extraStyle,
     children,
     onClick,
+    style = {},
+    ...restProps
   } = props;
+
+  // 判断是数字还是百分比
+  const formatUnit = useCallback((value: any) => {
+    if (value) {
+      if (!isNaN(value)) {
+        return value + unit;
+      }
+
+      const valueArray = value
+        .trim()
+        .split(' ')
+        .map((item: any) => {
+          return !isNaN(item) ? item + unit : item;
+        });
+
+      return valueArray.join(' ');
+    }
+  }, []);
 
   // 最外层类名
   const classes = useMemo(() => {
@@ -46,9 +78,19 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   // styles
   const styles: React.CSSProperties = useMemo(() => {
     let style: React.CSSProperties = {
-      width: width + 'px',
-      height: height + 'px',
-      borderRadius: borderRadius + 'px',
+      width: formatUnit(width),
+      height: formatUnit(height),
+      borderRadius: formatUnit(borderRadius),
+      margin: formatUnit(margin),
+      marginTop: formatUnit(marginTop),
+      marginRight: formatUnit(marginRight),
+      marginBottom: formatUnit(marginBottom),
+      marginLeft: formatUnit(marginLeft),
+      padding: formatUnit(padding),
+      paddingTop: formatUnit(paddingTop),
+      paddingRight: formatUnit(paddingRight),
+      paddingBottom: formatUnit(paddingBottom),
+      paddingLeft: formatUnit(paddingLeft),
     };
 
     if (color) {
@@ -102,7 +144,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   // loading图标类型
   const renderLoad = useMemo(() => {
     if (loading) {
-      const numObj = {
+      const numObj: any = {
         circle: 8,
         line: 4,
         turn: 2,
@@ -130,7 +172,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   return (
     <div
       className={classes}
-      style={styles}
+      style={{ ...styles, ...extraStyle, ...style }}
       onClick={disabled || loading ? disabledClick : click}
     >
       <div className={name + '-content'}>
