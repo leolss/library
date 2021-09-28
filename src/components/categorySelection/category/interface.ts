@@ -12,6 +12,11 @@ export interface CategoryProps extends BaseProps {
    * @default false
    */
   disabled?: boolean;
+  /**
+   * @description 是否显示生序降序图标
+   * @default false
+   */
+  showIcon?: boolean;
   slot?: boolean;
   selected?: string;
   width?: number;

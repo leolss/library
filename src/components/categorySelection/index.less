@@ -31,12 +31,16 @@
   border: var(--jdd-border-width-sm) solid var(--jdd-border-color-base);
   padding: 0 var(--jdd-h-spacing-md);
   margin: 0 var(--jdd-h-spacing-sm);
-  border-radius: var(--jdd-radius-lg);
+  border-radius: var(--jdd-radius-sm);
   cursor: pointer;
   white-space: nowrap;
+  background-color: var(--jdd-fill-base);
 
   &--disabled {
     opacity: 0.3;
     cursor: not-allowed;
+  }
+  &--selected {
+    border-color: var(--jdd-brand-primary);
   }
 }

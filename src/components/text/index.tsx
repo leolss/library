@@ -3,7 +3,7 @@
  * @Date: 2021-09-18 09:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 19:02:12
+ * @LastEditTime: 2021-09-28 13:10:31
  * @Description:
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -50,7 +50,7 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
     extraStyle,
     children,
     onClick,
-    style,
+    style = {},
     ...restProps
   } = props;
 
@@ -80,29 +80,39 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
   // 样式
   const styles: React.CSSProperties = useMemo(() => {
     let style: React.CSSProperties = {
-      width: formatUnit(width),
-      height: formatUnit(height),
-      maxWidth: formatUnit(maxWidth),
-      minWidth: formatUnit(minWidth),
-      lineHeight: formatUnit(lineHeight),
       textAlign: textAlign,
       textDecoration: textDecoration,
       color: color,
-      fontSize: formatUnit(fontSize),
       fontWeight: fontWeight,
       backgroundColor: backgroundColor,
       WebkitLineClamp: lineNum,
-      margin: formatUnit(margin),
-      marginTop: formatUnit(marginTop),
-      marginRight: formatUnit(marginRight),
-      marginBottom: formatUnit(marginBottom),
-      marginLeft: formatUnit(marginLeft),
-      padding: formatUnit(padding),
-      paddingTop: formatUnit(paddingTop),
-      paddingRight: formatUnit(paddingRight),
-      paddingBottom: formatUnit(paddingBottom),
-      paddingLeft: formatUnit(paddingLeft),
     };
+
+    const attrs: Object = {
+      width,
+      height,
+      maxWidth,
+      minWidth,
+      lineHeight,
+      fontSize,
+      margin,
+      marginTop,
+      marginRight,
+      marginBottom,
+      marginLeft,
+      padding,
+      paddingTop,
+      paddingRight,
+      paddingBottom,
+      paddingLeft,
+    };
+
+    Object.keys(attrs).forEach((item: string) => {
+      const nowItem = item as keyof typeof attrs;
+      if (attrs[nowItem]) {
+        style[nowItem] = formatUnit(attrs[nowItem]);
+      }
+    });
 
     if (showBorder) {
       style['borderWidth'] = formatUnit(borderWidth);
@@ -117,7 +127,7 @@ const Text: React.FC<TextProps> = memo((props: TextProps) => {
     style = Object.assign({}, style, extraStyle);
 
     return style;
-  }, [extraStyle]);
+  }, []);
 
   const click = useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

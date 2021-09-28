@@ -3,7 +3,7 @@
  * @Date: 2021-09-27 16:07:45
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 17:59:13
+ * @LastEditTime: 2021-09-28 10:25:37
  * @Description:
  */
 import React, { useCallback, memo, useState, useMemo, useContext } from 'react';
@@ -18,6 +18,8 @@ const Category: React.FC<CategoryProps> = memo((props: CategoryProps) => {
     label,
     value,
     disabled,
+    showIcon,
+
     slot,
     className,
     selected,
@@ -29,14 +31,23 @@ const Category: React.FC<CategoryProps> = memo((props: CategoryProps) => {
 
   const [name, ben] = createNamespace('category');
   const [isDesc, setIsDesc] = useState(true);
-  const { multiple } = useContext(CategoryContext);
-  console.log(multiple);
+  const { multiple, activeValue } = useContext(CategoryContext);
 
-  const click = useCallback(() => {}, [slot, isDesc, selected]);
+  const click = useCallback(() => {
+    if (disabled) {
+      return;
+    }
+    onChange(value, '');
+  }, [slot, isDesc, disabled]);
+
+  const renderCategoryIcons = useMemo(() => {}, []);
 
   // 最外层类名
   const classes = useMemo(() => {
-    return classNames(ben([{ disabled }]), className);
+    return classNames(
+      ben([activeValue == value && 'selected', { disabled }]),
+      className,
+    );
   }, [className]);
 
   return (

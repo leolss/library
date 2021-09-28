@@ -3,18 +3,10 @@
  * @Date: 2021-09-27 16:03:07
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 17:53:19
+ * @LastEditTime: 2021-09-28 10:13:33
  * @Description:
  */
-/*
- * @Author: liuyingying
- * @Date: 2021-09-27 16:03:07
- * @Email: liuyingying1@jd.com
- * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 16:12:12
- * @Description:
- */
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { createNamespace } from '@/utils/create';
 import classNames from 'classnames';
 import CategoryContext from './categoryContext';
@@ -30,11 +22,13 @@ const CategorySelection: React.FC<CategorySelectionProps> = memo((props) => {
     className = '',
     children,
     style = {},
+    onChange,
   } = props;
+
   const [name, ben] = createNamespace('category-selection');
 
   return (
-    <CategoryContext.Provider value={{ multiple, activeValue }}>
+    <CategoryContext.Provider value={{ multiple, activeValue, onChange }}>
       <div className={classNames(name, className)} style={style}>
         {title && (
           <div className="__category-title">

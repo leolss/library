@@ -14,7 +14,7 @@ import React from 'react';
 import { CategorySelection, Category } from 'library';
 
 export default () => (
-  <CategorySelection title="分类标题">
+  <CategorySelection title="分类标题" activeValue={1}>
     <Category value="1" label="销量" />
     <Category value="2" label="好评" disabled />
     <Category value="3" label="销量3" />
@@ -28,3 +28,7 @@ export default () => (
 ```
 
 <API src="./index.tsx"></API>
+
+## catetory
+
+<API src="./category/index.tsx" title="sdfs"></API>
