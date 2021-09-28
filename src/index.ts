@@ -19,3 +19,6 @@ export { default as Icon } from './components/icon';
 
 export { default as Badge } from './components/badge';
 export { default as Text } from './components/text';
+
+export { default as Calendar } from './components/calendar';
+export { default as Picker } from './components/picker';
