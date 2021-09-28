@@ -3,7 +3,7 @@
  * @Date: 2021-09-28 14:52:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-28 16:21:36
+ * @LastEditTime: 2021-09-28 18:32:12
  * @Description:
  */
 import React, { memo, useCallback, useMemo } from 'react';
@@ -31,7 +31,7 @@ const TabsDemo: React.FC = memo(() => {
       </div>
 
       <div style={contentStyle}>
-        <CategorySelection title="禁用状态">
+        <CategorySelection title="禁用状态" activeValue="2">
           <Category value="1" label="销量" />
           <Category value="2" label="好评" disabled />
           <Category value="3" label="信用" />
@@ -68,6 +68,14 @@ const TabsDemo: React.FC = memo(() => {
             label="好评"
             slot={<Badge text={77} overflowCount={55} />}
           />
+          <Category value="3" label="信用" />
+        </CategorySelection>
+      </div>
+
+      <div style={contentStyle}>
+        <CategorySelection title="多选标签" multiple>
+          <Category value="1" label="销量" />
+          <Category value="2" label="好评" />
           <Category value="3" label="信用" />
         </CategorySelection>
       </div>

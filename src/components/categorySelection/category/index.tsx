@@ -3,7 +3,7 @@
  * @Date: 2021-09-27 16:07:45
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-28 16:15:51
+ * @LastEditTime: 2021-09-28 18:50:37
  * @Description:
  */
 import React, {
@@ -60,6 +60,14 @@ const Category: React.FC<CategoryProps> = memo((props: CategoryProps) => {
   const [name, ben] = createNamespace(prefixCls as string);
   const [selectValue, setSelectValue] = useState(selected);
 
+  const isEqualValue = useMemo(() => {
+    return !multiple
+      ? value === finalValue
+      : (finalValue as (string | number)[])?.indexOf(
+          value as string | number,
+        ) != -1;
+  }, [multiple, value, finalValue]);
+
   /**
    * 更改后调用的事件，并修改升序降序状态
    */
@@ -69,7 +77,7 @@ const Category: React.FC<CategoryProps> = memo((props: CategoryProps) => {
     }
 
     if (showSort) {
-      if (value === finalValue) {
+      if (isEqualValue) {
         setSelectValue((v) => {
           return v == 'asc' ? 'desc' : 'asc';
         });
@@ -79,34 +87,34 @@ const Category: React.FC<CategoryProps> = memo((props: CategoryProps) => {
     }
 
     onTabClick(value, selectValue);
-  }, [selected, disabled, showSort, finalValue, value]);
+  }, [selected, disabled, showSort, isEqualValue, value]);
 
   /**
    * 排序图标dom
    */
   const renderCategoryIcons = useMemo(() => {
-    if (value !== finalValue) {
-      return (
-        <>
-          <Icon type="up" size="xxs" style={{ margin: '-4px 0' }} />
-          <Icon type="down" size="xxs" style={{ margin: '-4px 0' }} />
-        </>
-      );
-    }
-    if (value === finalValue) {
+    if (isEqualValue) {
       return <Icon type={selectValue === 'asc' ? 'up' : 'down'} size="xxs" />;
     }
-  }, [selectValue, finalValue, value]);
+
+    return (
+      <>
+        <Icon type="up" size="xxs" style={{ margin: '-4px 0' }} />
+        <Icon type="down" size="xxs" style={{ margin: '-4px 0' }} />
+      </>
+    );
+  }, [selectValue, isEqualValue, value]);
 
   /**
    * 最外层类名
    */
   const classes = useMemo(() => {
+    console.log(isEqualValue);
     return classNames(
-      ben([finalValue == value && 'selected', { disabled }]),
+      ben([isEqualValue && 'selected', { disabled }]),
       className,
     );
-  }, [className, finalValue, value, disabled]);
+  }, [className, isEqualValue, value, disabled]);
 
   // 判断是数字还是百分比
   const formatUnit = useCallback((value: any) => {

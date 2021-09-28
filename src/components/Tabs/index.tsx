@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 10:58:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 17:56:18
+ * @LastEditTime: 2021-09-28 17:06:43
  * @Description:
  */
 import React, {
@@ -24,7 +24,7 @@ import type { Tab, TabsProps } from './interface';
 import './index.less';
 
 function parseTabList(children: React.ReactElement): Tab[] {
-  return React.Children.map(children, (node) => {
+  return React.Children.map(children, (node: React.ReactNode) => {
     if (React.isValidElement(node)) {
       const key = node.key !== undefined ? String(node.key) : undefined;
       return {
