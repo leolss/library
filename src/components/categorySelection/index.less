@@ -1,15 +1,18 @@
-.jdd-category-selection {
+@prefixCls: jdd-category;
+@h: var(--jdd-tag-height);
+
+.@{prefixCls}-selection {
   width: 100%;
   display: flex;
   align-items: center;
 
-  .__category-title {
+  &__title {
     flex: 0 0 auto;
     font-size: var(--jdd-font-size-md);
     font-weight: bold;
     padding-right: var(--jdd-h-spacing-md);
   }
-  .__category-list {
+  &__list {
     flex: 1;
     display: flex;
     position: relative;
@@ -23,7 +26,7 @@
   }
 }
 
-.jdd-category {
+.@{prefixCls} {
   height: var(--jdd-tag-height);
   display: flex;
   align-items: center;
@@ -41,6 +44,14 @@
     cursor: not-allowed;
   }
   &--selected {
+    color: var(--jdd-brand-primary);
     border-color: var(--jdd-brand-primary);
+  }
+
+  &__sort {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    align-items: center;
   }
 }
