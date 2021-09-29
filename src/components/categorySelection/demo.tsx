@@ -3,7 +3,7 @@
  * @Date: 2021-09-28 14:52:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-28 18:32:12
+ * @LastEditTime: 2021-09-29 11:38:08
  * @Description:
  */
 import React, { memo, useCallback, useMemo } from 'react';
@@ -76,6 +76,14 @@ const TabsDemo: React.FC = memo(() => {
         <CategorySelection title="多选标签" multiple>
           <Category value="1" label="销量" />
           <Category value="2" label="好评" />
+          <Category value="3" label="信用" />
+        </CategorySelection>
+      </div>
+
+      <div style={contentStyle}>
+        <CategorySelection title="多选标签" multiple>
+          <Category value="1" label="销量" showSort />
+          <Category value="2" label="好评" showSort />
           <Category value="3" label="信用" />
         </CategorySelection>
       </div>

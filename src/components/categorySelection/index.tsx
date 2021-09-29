@@ -3,7 +3,7 @@
  * @Date: 2021-09-27 16:03:07
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-28 18:49:58
+ * @LastEditTime: 2021-09-29 11:33:40
  * @Description:
  */
 import React, {
@@ -84,24 +84,24 @@ const CategorySelection: React.FC<CategorySelectionProps> = memo((props) => {
    * 切换内容后调用的事件
    */
   const onTabClick = useCallback((v, sort) => {
-    onChange?.(v, sort);
-
     if (!multiple) {
       setFinalValue(v);
     } else {
       setFinalValue((valueArr) => {
-        const nowValueArr = valueArr as (string | number)[];
+        const nowValueArr = [...(valueArr as (string | number)[])];
         const fIndex = nowValueArr.indexOf(v);
 
         if (fIndex != -1) {
           const ss = nowValueArr.filter((item) => item != v);
           return ss;
-        } else {
-          nowValueArr.push(v);
-          return nowValueArr;
         }
+
+        nowValueArr.push(v);
+        return nowValueArr;
       });
     }
+
+    onChange?.(finalValue, sort);
   }, []);
 
   return (

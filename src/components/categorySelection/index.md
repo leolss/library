@@ -78,6 +78,26 @@ import { CategorySelection, Category, Badge } from 'library';
 </CategorySelection>;
 ```
 
+### 多选标签
+
+```tsx | pure
+<CategorySelection title="多选标签" multiple>
+  <Category value="1" label="销量" />
+  <Category value="2" label="好评" />
+  <Category value="3" label="信用" />
+</CategorySelection>
+```
+
+### 多选标签
+
+```tsx | pure
+<CategorySelection title="多选标签" multiple>
+  <Category value="1" label="销量" showSort />
+  <Category value="2" label="好评" showSort />
+  <Category value="3" label="信用" />
+</CategorySelection>
+```
+
 <code src="./demo.tsx" identifier="demo-categoryselection-phone" phone></code>
 
 <API src="./index.tsx"></API>

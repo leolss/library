@@ -3,7 +3,7 @@
  * @Date: 2021-09-27 16:07:45
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-28 18:50:37
+ * @LastEditTime: 2021-09-29 11:31:43
  * @Description:
  */
 import React, {
@@ -109,7 +109,6 @@ const Category: React.FC<CategoryProps> = memo((props: CategoryProps) => {
    * 最外层类名
    */
   const classes = useMemo(() => {
-    console.log(isEqualValue);
     return classNames(
       ben([isEqualValue && 'selected', { disabled }]),
       className,

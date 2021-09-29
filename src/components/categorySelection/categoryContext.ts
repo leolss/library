@@ -3,7 +3,7 @@
  * @Date: 2021-09-27 17:52:01
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-28 18:17:49
+ * @LastEditTime: 2021-09-29 11:02:25
  * @Description:
  */
 import { createContext } from 'react';
@@ -18,6 +18,6 @@ export interface CategoryContextProps {
 export default createContext<CategoryContextProps>({
   prefixCls: 'category',
   multiple: false,
-  finalValue: '',
+  finalValue: '' || [],
   onTabClick: () => {},
 });
