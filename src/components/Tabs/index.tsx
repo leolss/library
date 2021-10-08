@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 10:58:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-28 17:06:43
+ * @LastEditTime: 2021-10-08 11:42:32
  * @Description:
  */
 import React, {
@@ -12,6 +12,7 @@ import React, {
   useState,
   useContext,
   useCallback,
+  useEffect,
 } from 'react';
 import { createNamespace } from '@/utils/create';
 import classNames from 'classnames';
@@ -56,6 +57,10 @@ function TabsFn(
   const [finalActiveKey, setFinalActiveKey] = useState(
     () => activeKey || tabs[0]?.key,
   );
+
+  useEffect(() => {
+    setFinalActiveKey(() => activeKey || tabs[0]?.key);
+  }, [activeKey]);
 
   const onTabClick = useCallback((key: React.Key, e: React.MouseEvent) => {
     onClick?.(key, e);
