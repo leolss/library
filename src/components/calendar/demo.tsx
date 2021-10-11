@@ -3,11 +3,11 @@
  * @Date: 2021-09-09 15:16:43
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-28 09:47:25
+ * @LastEditTime: 2021-09-28 11:32:42
  * @Description:
  */
 import React, { useEffect, useState } from 'react';
-import { Calendar, View } from 'library';
+import { Calendar, View, Icon, Text } from 'library';
 import zhCN from './locale/zh_CN';
 import enUS from './locale/en_US';
 import './index.less';
@@ -83,21 +83,33 @@ const Demo: React.FC<any> = React.memo((props: Props) => {
     config['locale'] = En ? enUS : zhCN;
 
     return (
-      <View
-        onClick={() => {
-          document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
-          setShow(true);
-          setConfig(config);
+      <div
+        style={{
+          borderBottom: '1px solid #eee',
+          height: '40px',
+          lineHeight: '40px',
         }}
       >
-        {En ? en : zh}
-      </View>
+        <View
+          justify="between"
+          align="center"
+          onClick={() => {
+            document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
+            setShow(true);
+            setConfig(config);
+          }}
+        >
+          <Text>{En ? en : zh}</Text>
+          <Icon type="right"></Icon>
+        </View>
+      </div>
     );
   };
   const getDateExtra = (date: any) => extra[+date];
 
   return (
-    <div className="calendar-list">
+    <div className="calendar-list" style={{ padding: '10px' }}>
+      <Text color="#455a6499">日历事例</Text>
       {renderBtn('选择日期区间', 'Select Date Range')}
       {renderBtn('选择日期时间区间', 'Select DateTime Range', {
         pickTime: true,

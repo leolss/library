@@ -3,7 +3,7 @@
  * @Date: 2021-09-18 15:49:21
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-18 17:47:32
+ * @LastEditTime: 2021-09-28 11:02:34
  * @Description:
  */
 import React from 'react';
@@ -12,7 +12,7 @@ import './index.less';
 
 const Demo: React.FC<any> = (props) => {
   return (
-    <>
+    <div style={{ padding: '10px' }}>
       <View align="center">
         <Badge dot>
           <span
@@ -100,7 +100,7 @@ const Demo: React.FC<any> = (props) => {
           }}
         />
       </View>
-    </>
+    </div>
   );
 };
 export default Demo;
