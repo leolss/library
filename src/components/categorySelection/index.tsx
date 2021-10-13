@@ -3,7 +3,7 @@
  * @Date: 2021-09-27 16:03:07
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-29 11:33:40
+ * @LastEditTime: 2021-10-13 15:50:40
  * @Description:
  */
 import React, {
@@ -52,6 +52,14 @@ const CategorySelection: React.FC<CategorySelectionProps> = memo((props) => {
   );
 
   useEffect(() => {
+    setFinalValue(() =>
+      !multiple
+        ? activeValue || ''
+        : (activeValue instanceof Array && activeValue) || [],
+    );
+  }, [multiple, activeValue]);
+
+  useEffect(() => {
     // 单选： 默认选中的值是 disabled 状态，activeValue 置空
     if (
       !multiple &&
@@ -71,7 +79,7 @@ const CategorySelection: React.FC<CategorySelectionProps> = memo((props) => {
   useEffect(() => {
     const activeObj = document.getElementById(`${name}_${finalValue}`) as any;
 
-    if (activeObj && (children as Array<React.ReactElement>).length > 4) {
+    if (activeObj && React.Children.count(children) > 4) {
       activeObj.scrollIntoView({
         inline: 'center',
         behavior: 'smooth',
@@ -83,26 +91,31 @@ const CategorySelection: React.FC<CategorySelectionProps> = memo((props) => {
   /**
    * 切换内容后调用的事件
    */
-  const onTabClick = useCallback((v, sort) => {
-    if (!multiple) {
-      setFinalValue(v);
-    } else {
-      setFinalValue((valueArr) => {
-        const nowValueArr = [...(valueArr as (string | number)[])];
+  const onTabClick = useCallback(
+    (v, sort) => {
+      if (!multiple) {
+        setFinalValue(v);
+        onChange?.(v, sort);
+      } else {
+        let nowValueArr = [...(finalValue as (string | number)[])];
         const fIndex = nowValueArr.indexOf(v);
 
-        if (fIndex != -1) {
-          const ss = nowValueArr.filter((item) => item != v);
-          return ss;
+        if (fIndex != -1 && (!sort || sort === '')) {
+          nowValueArr = nowValueArr.filter((item) => item != v);
+        } else {
+          nowValueArr.push(v);
+          nowValueArr = [...new Set(nowValueArr)];
         }
 
-        nowValueArr.push(v);
-        return nowValueArr;
-      });
-    }
+        setFinalValue(() => {
+          return [...nowValueArr];
+        });
 
-    onChange?.(finalValue, sort);
-  }, []);
+        onChange?.(v, sort, nowValueArr);
+      }
+    },
+    [multiple, finalValue],
+  );
 
   return (
     <CategoryContext.Provider

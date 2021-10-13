@@ -3,7 +3,7 @@
  * @Date: 2021-09-27 16:07:45
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-29 11:31:43
+ * @LastEditTime: 2021-10-13 15:51:18
  * @Description:
  */
 import React, {
@@ -77,17 +77,43 @@ const Category: React.FC<CategoryProps> = memo((props: CategoryProps) => {
     }
 
     if (showSort) {
-      if (isEqualValue) {
-        setSelectValue((v) => {
-          return v == 'asc' ? 'desc' : 'asc';
-        });
-      } else {
-        setSelectValue(selected);
-      }
-    }
+      let nowSelectValue = selected;
 
-    onTabClick(value, selectValue);
-  }, [selected, disabled, showSort, isEqualValue, value]);
+      if (
+        !finalValue ||
+        finalValue === '' ||
+        (finalValue as Array<string | number>).length == 0 ||
+        isEqualValue
+      ) {
+        if (multiple) {
+          if (!selectValue || selectValue === '') {
+            nowSelectValue = 'asc';
+          } else {
+            nowSelectValue = selectValue === 'asc' ? 'desc' : '';
+          }
+        } else {
+          nowSelectValue =
+            !selectValue || selectValue === '' || selectValue == 'desc'
+              ? 'asc'
+              : 'desc';
+        }
+      }
+
+      setSelectValue(nowSelectValue);
+      onTabClick(value, nowSelectValue);
+    } else {
+      onTabClick(value);
+    }
+  }, [
+    selected,
+    disabled,
+    showSort,
+    isEqualValue,
+    value,
+    selectValue,
+    finalValue,
+    multiple,
+  ]);
 
   /**
    * 排序图标dom

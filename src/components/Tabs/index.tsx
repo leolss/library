@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 10:58:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-10-08 11:42:32
+ * @LastEditTime: 2021-10-13 13:48:53
  * @Description:
  */
 import React, {
@@ -47,6 +47,7 @@ function TabsFn(
     className,
     children,
     onClick,
+    onChange,
     ...restProps
   }: TabsProps,
   ref: React.Ref<HTMLDivElement>,
@@ -64,6 +65,7 @@ function TabsFn(
 
   const onTabClick = useCallback((key: React.Key, e: React.MouseEvent) => {
     onClick?.(key, e);
+    onChange?.(key);
     setFinalActiveKey(key);
   }, []);
 

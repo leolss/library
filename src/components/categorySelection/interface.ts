@@ -3,9 +3,11 @@
  * @Date: 2021-09-27 16:03:07
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-28 16:41:26
+ * @LastEditTime: 2021-10-13 15:54:23
  * @Description:
  */
+
+interface activeValueType {}
 
 export interface CategorySelectionProps extends BaseProps {
   /**
@@ -23,8 +25,12 @@ export interface CategorySelectionProps extends BaseProps {
    */
   multiple?: boolean;
   /**
-   * @description 更改状态时调用的方法
+   * @description 更改状态时调用的方法, 返回当前点击value, sort('', 'desc', 'asc'), result(多选时存在，数组)
    * @type Function
    */
-  onChange?: (id: any, slot?: string) => void;
+  onChange?: (
+    id: string | number,
+    sort?: string,
+    result?: Array<string | number>,
+  ) => void;
 }

@@ -3,7 +3,7 @@
  * @Date: 2021-09-28 14:52:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-29 11:38:08
+ * @LastEditTime: 2021-10-13 15:51:40
  * @Description:
  */
 import React, { memo, useCallback, useMemo } from 'react';
@@ -13,6 +13,13 @@ const TabsDemo: React.FC = memo(() => {
   const contentStyle: React.CSSProperties = {
     marginTop: 20,
   };
+
+  const activeValueMuti = ['1', '2'];
+  const changeValue = useCallback((id, slot, finalValue) => {
+    console.log('id:', id);
+    console.log('slot:', slot);
+    console.log('finalValue:', finalValue);
+  }, []);
 
   return (
     <div style={{ padding: '10px' }}>
@@ -39,7 +46,11 @@ const TabsDemo: React.FC = memo(() => {
       </div>
 
       <div style={contentStyle}>
-        <CategorySelection title="升序降序" activeValue="1">
+        <CategorySelection
+          title="升序降序"
+          activeValue="1"
+          onChange={changeValue}
+        >
           <Category value="1" label="销量" showSort />
           <Category value="2" label="好评" showSort selected="desc" />
           <Category value="3" label="信用" />
@@ -73,7 +84,12 @@ const TabsDemo: React.FC = memo(() => {
       </div>
 
       <div style={contentStyle}>
-        <CategorySelection title="多选标签" multiple>
+        <CategorySelection
+          title="多选标签"
+          activeValue={activeValueMuti}
+          multiple
+          onChange={changeValue}
+        >
           <Category value="1" label="销量" />
           <Category value="2" label="好评" />
           <Category value="3" label="信用" />
@@ -81,7 +97,7 @@ const TabsDemo: React.FC = memo(() => {
       </div>
 
       <div style={contentStyle}>
-        <CategorySelection title="多选标签" multiple>
+        <CategorySelection title="多选标签" multiple onChange={changeValue}>
           <Category value="1" label="销量" showSort />
           <Category value="2" label="好评" showSort />
           <Category value="3" label="信用" />

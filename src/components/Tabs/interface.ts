@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 10:58:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 15:32:02
+ * @LastEditTime: 2021-10-13 13:50:54
  * @Description:
  */
 import type { TabPaneProps } from './TabPane/interface';
@@ -33,4 +33,9 @@ export interface TabsProps extends BaseProps {
    * @type MouseEvent
    */
   onClick?: (activeKey: React.Key, e: React.MouseEvent) => void;
+  /**
+   * @description 切换调用的事件，返回选中的key
+   * @type Function
+   */
+  onChange?: (activeKey: React.Key) => void;
 }
