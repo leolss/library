@@ -30,3 +30,5 @@ export { default as CategorySelection } from './components/categorySelection';
 export { default as Category } from './components/categorySelection/category';
 
 export { default as NoData } from './components/noData';
+
+export { default as Image } from './components/image';
