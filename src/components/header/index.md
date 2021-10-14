@@ -58,7 +58,7 @@ export default () => (
 
 ```tsx | phone
 import React from 'react';
-import { Header, Text } from 'library';
+import { Header, Text, Icon } from 'library';
 
 export default () => (
   <div>
@@ -95,7 +95,9 @@ export default () => (
       带查询
     </Text>
     <Header
-      search={() => {}}
+      search={() => {
+        return <Icon type="check" />;
+      }}
       goBack={() => {}}
       title="琴声潇潇难解我心中忧愁"
     ></Header>

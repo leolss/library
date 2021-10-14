@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 19:01:12
+ * @LastEditTime: 2021-09-28 13:12:32
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -77,21 +77,30 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
 
   // styles
   const styles: React.CSSProperties = useMemo(() => {
-    let style: React.CSSProperties = {
-      width: formatUnit(width),
-      height: formatUnit(height),
-      borderRadius: formatUnit(borderRadius),
-      margin: formatUnit(margin),
-      marginTop: formatUnit(marginTop),
-      marginRight: formatUnit(marginRight),
-      marginBottom: formatUnit(marginBottom),
-      marginLeft: formatUnit(marginLeft),
-      padding: formatUnit(padding),
-      paddingTop: formatUnit(paddingTop),
-      paddingRight: formatUnit(paddingRight),
-      paddingBottom: formatUnit(paddingBottom),
-      paddingLeft: formatUnit(paddingLeft),
+    let style: React.CSSProperties = {};
+
+    const attrs: Object = {
+      width,
+      height,
+      borderRadius,
+      margin,
+      marginTop,
+      marginRight,
+      marginBottom,
+      marginLeft,
+      padding,
+      paddingTop,
+      paddingRight,
+      paddingBottom,
+      paddingLeft,
     };
+
+    Object.keys(attrs).forEach((item: string) => {
+      const nowItem = item as keyof typeof attrs;
+      if (attrs[nowItem]) {
+        style[nowItem] = formatUnit(attrs[nowItem]);
+      }
+    });
 
     if (color) {
       if (plain) {
@@ -106,7 +115,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     style = Object.assign({}, style, extraStyle);
 
     return style;
-  }, [width, height, borderRadius, plain, color, extraStyle]);
+  }, []);
 
   // click 节流
   const throttleClick = useMemo(() => {

@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 10:58:39
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 17:56:18
+ * @LastEditTime: 2021-10-13 13:48:53
  * @Description:
  */
 import React, {
@@ -12,6 +12,7 @@ import React, {
   useState,
   useContext,
   useCallback,
+  useEffect,
 } from 'react';
 import { createNamespace } from '@/utils/create';
 import classNames from 'classnames';
@@ -24,7 +25,7 @@ import type { Tab, TabsProps } from './interface';
 import './index.less';
 
 function parseTabList(children: React.ReactElement): Tab[] {
-  return React.Children.map(children, (node) => {
+  return React.Children.map(children, (node: React.ReactNode) => {
     if (React.isValidElement(node)) {
       const key = node.key !== undefined ? String(node.key) : undefined;
       return {
@@ -46,6 +47,7 @@ function TabsFn(
     className,
     children,
     onClick,
+    onChange,
     ...restProps
   }: TabsProps,
   ref: React.Ref<HTMLDivElement>,
@@ -57,8 +59,13 @@ function TabsFn(
     () => activeKey || tabs[0]?.key,
   );
 
+  useEffect(() => {
+    setFinalActiveKey(() => activeKey || tabs[0]?.key);
+  }, [activeKey]);
+
   const onTabClick = useCallback((key: React.Key, e: React.MouseEvent) => {
     onClick?.(key, e);
+    onChange?.(key);
     setFinalActiveKey(key);
   }, []);
 

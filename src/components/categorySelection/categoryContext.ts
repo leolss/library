@@ -3,15 +3,21 @@
  * @Date: 2021-09-27 17:52:01
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 17:57:10
+ * @LastEditTime: 2021-09-29 11:02:25
  * @Description:
  */
 import { createContext } from 'react';
+
 export interface CategoryContextProps {
+  prefixCls?: string;
+  finalValue?: string | number | Array<string | number>;
   multiple?: boolean;
-  activeValue?: string | Object;
+  onTabClick: (id: any, slot?: string) => void;
 }
+
 export default createContext<CategoryContextProps>({
+  prefixCls: 'category',
   multiple: false,
-  activeValue: '',
+  finalValue: '' || [],
+  onTabClick: () => {},
 });

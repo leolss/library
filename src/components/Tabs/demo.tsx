@@ -3,7 +3,7 @@
  * @Date: 2021-09-26 10:57:02
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 15:27:09
+ * @LastEditTime: 2021-10-13 13:52:23
  * @Description:
  */
 import React, { memo, useCallback, useMemo } from 'react';
@@ -81,7 +81,7 @@ const TabsDemo: React.FC = memo(() => {
 
       <h2 style={titleStyle}>切换动画</h2>
       <div style={bgStyle}>
-        <Tabs activeKey="tab1" animated>
+        <Tabs activeKey="tab1" animated onChange={onClickTab}>
           {Array(4)
             .fill(null)
             .map((item, index) => (

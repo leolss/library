@@ -3,7 +3,7 @@
  * @Date: 2021-09-22 13:44:37
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 15:30:34
+ * @LastEditTime: 2021-10-13 15:55:11
  * @Description:
  */
 import * as React from 'react';
@@ -23,10 +23,7 @@ import TabNode from './TabNode';
 import type { TabNavListProps } from './interface';
 import TabContext from '../TabContext';
 
-function TabNavList(
-  { activeKey, onClick }: TabNavListProps,
-  ref: React.Ref<HTMLDivElement>,
-) {
+function TabNavList({ activeKey, onClick }: TabNavListProps) {
   const { prefixCls, tabs } = useContext(TabContext);
   const navRef = useRef(null);
   const navListRef = useRef(null);
@@ -43,11 +40,13 @@ function TabNavList(
   }, []);
 
   useEffect(() => {
-    getNavListRef(activeKey)?.current?.scrollIntoView({
-      inline: tabs[tabs.length - 1].key === activeKey ? 'nearest' : 'center',
-      behavior: 'smooth',
-      block: 'nearest',
-    });
+    if (tabs.length > 4) {
+      getNavListRef(activeKey)?.current?.scrollIntoView({
+        inline: tabs[tabs.length - 1].key === activeKey ? 'nearest' : 'center',
+        behavior: 'smooth',
+        block: 'nearest',
+      });
+    }
   }, [activeKey, tabs]);
 
   const renderTabNodes: React.ReactElement[] = useMemo(() => {
@@ -81,4 +80,4 @@ function TabNavList(
   );
 }
 
-export default React.forwardRef(TabNavList);
+export default React.memo(TabNavList);
