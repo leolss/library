@@ -1,5 +1,5 @@
-@import './default.less';
-@import './hairline.less';
+@import '../../../styles/var.less';
+@import '../../../styles/hairline.less';
 
 @pickerPopupPrefixCls: jdd-picker-popup;
 @pickerPrefixCls: jdd-picker-col;
@@ -96,7 +96,9 @@
     display: none;
   }
 }
-
+.jdd-picker {
+  display: flex;
+}
 .@{pickerPrefixCls} {
   flex: 1;
 }

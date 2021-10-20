@@ -3,7 +3,7 @@
  * @Date: 2021-09-24 09:53:38
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-27 17:27:05
+ * @LastEditTime: 2021-10-20 10:54:18
  * @Description:
  */
 import * as PropTypes from 'prop-types';
@@ -26,8 +26,6 @@ class Calendar extends React.Component<CalendarProps, any> {
   };
   render() {
     const { props, context } = this;
-    console.log(props, ':props===');
-    console.log(context, ':context====');
     const locale = getComponentLocale(props, context, 'Calendar', () =>
       require('./locale/zh_CN'),
     );
