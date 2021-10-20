@@ -2,13 +2,20 @@
  * @Author: 姚嘉琦
  * @Date: 2021-09-09 15:10:03
  * @Email: yaojiaqi1@jd.com
- * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-16 09:48:19
+ * @LastEditors: 姚嘉琦
+ * @LastEditTime: 2021-10-20 10:42:47
  * @Description: 全局global
  */
 declare module '*.css';
 declare module '*.less';
 declare module 'rmc-notification';
+declare module '*.svg';
+declare module '*.png';
+declare module '*.jpg';
+declare module '*.jpeg';
+declare module '*.gif';
+declare module '*.bmp';
+declare module '*.tiff';
 interface BaseProps {
   /**
    * @description 额外的类名

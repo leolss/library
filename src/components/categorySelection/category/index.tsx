@@ -2,8 +2,8 @@
  * @Author: liuyingying
  * @Date: 2021-09-27 16:07:45
  * @Email: liuyingying1@jd.com
- * @LastEditors: liuyingying
- * @LastEditTime: 2021-10-13 15:51:18
+ * @LastEditors: 姚嘉琦
+ * @LastEditTime: 2021-10-20 10:44:32
  * @Description:
  */
 import React, {
@@ -17,7 +17,7 @@ import React, {
 import { createNamespace } from '@/utils/create';
 import classNames from 'classnames';
 import CategoryContext from '../categoryContext';
-import { Icon } from 'library';
+import Icon from '../../icon';
 
 import type { CategoryProps } from './interface';
 
