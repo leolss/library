@@ -3,39 +3,39 @@
  * @Date: 2021-10-19 10:55:50
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-10-19 18:08:48
+ * @LastEditTime: 2021-10-21 16:04:00
  * @Description:
  */
 import localeProps from './localeProps';
-export type modeFit = 'datetime' | 'date' | 'year' | 'month' | 'time';
+// export type modeFit = 'datetime' | 'date' | 'year' | 'month' | 'time';
 export interface DatePickerProps extends BaseProps {
   /**
-   * @description props示范 必须要参照此格式书写注释以生成文档
+   * @description 当前选中时间
    * @default --
    */
   value?: Date;
   /**
-   * @description mode
-   * @default --
+   * @description 日期选择的类型, 可以是日期date,时间time,日期+时间datetime,年year,月month
+   * @default date
    */
-  mode?: modeFit;
+  mode?: 'datetime' | 'date' | 'year' | 'month' | 'time';
   /**
-   * @description minDate
-   * @default --
+   * @description 最小可选日期
+   * @default new Date(2000, 1, 1, 0, 0, 0)
    */
   minDate?: Date;
   /**
-   * @description maxDate
-   * @default --
+   * @description 最大可选日期
+   * @default new Date(2030, 1, 1, 23, 59, 59)
    */
   maxDate?: Date;
   /**
-   * @description onChange
+   * @description 时间发生变化的回调函数
    * @default --
    */
-  onChange?: (value: Date) => void;
+  onChange?: (value: Object) => void;
   /**
-   * @description onValueChange
+   * @description 每列 picker 改变时的回调
    * @default --
    */
   onValueChange?: (vals: any, index: number) => void;
@@ -45,32 +45,27 @@ export interface DatePickerProps extends BaseProps {
    */
   visible?: boolean;
   /**
-   * @description onDismiss
-   * @default --
-   */
-  onDismiss?: () => void;
-  /**
    * @description locale
    * @default --
    */
   locale?: localeProps;
   /**
-   * @description minuteStep
-   * @default --
+   * @description 分钟数递增步长设置
+   * @default 1
    */
   minuteStep?: number;
   /**
-   * @description disabled
+   * @description 是否不可用
    * @default --
    */
   disabled?: boolean;
   /**
-   * @description format
+   * @description 格式化选中的值 (对应 mode 下格式分别为:YYYY-MM-DD,HH:mm,YYYY-MM-DD HH:mm)
    * @default --
    */
   format?: string | ((value: Date) => string);
   /**
-   * @description extra
+   * @description 显示文案
    * @default --
    */
   extra?: string;
@@ -85,8 +80,33 @@ export interface DatePickerProps extends BaseProps {
    */
   okText?: React.ReactNode;
   /**
-   * @description disabled
+   * @description 弹框的标题
    * @default --
    */
   title?: React.ReactNode;
+  /**
+   * @description class前缀
+   * @default jdd-picker
+   */
+  prefixCls?: string;
+  /**
+   * @description 样式类名
+   * @default --
+   */
+  className?: string;
+  /**
+   * @description 12小时制
+   * @default false
+   */
+  use12Hours?: boolean;
+  /**
+   * @description 点击选中时执行的回调
+   * @default --
+   */
+  onOk?: (val: any) => void;
+  /**
+   * @description 点击取消时执行的回调
+   * @default --
+   */
+  onDismiss?: () => void;
 }

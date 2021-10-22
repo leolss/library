@@ -3,7 +3,7 @@
  * @Date: 2021-10-19 10:55:50
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-10-20 09:56:34
+ * @LastEditTime: 2021-10-21 15:55:48
  * @Description:
  */
 import * as PropTypes from 'prop-types';
@@ -14,12 +14,8 @@ import { DatePickerProps } from './interface';
 import { formatFn, getComponentLocale } from './utils';
 import './index.less';
 export interface PropsType extends DatePickerProps {
-  prefixCls?: string;
-  className?: string;
-  use12Hours?: boolean;
   pickerPrefixCls?: string;
   popupPrefixCls?: string;
-  onOk?: (x: any) => void;
   onVisibleChange?: (visible: boolean) => void;
 }
 const DatePicker: React.FC<PropsType> = (props) => {

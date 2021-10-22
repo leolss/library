@@ -3,23 +3,19 @@
  * @Date: 2021-10-19 18:02:08
  * @Email: lishanshan6@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-10-19 18:06:26
+ * @LastEditTime: 2021-10-21 15:24:24
  * @Description:
  */
-import * as React from 'react';
-import { DatePicker } from 'library';
+import React, { useState } from 'react';
+import { DatePicker, Text } from 'library';
 
 const nowTimeStamp = Date.now();
 const now = new Date(nowTimeStamp);
-// GMT is not currently observed in the UK. So use UTC now.
 const utcNow = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
 
-// Make sure that in `time` mode, the maxDate and minDate are within one day.
 let minDate = new Date(nowTimeStamp - 1e7);
 const maxDate = new Date(nowTimeStamp + 1e7);
-// console.log(minDate, maxDate);
 if (minDate.getDate() !== maxDate.getDate()) {
-  // set the minDate to the 0 of maxDate
   minDate = new Date(
     maxDate.getFullYear(),
     maxDate.getMonth(),
@@ -53,73 +49,71 @@ const CustomChildren = ({ extra, onClick, children }) => (
     <span style={{ float: 'right', color: '#888' }}>{extra}</span>
   </div>
 );
+const Demo: React.FC<any> = (props) => {
+  const [date, setDate] = useState(now);
+  const [time, setTime] = useState(now);
+  const [utcDate, setUtcDate] = useState(utcNow);
+  const [customChildValue, setCustomChildValue] = useState(null);
+  return (
+    <div className="date-picker-list" style={{ backgroundColor: 'white' }}>
+      <Text
+        color="#455a6499"
+        paddingTop={30}
+        paddingBottom={10}
+        paddingLeft={10}
+      >
+        DatePicker的用法
+      </Text>
+      <DatePicker value={date} onChange={(date) => setDate(date)}>
+        <CustomChildren>Datetime</CustomChildren>
+      </DatePicker>
+      <DatePicker
+        mode="date"
+        title="Select Date"
+        extra="Optional"
+        value={date}
+        onChange={(date) => setDate(date)}
+      >
+        <CustomChildren>Date</CustomChildren>
+      </DatePicker>
 
-class Demo extends React.Component {
-  state = {
-    date: now,
-    time: now,
-    utcDate: utcNow,
-    dpValue: null,
-    customChildValue: null,
-    visible: false,
-  };
-  render() {
-    return (
-      <div className="date-picker-list" style={{ backgroundColor: 'white' }}>
-        <DatePicker
-          value={this.state.date}
-          onChange={(date) => this.setState({ date })}
-        >
-          <CustomChildren>Datetime</CustomChildren>
-        </DatePicker>
-        <DatePicker
-          mode="date"
-          title="Select Date"
-          extra="Optional"
-          value={this.state.date}
-          onChange={(date) => this.setState({ date })}
-        >
-          <CustomChildren>Date</CustomChildren>
-        </DatePicker>
-
-        <DatePicker
-          mode="time"
-          minuteStep={2}
-          use12Hours
-          value={this.state.time}
-          onChange={(time) => this.setState({ time })}
-        >
-          <CustomChildren>Time (am/pm)</CustomChildren>
-        </DatePicker>
-        <DatePicker
-          mode="time"
-          minDate={minDate}
-          maxDate={maxDate}
-          value={this.state.time}
-          onChange={(time) => this.setState({ time })}
-        >
-          <CustomChildren>Limited time</CustomChildren>
-        </DatePicker>
-
-        <DatePicker
-          visible={this.state.visible}
-          value={this.state.dpValue}
-          onOk={(date) => this.setState({ dpValue: date, visible: false })}
-          onDismiss={() => this.setState({ visible: false })}
-        />
-
-        <DatePicker
-          mode="time"
-          format="HH:mm"
-          title="Select Time"
-          value={this.state.customChildValue}
-          onChange={(v) => this.setState({ customChildValue: v })}
-          extra="click to choose"
-        >
-          <CustomChildren>With customized children</CustomChildren>
-        </DatePicker>
-      </div>
-    );
-  }
-}
+      <DatePicker
+        mode="time"
+        minuteStep={2}
+        use12Hours
+        value={time}
+        onChange={(time) => setTime(time)}
+      >
+        <CustomChildren>Time (am/pm)</CustomChildren>
+      </DatePicker>
+      <DatePicker
+        mode="time"
+        minDate={minDate}
+        maxDate={maxDate}
+        value={time}
+        onChange={(time) => setTime(time)}
+      >
+        <CustomChildren>Limited time</CustomChildren>
+      </DatePicker>
+      <DatePicker
+        mode="time"
+        format={(val) => `UTC Time: ${formatDate(val).split(' ')[1]}`}
+        value={utcDate}
+        onChange={(date) => setUtcDate(date)}
+      >
+        <CustomChildren>UTC time</CustomChildren>
+      </DatePicker>
+      <DatePicker
+        mode="time"
+        format="HH:mm"
+        title="Select Time"
+        value={customChildValue}
+        onChange={(v) => setCustomChildValue(v)}
+        extra="click to choose"
+      >
+        <CustomChildren>With customized children</CustomChildren>
+      </DatePicker>
+    </div>
+  );
+};
 export default Demo;
