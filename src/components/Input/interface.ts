@@ -5,4 +5,5 @@ export interface InputProps extends BaseProps {
    */
   onChange?: (value: any) => void;
   type?: 'text' | 'tel';
+  value?: any;
 }

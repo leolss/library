@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Input } from 'library';
 
 const Demo: React.FC = () => {
@@ -13,13 +13,17 @@ const Demo: React.FC = () => {
     background: '#F2F2F2',
   };
 
+  const [str, setStr] = useState('defaultValue');
+
   return (
     <>
       <h2 style={titleStyle}>文本输入框</h2>
       <Input
         placeholder="请输入"
+        value={str}
         onChange={(val: any) => {
-          console.log(val);
+          setStr(val);
+          console.log('++++++', val);
         }}
       />
       <h2 style={titleStyle}>数字输入框</h2>
