@@ -7,4 +7,5 @@ export interface InputProps extends BaseProps {
   type?: 'text' | 'tel';
   value?: any;
   label?: any;
+  classNames?: any;
 }

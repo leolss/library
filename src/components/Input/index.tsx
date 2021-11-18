@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { InputProps } from './interface';
 import './index.less';
 import { Icon } from 'library';
+import classnames from 'classnames';
 
 const Input: React.FC<InputProps> = ({
   onChange,
   type = 'text',
   value,
   label,
+  className,
   ...baseProps
 }) => {
   const [val, setVal] = useState(value ? value : '');
@@ -27,7 +29,8 @@ const Input: React.FC<InputProps> = ({
   }, [val]);
 
   return (
-    <div className="jdd-Input">
+    // <div className="jdd-Input">
+    <div className={classnames('jdd-Input', className)}>
       <div className="input-warpper">
         {label && <label>{label}</label>}
         <input type={type} onChange={change} ref={ref} {...baseProps} />
