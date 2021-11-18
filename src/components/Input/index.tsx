@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { InputProps } from './interface';
 import './index.less';
+import { Icon } from 'library';
 
 const Input: React.FC<InputProps> = ({
   onChange,
@@ -26,8 +27,16 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <div className="jdd-Input">
-      <input type={type} onChange={change} ref={ref} {...baseProps} />
-      {val && <i onClick={clearVal}>x</i>}
+      <div className="input-warpper">
+        <input type={type} onChange={change} ref={ref} {...baseProps} />
+        {val && (
+          <Icon
+            onClick={clearVal}
+            className="clearBtnIcon"
+            type="cross-circle-o"
+          />
+        )}
+      </div>
     </div>
   );
 };

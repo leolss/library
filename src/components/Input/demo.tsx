@@ -3,15 +3,14 @@ import { Input } from 'library';
 
 const Demo: React.FC = () => {
   const titleStyle: React.CSSProperties = {
-    margin: '20px 0 10px',
-    padding: 0,
-    color: '#455a6499',
+    margin: 0,
+    padding: '32px 16px 16px',
+    color: 'rgba(69, 90, 100, 0.6)',
     fontSize: '14px',
     fontWeight: 'normal',
+    background: '#f7f8fa',
   };
-  const bgStyle: React.CSSProperties = {
-    background: '#F2F2F2',
-  };
+  const bgStyle: React.CSSProperties = {};
 
   const [str, setStr] = useState('defaultValue');
 
@@ -23,7 +22,6 @@ const Demo: React.FC = () => {
         value={str}
         onChange={(val: any) => {
           setStr(val);
-          console.log('++++++', val);
         }}
       />
       <h2 style={titleStyle}>数字输入框</h2>
