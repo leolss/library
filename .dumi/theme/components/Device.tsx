@@ -1,3 +1,11 @@
+/*
+ * @Author: 姚嘉琦
+ * @Date: 2021-11-17 18:01:04
+ * @Email: yaojiaqi1@jd.com
+ * @LastEditors: 姚嘉琦
+ * @LastEditTime: 2021-11-18 11:15:12
+ * @Description:
+ */
 import type { FC } from 'react';
 import React, { useState, useContext, useEffect } from 'react';
 import QRCode from 'qrcode.react';
@@ -41,7 +49,7 @@ const Device: FC<IDeviceProps> = ({ url, className }) => {
           onClick={() => setRenderKey(Math.random())}
         />
         <button className="__dumi-default-icon" role="qrcode">
-          <QRCode value={url} size={96} />
+          {/* <QRCode value={url} size={96} /> */}
         </button>
         <a
           href={url}
