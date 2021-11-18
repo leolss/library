@@ -24,12 +24,10 @@ const Demo: React.FC = () => {
           setValue(val);
         }}
       />
-      <hr
-        style={{ border: 0, borderTop: '.5px solid #eaf0fb', margin: '0 10px' }}
-      />
       <Input type="tel" placeholder="请输入数字" />
 
       <h2 style={titleStyle}>自定义类型</h2>
+      <Input label="姓名" placeholder="请输入" />
     </>
   );
 };

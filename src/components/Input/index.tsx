@@ -7,6 +7,7 @@ const Input: React.FC<InputProps> = ({
   onChange,
   type = 'text',
   value,
+  label,
   ...baseProps
 }) => {
   const [val, setVal] = useState(value ? value : '');
@@ -28,6 +29,7 @@ const Input: React.FC<InputProps> = ({
   return (
     <div className="jdd-Input">
       <div className="input-warpper">
+        {label && <label>{label}</label>}
         <input type={type} onChange={change} ref={ref} {...baseProps} />
         {val && (
           <Icon
@@ -37,6 +39,9 @@ const Input: React.FC<InputProps> = ({
           />
         )}
       </div>
+      <hr
+        style={{ border: 0, borderTop: '.5px solid #eaf0fb', margin: '0 10px' }}
+      />
     </div>
   );
 };
