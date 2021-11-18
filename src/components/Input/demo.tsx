@@ -12,20 +12,24 @@ const Demo: React.FC = () => {
   };
   const bgStyle: React.CSSProperties = {};
 
-  const [str, setStr] = useState('defaultValue');
+  const [value, setValue] = useState('defaultValue');
 
   return (
     <>
-      <h2 style={titleStyle}>文本输入框</h2>
+      <h2 style={titleStyle}>基础用法</h2>
       <Input
-        placeholder="请输入"
-        value={str}
+        placeholder="请输入文本"
+        value={value}
         onChange={(val: any) => {
-          setStr(val);
+          setValue(val);
         }}
       />
-      <h2 style={titleStyle}>数字输入框</h2>
-      <Input type="tel" placeholder="请输入" />
+      <hr
+        style={{ border: 0, borderTop: '.5px solid #eaf0fb', margin: '0 10px' }}
+      />
+      <Input type="tel" placeholder="请输入数字" />
+
+      <h2 style={titleStyle}>自定义类型</h2>
     </>
   );
 };
