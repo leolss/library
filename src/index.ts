@@ -34,3 +34,5 @@ export { default as NoData } from './components/noData';
 export { default as Image } from './components/image';
 
 export { default as DatePicker } from './components/datePicker';
+
+export { default as Input } from './components/Input';
