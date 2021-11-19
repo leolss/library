@@ -21,7 +21,7 @@ export interface InputProps extends BaseProps {
 
   /**
    * @description 类型
-   * @type 'text' | 'tel'
+   * @type 'text' | 'tel' | 'password'
    * @default text
    */
   type?: 'text' | 'tel';

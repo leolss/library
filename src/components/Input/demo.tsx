@@ -47,6 +47,7 @@ const Demo: React.FC = () => {
       <h2 style={titleStyle}>自定义类型</h2>
       <Input label="姓名" className="inputname" placeholder="请输入" />
       <Input label="手机号" maxLength="11" placeholder="请输入" />
+      <Input label="密码" type="password" placeholder="请输入" />
     </>
   );
 };

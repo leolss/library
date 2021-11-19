@@ -62,5 +62,19 @@ export default () => (
 );
 ```
 
+### 自定义类型
+
+```tsx
+import { Input } from 'library';
+
+export default () => (
+  <>
+    <Input label="姓名" className="inputname" placeholder="请输入" />
+    <Input label="手机号" maxLength="11" placeholder="请输入" />
+    <Input label="密码" type="password" placeholder="请输入" />
+  </>
+);
+```
+
 <code src="./demo.tsx" identifier="input-demo-phone" phone></code>
 <API src="./index.tsx"></API>
