@@ -35,16 +35,16 @@ const Input: React.FC<InputProps> = ({
         {label && <label>{label}</label>}
         <input type={type} onChange={change} ref={ref} {...baseProps} />
         {val && (
-          <Icon
-            onClick={clearVal}
-            className="clearBtnIcon"
-            type="cross-circle-o"
-          />
+          <span className="btn-after">
+            <Icon
+              onClick={clearVal}
+              className="clearBtnIcon"
+              type="cross-circle-o"
+            />
+          </span>
         )}
       </div>
-      <hr
-        style={{ border: 0, borderTop: '.5px solid #eaf0fb', margin: '0 10px' }}
-      />
+      <hr />
     </div>
   );
 };
