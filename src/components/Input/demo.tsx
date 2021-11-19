@@ -18,26 +18,26 @@ const Demo: React.FC = () => {
     <>
       <h2 style={titleStyle}>基础用法</h2>
       <Input
-        placeholder="请输入文本"
         value={value}
         onChange={(val: any) => {
           setValue(val);
         }}
+        placeholder="请输入文本"
       />
       <Input type="tel" placeholder="请输入数字" />
 
       <h2 style={titleStyle}>输入框内容对齐</h2>
       <Input label="文本" placeholder="左对齐（默认）" />
-      <Input label="文本" placeholder="右对齐" textAlign="right" />
+      <Input label="文本" textAlign="right" placeholder="右对齐" />
       <Input
         label="订单号"
-        placeholder="请输入"
         textAlign="right"
         type="tel"
         value="11323456789"
+        placeholder="请输入"
       />
 
-      <h2 style={titleStyle}>插入按钮</h2>
+      <h2 style={titleStyle}>额外的操作按钮插槽</h2>
       <Input
         label="短信验证码"
         append={<a>发送验证码</a>}
@@ -45,8 +45,8 @@ const Demo: React.FC = () => {
       />
 
       <h2 style={titleStyle}>自定义类型</h2>
-      <Input label="姓名" placeholder="请输入" className="inputname" />
-      <Input label="手机号" placeholder="请输入" maxLength="11" />
+      <Input label="姓名" className="inputname" placeholder="请输入" />
+      <Input label="手机号" maxLength="11" placeholder="请输入" />
     </>
   );
 };

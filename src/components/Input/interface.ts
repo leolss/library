@@ -1,5 +1,25 @@
 export interface InputProps extends BaseProps {
   /**
+   * @description 输入值
+   * @type string
+   * @default --
+   */
+  value?: any;
+
+  /**
+   * @description 输入内容时触发
+   * @default --
+   */
+  onChange?: (value: any) => void;
+
+  /**
+   * @description 字段标题
+   * @type string
+   * @default --
+   */
+  label?: String;
+
+  /**
    * @description 类型
    * @type 'text' | 'tel'
    * @default text
@@ -12,19 +32,17 @@ export interface InputProps extends BaseProps {
    * @default left
    */
   textAlign?: 'left' | 'right';
-  /**
-   * @description 字段标题
-   * @type string
-   * @default --
-   */
-  label?: String;
-  /**
-   * @description 输入内容时触发
-   * @default --
-   */
-  onChange?: (value: any) => void;
 
-  value?: any;
-  className?: any;
+  /**
+   * @description 额外的操作按钮插槽
+   * @type jsx
+   * @default --
+   */
   append?: any;
+
+  /**
+   * @description 添加自定义类名
+   * @default --
+   */
+  className?: string;
 }
