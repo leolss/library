@@ -3,7 +3,7 @@
  * @Date: 2021-09-10 13:47:27
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-09-18 16:00:14
+ * @LastEditTime: 2021-11-19 16:45:48
  * @Description: 配置文件
  */
 import { defineConfig } from 'dumi';
@@ -18,6 +18,8 @@ export default defineConfig({
   // API解析配置
   apiParser: {
     propFilter: {
+      // 是否忽略从 node_modules 继承的属性，默认值为 false
+      skipNodeModules: false,
       // 忽略没有描述的属性
       skipPropsWithoutDoc: true,
     },
