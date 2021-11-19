@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { InputProps } from './interface';
 import './index.less';
-import { Icon } from 'library';
+import Icon from '@/components/icon';
 import classnames from 'classnames';
 
 const Input: React.FC<InputProps> = ({

@@ -5,15 +5,49 @@ nav:
   path: /components
 ---
 
-## Foo
+## Input 输入框
 
-Demo:
+### 基础用法
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Input } from 'library';
 
-export default () => <Input className="jdd-Input" type="tel"></Input>;
+export default () => {
+  const [value, setValue] = useState('defaultValue');
+  return (
+    <>
+      <Input
+        placeholder="请输入文本"
+        value={value}
+        onChange={(val: any) => {
+          setValue(val);
+        }}
+      />
+      <Input type="tel" placeholder="请输入数字" />
+    </>
+  );
+};
+```
+
+### 输入框内容对齐
+
+```tsx
+import { Input } from 'library';
+
+export default () => (
+  <>
+    <Input label="文本" placeholder="左对齐（默认）" />
+    <Input label="文本" placeholder="右对齐" textAlign="right" />
+    <Input
+      label="订单号"
+      placeholder="请输入"
+      textAlign="right"
+      type="tel"
+      value="11323456789"
+    />
+  </>
+);
 ```
 
 <code src="./demo.tsx" identifier="input-demo-phone" phone></code>
