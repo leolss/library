@@ -1,3 +1,11 @@
+/*
+ * @Author: 李闪闪
+ * @Date: 2021-10-20 15:54:12
+ * @Email: lishanshan6@jd.com
+ * @LastEditors: 李闪闪
+ * @LastEditTime: 2021-11-18 17:55:24
+ * @Description:
+ */
 function formatIt(date: Date, form: string) {
   const pad = (n: number) => (n < 10 ? `0${n}` : n);
   const dateStr = `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(
@@ -42,8 +50,6 @@ export function getComponentLocale(
     locale = context.antLocale[componentName];
   } else {
     const defaultLocale = getDefaultLocale();
-    // TODO: make default lang of antd be English
-    // https://github.com/ant-design/ant-design/issues/6334
     locale = defaultLocale.default || defaultLocale;
   }
 
