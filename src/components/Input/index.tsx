@@ -10,6 +10,7 @@ const Input: React.FC<InputProps> = ({
   value,
   label,
   className,
+  textAlign,
   ...baseProps
 }) => {
   const [val, setVal] = useState(value ? value : '');
@@ -33,7 +34,13 @@ const Input: React.FC<InputProps> = ({
     <div className={classnames('jdd-Input', className)}>
       <div className="input-warpper">
         {label && <label>{label}</label>}
-        <input type={type} onChange={change} ref={ref} {...baseProps} />
+        <input
+          type={type}
+          onChange={change}
+          ref={ref}
+          {...baseProps}
+          style={{ textAlign }}
+        />
         {val && (
           <span className="btn-after">
             <Icon
