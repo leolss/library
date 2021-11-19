@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { InputProps } from './interface';
 import './index.less';
-import Icon from '../icon';
+import Icon from '@/components/icon';
 import classnames from 'classnames';
 
 const Input: React.FC<InputProps> = ({
@@ -11,6 +11,7 @@ const Input: React.FC<InputProps> = ({
   label,
   className,
   textAlign,
+  append,
   ...baseProps
 }) => {
   const [val, setVal] = useState(value ? value : '');
@@ -41,15 +42,17 @@ const Input: React.FC<InputProps> = ({
           {...baseProps}
           style={{ textAlign }}
         />
-        {val && (
-          <span className="btn-after">
+
+        <span className="btn-after">
+          {val && (
             <Icon
               onClick={clearVal}
               className="clearBtnIcon"
               type="cross-circle-o"
             />
-          </span>
-        )}
+          )}
+          <span className="append">{append} </span>
+        </span>
       </div>
       <hr />
     </div>

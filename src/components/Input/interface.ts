@@ -1,12 +1,48 @@
 export interface InputProps extends BaseProps {
   /**
-   * @description props示范 必须要参照此格式书写注释以生成文档
+   * @description 输入值
+   * @type string
+   * @default --
+   */
+  value?: any;
+
+  /**
+   * @description 输入内容时触发
    * @default --
    */
   onChange?: (value: any) => void;
+
+  /**
+   * @description 字段标题
+   * @type string
+   * @default --
+   */
+  label?: String;
+
+  /**
+   * @description 类型
+   * @type 'text' | 'tel' | 'password'
+   * @default text
+   */
   type?: 'text' | 'tel';
-  value?: any;
-  label?: any;
-  className?: any;
-  textAlign?: any;
+
+  /**
+   * @description 对齐方式
+   * @type 'left' | 'right'
+   * @default left
+   */
+  textAlign?: 'left' | 'right';
+
+  /**
+   * @description 额外的操作按钮插槽
+   * @type jsx
+   * @default --
+   */
+  append?: any;
+
+  /**
+   * @description 添加自定义类名
+   * @default --
+   */
+  className?: string;
 }
