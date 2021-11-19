@@ -26,4 +26,5 @@ export interface InputProps extends BaseProps {
 
   value?: any;
   className?: any;
+  append?: any;
 }

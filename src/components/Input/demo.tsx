@@ -37,6 +37,13 @@ const Demo: React.FC = () => {
         value="11323456789"
       />
 
+      <h2 style={titleStyle}>插入按钮</h2>
+      <Input
+        label="短信验证码"
+        append={<a>发送验证码</a>}
+        placeholder="请输入"
+      />
+
       <h2 style={titleStyle}>自定义类型</h2>
       <Input label="姓名" placeholder="请输入" className="inputname" />
       <Input label="手机号" placeholder="请输入" maxLength="11" />
