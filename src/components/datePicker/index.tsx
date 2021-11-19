@@ -2,8 +2,8 @@
  * @Author: 李闪闪
  * @Date: 2021-10-19 10:55:50
  * @Email: lishanshan6@jd.com
- * @LastEditors: 李闪闪
- * @LastEditTime: 2021-10-20 09:56:34
+ * @LastEditors: 姚嘉琦
+ * @LastEditTime: 2021-11-18 16:23:27
  * @Description:
  */
 import * as PropTypes from 'prop-types';
@@ -12,6 +12,7 @@ import RCDatePicker from 'rmc-date-picker/lib/DatePicker';
 import PopupDatePicker from 'rmc-date-picker/lib/Popup';
 import { DatePickerProps } from './interface';
 import { formatFn, getComponentLocale } from './utils';
+import zh_CN from './locale/zh_CN';
 import './index.less';
 export interface PropsType extends DatePickerProps {
   prefixCls?: string;
@@ -60,9 +61,7 @@ const DatePicker: React.FC<PropsType> = (props) => {
       picker.onOk = onOk;
     }
   };
-  const locale = getComponentLocale(props, context, 'DatePicker', () =>
-    require('./locale/zh_CN'),
-  );
+  const locale = getComponentLocale(props, context, 'DatePicker', () => zh_CN);
   const { okText, dismissText, extra, DatePickerLocale } = locale;
   const datePicker = (
     <RCDatePicker

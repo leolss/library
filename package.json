@@ -1,7 +1,6 @@
 {
-  "private": true,
-  "name": "library",
-  "version": "1.0.0",
+  "name": "jdd-react-components",
+  "version": "1.0.5",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
