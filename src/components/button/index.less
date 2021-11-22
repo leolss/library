@@ -96,12 +96,12 @@
 
   /* 正常大小 */
   &--normal {
-    height: var(--jdd-button-height-sm);
-    font-size: var(--jdd-button-font-size-sm);
-    padding: 0 var(--jdd-h-spacing-sm);
+    height: var(--jdd-button-height-md);
+    font-size: var(--jdd-button-font-size-md);
+    padding: 0 var(--jdd-h-spacing-md);
 
     &.@{prefixCls}--radius {
-      border-radius: var(--jdd-button-radius-sm);
+      border-radius: var(--jdd-button-radius-md);
     }
   }
 
@@ -123,8 +123,12 @@
 
   /* 小号按钮 */
   &--small {
-    height: 26 * @hd;
-    font-size: 12 * @hd;
+    height: var(--jdd-button-height-sm);
+    font-size: var(--jdd-button-font-size-sm);
+
+    &.@{prefixCls}--radius {
+      border-radius: var(--jdd-button-radius-sm);
+    }
 
     .@{prefixCls}-content {
       transform: scale(0.93);
