@@ -1,5 +1,6 @@
+@import '../../styles/var.less';
+
 @prefixCls: jdd-button;
-@hd: 1px;
 
 .@{prefixCls} {
   position: relative;
@@ -23,7 +24,7 @@
     height: 100%;
   }
   &-text {
-    padding: 4 * @hd;
+    padding: 0 4 * @hd;
   }
 
   /* 默认按钮 */
@@ -97,7 +98,11 @@
   &--normal {
     height: var(--jdd-button-height-sm);
     font-size: var(--jdd-button-font-size-sm);
-    padding: 6 * @hd 10 * @hd;
+    padding: 0 var(--jdd-h-spacing-sm);
+
+    &.@{prefixCls}--radius {
+      border-radius: var(--jdd-button-radius-sm);
+    }
   }
 
   /* 大号按钮 */
@@ -105,7 +110,11 @@
     width: 100%;
     height: var(--jdd-button-height);
     font-size: var(--jdd-button-font-size);
-    padding: 10 * @hd 18 * @hd;
+    padding: 0 var(--jdd-h-spacing-md);
+
+    &.@{prefixCls}--radius {
+      border-radius: var(--jdd-button-radius);
+    }
 
     .@{prefixCls}-loading-style {
       transform: scale(1.3);
@@ -274,6 +283,9 @@
         animation-delay: 0.48s;
       }
     }
+  }
+  &--circle {
+    border-radius: var(--jdd-radius-circle);
   }
 
   /* icon -- 待添加 */

@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 11:14:47
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 19:00:36
+ * @LastEditTime: 2021-11-22 14:14:38
  * @Description:
  */
 
@@ -138,4 +138,14 @@ export interface ButtonProps extends BaseProps, StyleProps, EventProps {
    * @default false
    */
   disabled?: boolean;
+  /**
+   * @description 是否为圆角
+   * @default false
+   */
+  radius?: boolean;
+  /**
+   * @description 是否为圆形
+   * @default false
+   */
+  circle?: boolean;
 }

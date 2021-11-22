@@ -3,7 +3,7 @@
  * @Date: 2021-09-13 19:39:35
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-28 13:12:32
+ * @LastEditTime: 2021-11-22 14:14:56
  * @Description:  Button
  */
 import React, { memo, useMemo, useCallback } from 'react';
@@ -27,6 +27,8 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
     loading = false,
     block = false,
     loadingType = 'circle',
+    radius = false,
+    circle = false,
     icon,
     width,
     height,
@@ -70,7 +72,7 @@ const Button: React.FC<ButtonProps> = memo((props: ButtonProps) => {
   // 最外层类名
   const classes = useMemo(() => {
     return classnames(
-      bem([type, size, { plain, disabled, loading, block }]),
+      bem([type, size, { plain, disabled, loading, block, radius, circle }]),
       className,
     );
   }, [type, size, disabled, loading, className]);
