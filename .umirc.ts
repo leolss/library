@@ -3,16 +3,16 @@
  * @Date: 2021-09-10 13:47:27
  * @Email: yaojiaqi1@jd.com
  * @LastEditors: 李闪闪
- * @LastEditTime: 2021-11-19 16:45:48
+ * @LastEditTime: 2021-11-19 17:10:03
  * @Description: 配置文件
  */
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'Smart Design',
+  title: 'JDD Design',
   favicon:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
-  logo: 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+    'https://storage.360buyimg.com/jdd-web-yinp/image/assets/%E4%BA%BF%E5%86%9C%E6%89%B9logo.png?Expires=3782378757&AccessKey=2pD6LmpoRGa4Z7wB&Signature=8L2DBcyIqQazhyUMyHBjPYOq7Hc%3D',
+  logo: 'https://storage.360buyimg.com/jdd-web-yinp/image/assets/%E4%BA%BF%E5%86%9C%E6%89%B9logo.png?Expires=3782378757&AccessKey=2pD6LmpoRGa4Z7wB&Signature=8L2DBcyIqQazhyUMyHBjPYOq7Hc%3D',
   outputPath: 'docs-dist',
   mode: 'site',
   // API解析配置
