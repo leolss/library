@@ -3,7 +3,7 @@
  * @Date: 2021-09-16 17:34:09
  * @Email: liuyingying1@jd.com
  * @LastEditors: liuyingying
- * @LastEditTime: 2021-09-27 15:55:25
+ * @LastEditTime: 2021-11-22 14:20:53
  * @Description:
  */
 import React, { memo, useCallback } from 'react';
@@ -69,10 +69,21 @@ const Demo: React.FC = memo(() => {
       <Button type="primary" loading loadingType="circle" />
       <Button type="primary" loading loadingType="turn" />
       <Button type="primary" loading loadingType="line" />
+      <Button type="primary" loading loadingType="circle" circle />
+      <Button type="primary" loading loadingType="turn" circle />
+      <Button type="primary" loading loadingType="line" circle />
 
       <h2 className="jdd-button-md-title">块级元素</h2>
       <Button type="primary" block>
         块级元素
+      </Button>
+
+      <h2 className="jdd-button-md-title">圆角</h2>
+      <Button type="default" radius>
+         圆角默认
+      </Button>
+      <Button type="primary" radius>
+         圆角主要
       </Button>
 
       <h2 className="jdd-button-md-title">自定义按钮</h2>
